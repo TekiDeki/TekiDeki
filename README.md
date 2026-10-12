@@ -21,7 +21,7 @@ One file. No build step. No backend. No tracking. Works offline.
 
 ## 🚀 What I'm building
 
-Three tools. Three real problems. Zero dependencies.
+Four tools. Four real problems. Zero dependencies.
 
 <br>
 
@@ -66,6 +66,20 @@ Midjourney · FLUX.1 · Stable Diffusion · DALL-E 3 · 14 presets · 18 SD mode
 [![Repo](https://img.shields.io/badge/repo-source-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/TekiDeki/AI-Prompt-Builder)
 [![Version](https://img.shields.io/badge/version-22.12-blue?style=flat-square)](https://github.com/TekiDeki/AI-Prompt-Builder)
 
+<br>
+
+### ⚖️ [Calculator IMC · BMI Calculator](https://github.com/TekiDeki/BMI-Calculator)
+
+**Your BMI in two taps — in four languages.**
+
+Weight + height → instant BMI with category and clear result. Română · English · Srpski · Српски, dark & light theme, shareable language links, works offline.
+
+4 languages with `hreflang` · dark/light theme · share button · offline PWA · **17 KB total**
+
+[![Live demo](https://img.shields.io/badge/live-demo-success?style=flat-square&logo=githubpages&logoColor=white)](https://tekideki.github.io/BMI-Calculator/)
+[![Repo](https://img.shields.io/badge/repo-source-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/TekiDeki/BMI-Calculator)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](https://github.com/TekiDeki/BMI-Calculator/blob/main/LICENSE)
+
 ---
 
 ## 🧠 How I build
@@ -94,6 +108,7 @@ Every project follows the same rules:
 | 🛒 Which is cheaper? | **[tekideki.github.io/Which-is-cheaper](https://tekideki.github.io/Which-is-cheaper/)** |
 | 💰 Smart Money Manager | **[tekideki.github.io/Smart-Money-Manager](https://tekideki.github.io/Smart-Money-Manager/)** |
 | 🎨 AI Prompt Builder | **[tekideki.github.io/AI-Prompt-Builder](https://tekideki.github.io/AI-Prompt-Builder/)** |
+| ⚖️ BMI Calculator | **[tekideki.github.io/BMI-Calculator](https://tekideki.github.io/BMI-Calculator/)** |
 
 **Personal site:** [freeHTML.dev](https://freehtml.dev/)
 
