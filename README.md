@@ -11,7 +11,7 @@ I build small, fast, dependency-free web tools that solve one problem well.
 One file. No build step. No backend. No tracking. Works offline.
 
 [![Website](https://img.shields.io/badge/website-freeHTML.dev-blue?style=flat-square)](https://freehtml.dev/)
-[![Projects](https://img.shields.io/badge/projects-3-brightgreen?style=flat-square)](#-what-im-building)
+[![Projects](https://img.shields.io/badge/projects-5-brightgreen?style=flat-square)](#-what-im-building)
 [![Dependencies](https://img.shields.io/badge/dependencies-0-brightgreen?style=flat-square)](#-how-i-build)
 [![Made with](https://img.shields.io/badge/made%20with-vanilla%20JS-yellow?style=flat-square)](#-how-i-build)
 
@@ -21,7 +21,7 @@ One file. No build step. No backend. No tracking. Works offline.
 
 ## 🚀 What I'm building
 
-Four tools. Four real problems. Zero dependencies.
+Five tools. Five real problems. Zero dependencies.
 
 <br>
 
@@ -80,6 +80,20 @@ Weight + height → instant BMI with category and clear result. Română · Engl
 [![Repo](https://img.shields.io/badge/repo-source-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/TekiDeki/BMI-Calculator)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](https://github.com/TekiDeki/BMI-Calculator/blob/main/LICENSE)
 
+<br>
+
+### 📱 [Mobile Preview](https://github.com/TekiDeki/Mobile-Preview)
+
+**See how any page looks on iPhone, iPad, Android and desktop — in seconds.**
+
+Load a local HTML file or paste a URL, and it renders inside real device frames. For developers, designers and anyone who ships for small screens.
+
+12 devices · 13 aspect ratios · custom sizes · portrait/landscape · zoom · offline PWA
+
+[![Live demo](https://img.shields.io/badge/live-demo-success?style=flat-square&logo=githubpages&logoColor=white)](https://tekideki.github.io/Mobile-Preview/)
+[![Repo](https://img.shields.io/badge/repo-source-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/TekiDeki/Mobile-Preview)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](https://github.com/TekiDeki/Mobile-Preview/blob/main/LICENSE)
+
 ---
 
 ## 🧠 How I build
@@ -109,6 +123,7 @@ Every project follows the same rules:
 | 💰 Smart Money Manager | **[tekideki.github.io/Smart-Money-Manager](https://tekideki.github.io/Smart-Money-Manager/)** |
 | 🎨 AI Prompt Builder | **[tekideki.github.io/AI-Prompt-Builder](https://tekideki.github.io/AI-Prompt-Builder/)** |
 | ⚖️ BMI Calculator | **[tekideki.github.io/BMI-Calculator](https://tekideki.github.io/BMI-Calculator/)** |
+| 📱 Mobile Preview | **[tekideki.github.io/Mobile-Preview](https://tekideki.github.io/Mobile-Preview/)** |
 
 **Personal site:** [freeHTML.dev](https://freehtml.dev/)
 
