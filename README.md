@@ -6,14 +6,14 @@
 
 **Old man but... coder.**
 
-I build small, fast, dependency-free web tools that solve one problem well.
+I build small, fast web tools that solve one problem well, with privacy and simplicity in mind.
 
-One file. No build step. No backend. No tracking. Works offline.
+Single-file apps. Privacy first. Offline-ready.
 
 [![Website](https://img.shields.io/badge/website-freeHTML.dev-blue?style=flat-square)](https://freehtml.dev/)
 [![Projects](https://img.shields.io/badge/projects-9-brightgreen?style=flat-square)](#-what-im-building)
-[![Dependencies](https://img.shields.io/badge/dependencies-0-brightgreen?style=flat-square)](#-how-i-build)
-[![Made with](https://img.shields.io/badge/made%20with-vanilla%20JS-yellow?style=flat-square)](#-how-i-build)
+[![Focus](https://img.shields.io/badge/focus-privacy%20first-brightgreen?style=flat-square)](#-how-i-build)
+[![Made with](https://img.shields.io/badge/made%20with-HTML%20%2F%20CSS%20%2F%20JS-yellow?style=flat-square)](#-how-i-build)
 
 </div>
 
@@ -21,7 +21,7 @@ One file. No build step. No backend. No tracking. Works offline.
 
 ## 🚀 What I'm building
 
-Nine tools. Nine real problems. Zero dependencies.
+Nine tools. Nine real problems. Built to be useful.
 
 <br>
 
@@ -154,11 +154,11 @@ Generate passwords locally with Web Crypto. Choose length and character sets, re
 
 ## 🧠 How I build
 
-Every project follows the same rules:
+The priorities behind my tools:
 
 | Principle | What it means |
 |---|---|
-| 🪶 **Zero dependencies** | No frameworks, no npm, no build step. Open the file — that's it. |
+| 🪶 **Dependencies with purpose** | Use well-chosen libraries when they improve quality. Keep them lightweight, bundle locally where practical, and respect their licenses. |
 | 📄 **Single file** | One `index.html` holds the whole app. CSS and JS included. |
 | 🔒 **Privacy first** | All data stays in your browser. No backend, no analytics, no tracking. |
 | 📦 **Offline by default** | Service workers & web app manifests. Install it like a native app. |
@@ -191,6 +191,6 @@ Every project follows the same rules:
 
 *⭐ If one of these tools saved you three seconds in a grocery aisle — a star costs nothing.*
 
-**Built with ❤️ and vanilla JavaScript**
+**Built with ❤️ for the web**
 
 </div>
