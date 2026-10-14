@@ -11,7 +11,7 @@ I build small, fast, dependency-free web tools that solve one problem well.
 One file. No build step. No backend. No tracking. Works offline.
 
 [![Website](https://img.shields.io/badge/website-freeHTML.dev-blue?style=flat-square)](https://freehtml.dev/)
-[![Projects](https://img.shields.io/badge/projects-8-brightgreen?style=flat-square)](#-what-im-building)
+[![Projects](https://img.shields.io/badge/projects-9-brightgreen?style=flat-square)](#-what-im-building)
 [![Dependencies](https://img.shields.io/badge/dependencies-0-brightgreen?style=flat-square)](#-how-i-build)
 [![Made with](https://img.shields.io/badge/made%20with-vanilla%20JS-yellow?style=flat-square)](#-how-i-build)
 
@@ -21,7 +21,7 @@ One file. No build step. No backend. No tracking. Works offline.
 
 ## 🚀 What I'm building
 
-Eight tools. Eight real problems. Zero dependencies.
+Nine tools. Nine real problems. Zero dependencies.
 
 <br>
 
@@ -136,6 +136,20 @@ Generate paragraphs, sentences or an exact word count. Copy the text or download
 [![Repo](https://img.shields.io/badge/repo-source-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/TekiDeki/Generator-Lorem-Ipsum)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](https://github.com/TekiDeki/Generator-Lorem-Ipsum/blob/main/LICENSE)
 
+<br>
+
+### 🔐 [Password Generator](https://github.com/TekiDeki/Password-Generator)
+
+**Random by design. Private by default.**
+
+Generate passwords locally with Web Crypto. Choose length and character sets, reveal only when needed, copy or export TXT after a plaintext warning. No saved passwords, accounts or tracking.
+
+8–128 characters · batches up to 100 · 10 interface languages · estimated entropy · light/dark theme · offline PWA · HTTPS/localhost required
+
+[![Live demo](https://img.shields.io/badge/live-demo-success?style=flat-square&logo=githubpages&logoColor=white)](https://tekideki.github.io/Password-Generator/)
+[![Repo](https://img.shields.io/badge/repo-source-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/TekiDeki/Password-Generator)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](https://github.com/TekiDeki/Password-Generator/blob/main/LICENSE)
+
 ---
 
 ## 🧠 How I build
@@ -169,6 +183,7 @@ Every project follows the same rules:
 | 📓 Bet Tracker | **[tekideki.github.io/Bet-Tracker](https://tekideki.github.io/Bet-Tracker/)** |
 | 🔤 LexiGen | **[tekideki.github.io/Generator-Random-Word](https://tekideki.github.io/Generator-Random-Word/)** |
 | ¶ Lorem Ipsum | **[tekideki.github.io/Generator-Lorem-Ipsum](https://tekideki.github.io/Generator-Lorem-Ipsum/)** |
+| 🔐 Password Generator | **[tekideki.github.io/Password-Generator](https://tekideki.github.io/Password-Generator/)** |
 
 **Personal site:** [freeHTML.dev](https://freehtml.dev/)
 
