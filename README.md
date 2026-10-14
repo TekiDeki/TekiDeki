@@ -11,7 +11,7 @@ I build small, fast, dependency-free web tools that solve one problem well.
 One file. No build step. No backend. No tracking. Works offline.
 
 [![Website](https://img.shields.io/badge/website-freeHTML.dev-blue?style=flat-square)](https://freehtml.dev/)
-[![Projects](https://img.shields.io/badge/projects-5-brightgreen?style=flat-square)](#-what-im-building)
+[![Projects](https://img.shields.io/badge/projects-6-brightgreen?style=flat-square)](#-what-im-building)
 [![Dependencies](https://img.shields.io/badge/dependencies-0-brightgreen?style=flat-square)](#-how-i-build)
 [![Made with](https://img.shields.io/badge/made%20with-vanilla%20JS-yellow?style=flat-square)](#-how-i-build)
 
@@ -21,7 +21,7 @@ One file. No build step. No backend. No tracking. Works offline.
 
 ## 🚀 What I'm building
 
-Five tools. Five real problems. Zero dependencies.
+Six tools. Six real problems. Zero dependencies.
 
 <br>
 
@@ -94,6 +94,20 @@ Load a local HTML file or paste a URL, and it renders inside real device frames.
 [![Repo](https://img.shields.io/badge/repo-source-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/TekiDeki/Mobile-Preview)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](https://github.com/TekiDeki/Mobile-Preview/blob/main/LICENSE)
 
+<br>
+
+### 📓 [Bet Tracker](https://github.com/TekiDeki/Bet-Tracker)
+
+**A private bet journal — not betting advice.**
+
+Record and settle bets, review net profit and settled-bet ROI, and export JSON backups. No account, no tracking; data stays in your browser.
+
+4 languages · edit records · independent currency setting · light/dark theme · offline PWA · Apache-2.0
+
+[![Live demo](https://img.shields.io/badge/live-demo-success?style=flat-square&logo=githubpages&logoColor=white)](https://tekideki.github.io/Bet-Tracker/)
+[![Repo](https://img.shields.io/badge/repo-source-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/TekiDeki/Bet-Tracker)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](https://github.com/TekiDeki/Bet-Tracker/blob/main/LICENSE)
+
 ---
 
 ## 🧠 How I build
@@ -124,6 +138,8 @@ Every project follows the same rules:
 | 🎨 AI Prompt Builder | **[tekideki.github.io/AI-Prompt-Builder](https://tekideki.github.io/AI-Prompt-Builder/)** |
 | ⚖️ BMI Calculator | **[tekideki.github.io/BMI-Calculator](https://tekideki.github.io/BMI-Calculator/)** |
 | 📱 Mobile Preview | **[tekideki.github.io/Mobile-Preview](https://tekideki.github.io/Mobile-Preview/)** |
+
+| 📓 Bet Tracker | **[tekideki.github.io/Bet-Tracker](https://tekideki.github.io/Bet-Tracker/)** |
 
 **Personal site:** [freeHTML.dev](https://freehtml.dev/)
 
