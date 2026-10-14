@@ -11,7 +11,7 @@ I build small, fast, dependency-free web tools that solve one problem well.
 One file. No build step. No backend. No tracking. Works offline.
 
 [![Website](https://img.shields.io/badge/website-freeHTML.dev-blue?style=flat-square)](https://freehtml.dev/)
-[![Projects](https://img.shields.io/badge/projects-6-brightgreen?style=flat-square)](#-what-im-building)
+[![Projects](https://img.shields.io/badge/projects-7-brightgreen?style=flat-square)](#-what-im-building)
 [![Dependencies](https://img.shields.io/badge/dependencies-0-brightgreen?style=flat-square)](#-how-i-build)
 [![Made with](https://img.shields.io/badge/made%20with-vanilla%20JS-yellow?style=flat-square)](#-how-i-build)
 
@@ -21,7 +21,7 @@ One file. No build step. No backend. No tracking. Works offline.
 
 ## 🚀 What I'm building
 
-Six tools. Six real problems. Zero dependencies.
+Seven tools. Seven real problems. Zero dependencies.
 
 <br>
 
@@ -108,6 +108,20 @@ Record and settle bets, review net profit and settled-bet ROI, and export JSON b
 [![Repo](https://img.shields.io/badge/repo-source-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/TekiDeki/Bet-Tracker)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](https://github.com/TekiDeki/Bet-Tracker/blob/main/LICENSE)
 
+<br>
+
+### 🔤 [LexiGen · Random Word Generator](https://github.com/TekiDeki/Generator-Random-Word)
+
+**Find a word. Start an idea.**
+
+Generate random words in ten languages for writing, language practice or creative prompts. Filter by length, copy a word and revisit recent history — all locally.
+
+10 languages · strict filters · copy · per-language history · light/dark theme · offline PWA · zero dependencies
+
+[![Live demo](https://img.shields.io/badge/live-demo-success?style=flat-square&logo=githubpages&logoColor=white)](https://tekideki.github.io/Generator-Random-Word/)
+[![Repo](https://img.shields.io/badge/repo-source-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/TekiDeki/Generator-Random-Word)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](https://github.com/TekiDeki/Generator-Random-Word/blob/main/LICENSE)
+
 ---
 
 ## 🧠 How I build
@@ -139,6 +153,7 @@ Every project follows the same rules:
 | ⚖️ BMI Calculator | **[tekideki.github.io/BMI-Calculator](https://tekideki.github.io/BMI-Calculator/)** |
 | 📱 Mobile Preview | **[tekideki.github.io/Mobile-Preview](https://tekideki.github.io/Mobile-Preview/)** |
 | 📓 Bet Tracker | **[tekideki.github.io/Bet-Tracker](https://tekideki.github.io/Bet-Tracker/)** |
+| 🔤 LexiGen | **[tekideki.github.io/Generator-Random-Word](https://tekideki.github.io/Generator-Random-Word/)** |
 
 **Personal site:** [freeHTML.dev](https://freehtml.dev/)
 
