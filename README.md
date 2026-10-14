@@ -11,7 +11,7 @@ I build small, fast, dependency-free web tools that solve one problem well.
 One file. No build step. No backend. No tracking. Works offline.
 
 [![Website](https://img.shields.io/badge/website-freeHTML.dev-blue?style=flat-square)](https://freehtml.dev/)
-[![Projects](https://img.shields.io/badge/projects-7-brightgreen?style=flat-square)](#-what-im-building)
+[![Projects](https://img.shields.io/badge/projects-8-brightgreen?style=flat-square)](#-what-im-building)
 [![Dependencies](https://img.shields.io/badge/dependencies-0-brightgreen?style=flat-square)](#-how-i-build)
 [![Made with](https://img.shields.io/badge/made%20with-vanilla%20JS-yellow?style=flat-square)](#-how-i-build)
 
@@ -21,7 +21,7 @@ One file. No build step. No backend. No tracking. Works offline.
 
 ## 🚀 What I'm building
 
-Seven tools. Seven real problems. Zero dependencies.
+Eight tools. Eight real problems. Zero dependencies.
 
 <br>
 
@@ -122,6 +122,20 @@ Generate random words in ten languages for writing, language practice or creativ
 [![Repo](https://img.shields.io/badge/repo-source-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/TekiDeki/Generator-Random-Word)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](https://github.com/TekiDeki/Generator-Random-Word/blob/main/LICENSE)
 
+<br>
+
+### ¶ [Lorem Ipsum Generator](https://github.com/TekiDeki/Generator-Lorem-Ipsum)
+
+**Placeholder text, exactly how you need it.**
+
+Generate paragraphs, sentences or an exact word count. Copy the text or download a plain TXT file — no accounts, no tracking, no backend.
+
+10 interface languages · 3 length presets · copy & TXT export · light/dark theme · offline PWA · zero dependencies
+
+[![Live demo](https://img.shields.io/badge/live-demo-success?style=flat-square&logo=githubpages&logoColor=white)](https://tekideki.github.io/Generator-Lorem-Ipsum/)
+[![Repo](https://img.shields.io/badge/repo-source-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/TekiDeki/Generator-Lorem-Ipsum)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](https://github.com/TekiDeki/Generator-Lorem-Ipsum/blob/main/LICENSE)
+
 ---
 
 ## 🧠 How I build
@@ -154,6 +168,7 @@ Every project follows the same rules:
 | 📱 Mobile Preview | **[tekideki.github.io/Mobile-Preview](https://tekideki.github.io/Mobile-Preview/)** |
 | 📓 Bet Tracker | **[tekideki.github.io/Bet-Tracker](https://tekideki.github.io/Bet-Tracker/)** |
 | 🔤 LexiGen | **[tekideki.github.io/Generator-Random-Word](https://tekideki.github.io/Generator-Random-Word/)** |
+| ¶ Lorem Ipsum | **[tekideki.github.io/Generator-Lorem-Ipsum](https://tekideki.github.io/Generator-Lorem-Ipsum/)** |
 
 **Personal site:** [freeHTML.dev](https://freehtml.dev/)
 
