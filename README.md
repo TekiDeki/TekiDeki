@@ -138,7 +138,6 @@ Every project follows the same rules:
 | 🎨 AI Prompt Builder | **[tekideki.github.io/AI-Prompt-Builder](https://tekideki.github.io/AI-Prompt-Builder/)** |
 | ⚖️ BMI Calculator | **[tekideki.github.io/BMI-Calculator](https://tekideki.github.io/BMI-Calculator/)** |
 | 📱 Mobile Preview | **[tekideki.github.io/Mobile-Preview](https://tekideki.github.io/Mobile-Preview/)** |
-
 | 📓 Bet Tracker | **[tekideki.github.io/Bet-Tracker](https://tekideki.github.io/Bet-Tracker/)** |
 
 **Personal site:** [freeHTML.dev](https://freehtml.dev/)
