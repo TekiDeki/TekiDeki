@@ -11,7 +11,7 @@ I build small, fast web tools that solve one problem well, with privacy and simp
 Single-file apps. Privacy first. Offline-ready.
 
 [![Website](https://img.shields.io/badge/website-freeHTML.dev-blue?style=flat-square)](https://freehtml.dev/)
-[![Projects](https://img.shields.io/badge/projects-9-brightgreen?style=flat-square)](#-what-im-building)
+[![Projects](https://img.shields.io/badge/projects-10-brightgreen?style=flat-square)](#-what-im-building)
 [![Focus](https://img.shields.io/badge/focus-privacy%20first-brightgreen?style=flat-square)](#-how-i-build)
 [![Made with](https://img.shields.io/badge/made%20with-HTML%20%2F%20CSS%20%2F%20JS-yellow?style=flat-square)](#-how-i-build)
 
@@ -21,7 +21,7 @@ Single-file apps. Privacy first. Offline-ready.
 
 ## 🚀 What I'm building
 
-Nine tools. Nine real problems. Built to be useful.
+Ten tools. Ten real problems. Built to be useful.
 
 <br>
 
@@ -150,6 +150,20 @@ Generate passwords locally with Web Crypto. Choose length and character sets, re
 [![Repo](https://img.shields.io/badge/repo-source-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/TekiDeki/Password-Generator)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](https://github.com/TekiDeki/Password-Generator/blob/main/LICENSE)
 
+<br>
+
+### 📷 [QR Scanner](https://github.com/TekiDeki/QR-Scanner)
+
+**Point, scan, know. Nothing is uploaded.**
+
+Scan QR codes and barcodes with the camera or from an image, and see product details for EAN/UPC codes straight from Open Food Facts. Content is understood, not just printed: links, WiFi, contacts, e-mail, phone, geolocation, product codes.
+
+QR + EAN/UPC/Code 128/DataMatrix · Open Food Facts enrichment with local cache · scan history with JSON export/import · 4 languages · offline PWA after the first visit
+
+[![Live demo](https://img.shields.io/badge/live-demo-success?style=flat-square&logo=githubpages&logoColor=white)](https://tekideki.github.io/QR-Scanner/)
+[![Repo](https://img.shields.io/badge/repo-source-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/TekiDeki/QR-Scanner)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](https://github.com/TekiDeki/QR-Scanner/blob/main/LICENSE)
+
 ---
 
 ## 🧠 How I build
@@ -184,6 +198,7 @@ The priorities behind my tools:
 | 🔤 LexiGen | **[tekideki.github.io/Generator-Random-Word](https://tekideki.github.io/Generator-Random-Word/)** |
 | ¶ Lorem Ipsum | **[tekideki.github.io/Generator-Lorem-Ipsum](https://tekideki.github.io/Generator-Lorem-Ipsum/)** |
 | 🔐 Password Generator | **[tekideki.github.io/Password-Generator](https://tekideki.github.io/Password-Generator/)** |
+| 📷 QR Scanner | **[tekideki.github.io/QR-Scanner](https://tekideki.github.io/QR-Scanner/)** |
 
 **Personal site:** [freeHTML.dev](https://freehtml.dev/)
 
