@@ -11,7 +11,7 @@ I build small, fast web tools that solve one problem well, with privacy and simp
 Single-file apps. Privacy first. Offline-ready.
 
 [![Website](https://img.shields.io/badge/website-freeHTML.dev-blue?style=flat-square)](https://freehtml.dev/)
-[![Projects](https://img.shields.io/badge/projects-10-brightgreen?style=flat-square)](#-what-im-building)
+[![Projects](https://img.shields.io/badge/projects-11-brightgreen?style=flat-square)](#-what-im-building)
 [![Focus](https://img.shields.io/badge/focus-privacy%20first-brightgreen?style=flat-square)](#-how-i-build)
 [![Made with](https://img.shields.io/badge/made%20with-HTML%20%2F%20CSS%20%2F%20JS-yellow?style=flat-square)](#-how-i-build)
 
@@ -21,7 +21,7 @@ Single-file apps. Privacy first. Offline-ready.
 
 ## 🚀 What I'm building
 
-Ten tools. Ten real problems. Built to be useful.
+Eleven tools. Eleven real problems. Built to be useful.
 
 <br>
 
@@ -162,7 +162,21 @@ QR + EAN/UPC/Code 128/DataMatrix · Open Food Facts enrichment with local cache 
 
 [![Live demo](https://img.shields.io/badge/live-demo-success?style=flat-square&logo=githubpages&logoColor=white)](https://tekideki.github.io/QR-Scanner/)
 [![Repo](https://img.shields.io/badge/repo-source-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/TekiDeki/QR-Scanner)
-[![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](https://github.com/TekiDeki/QR-Scanner/blob/main/LICENSE)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](https://github.com/TekiDeki/QR-Scanner/blob/main/LI
+
+<br>
+
+### 🖼️ [Image Compressor](https://github.com/TekiDeki/Image-Compressor)
+
+**Smaller photos. Without the metadata.**
+
+Batch compress and resize images right in the browser, and get them back with the EXIF, GPS, camera and timestamp data removed. Set quality and maximum width once, then download single files or the whole batch as one ZIP.
+
+Batch up to 60 images · EXIF and GPS stripped · quality and max width · JPEG / WebP / PNG · ZIP download · 4 languages · offline PWA
+
+[![Live demo](https://img.shields.io/badge/live-demo-success?style=flat-square&logo=githubpages&logoColor=white)](https://tekideki.github.io/Image-Compressor/)
+[![Repo](https://img.shields.io/badge/repo-source-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/TekiDeki/Image-Compressor)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](https://github.com/TekiDeki/Image-Compressor/blob/main/LICENSE)CENSE)
 
 ---
 
@@ -199,6 +213,7 @@ The priorities behind my tools:
 | ¶ Lorem Ipsum | **[tekideki.github.io/Generator-Lorem-Ipsum](https://tekideki.github.io/Generator-Lorem-Ipsum/)** |
 | 🔐 Password Generator | **[tekideki.github.io/Password-Generator](https://tekideki.github.io/Password-Generator/)** |
 | 📷 QR Scanner | **[tekideki.github.io/QR-Scanner](https://tekideki.github.io/QR-Scanner/)** |
+| 🖼️ Image Compressor | **[tekideki.github.io/Image-Compressor](https://tekideki.github.io/Image-Compressor/)** |
 
 **Personal site:** [freeHTML.dev](https://freehtml.dev/)
 
