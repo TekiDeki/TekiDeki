@@ -1,0 +1,61 @@
+{
+  "name": "freeHTML.dev — small tools, one file, zero tracking",
+  "short_name": "freeHTML.dev",
+  "description": "Eleven single-file web tools by @TekiDeki. No backend, no analytics, no accounts. Everything runs in your browser and works offline.",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "minimal-ui",
+  "orientation": "portrait-primary",
+  "background_color": "#080a0e",
+  "theme_color": "#080a0e",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["productivity", "utilities", "developer-tools"],
+  "icons": [
+    {
+      "src": "/assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Which is cheaper?",
+      "short_name": "Cheaper",
+      "url": "/cheaper",
+      "icons": [{ "src": "/assets/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Password Generator",
+      "short_name": "Passwords",
+      "url": "/pass",
+      "icons": [{ "src": "/assets/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Image Compressor",
+      "short_name": "Images",
+      "url": "/img",
+      "icons": [{ "src": "/assets/icon-192.png", "sizes": "192x192" }]
+    }
+  ]
+}
