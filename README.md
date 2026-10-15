@@ -42,7 +42,7 @@ Type in two products (price + size) → instant price-per-unit verdict:
 
 ### 💰 [Smart Money Manager](https://github.com/TekiDeki/Smart-Money-Manager)
 
-**Take control of your finances — without handing over your data.**
+**Take control of your finances - without handing over your data.**
 
 Track income & expenses, categorize spending, watch real-time analytics and interactive charts. Your data never leaves the browser.
 
@@ -56,9 +56,9 @@ Income & expenses · categories · interactive charts · spending insights · in
 
 ### 🎨 [AI Prompt Builder](https://github.com/TekiDeki/AI-Prompt-Builder)
 
-**The Luminance Master — craft perfect prompts for AI image generators.**
+**The Luminance Master - craft perfect prompts for AI image generators.**
 
-Stop guessing what words work. Pick from curated dropdowns — lighting, composition, camera, film stock, atmosphere — and the tool assembles a coherent, engine-specific prompt.
+Stop guessing what words work. Pick from curated dropdowns - lighting, composition, camera, film stock, atmosphere - and the tool assembles a coherent, engine-specific prompt.
 
 Midjourney · FLUX.1 · Stable Diffusion · DALL-E 3 · 14 presets · 18 SD models with trigger words · live prompt score · batch processing
 
@@ -70,7 +70,7 @@ Midjourney · FLUX.1 · Stable Diffusion · DALL-E 3 · 14 presets · 18 SD mode
 
 ### ⚖️ [Calculator IMC · BMI Calculator](https://github.com/TekiDeki/BMI-Calculator)
 
-**Your BMI in two taps — in four languages.**
+**Your BMI in two taps - in four languages.**
 
 Weight + height → instant BMI with category and clear result. Română · English · Srpski · Српски, dark & light theme, shareable language links, works offline.
 
@@ -84,7 +84,7 @@ Weight + height → instant BMI with category and clear result. Română · Engl
 
 ### 📱 [Mobile Preview](https://github.com/TekiDeki/Mobile-Preview)
 
-**See how any page looks on iPhone, iPad, Android and desktop — in seconds.**
+**See how any page looks on iPhone, iPad, Android and desktop - in seconds.**
 
 Load a local HTML file or paste a URL, and it renders inside real device frames. For developers, designers and anyone who ships for small screens.
 
@@ -98,7 +98,7 @@ Load a local HTML file or paste a URL, and it renders inside real device frames.
 
 ### 📓 [Bet Tracker](https://github.com/TekiDeki/Bet-Tracker)
 
-**A private bet journal — not betting advice.**
+**A private bet journal - not betting advice.**
 
 Record and settle bets, review net profit and settled-bet ROI, and export JSON backups. No account, no tracking; data stays in your browser.
 
@@ -114,7 +114,7 @@ Record and settle bets, review net profit and settled-bet ROI, and export JSON b
 
 **Find a word. Start an idea.**
 
-Generate random words in ten languages for writing, language practice or creative prompts. Filter by length, copy a word and revisit recent history — all locally.
+Generate random words in ten languages for writing, language practice or creative prompts. Filter by length, copy a word and revisit recent history - all locally.
 
 10 languages · strict filters · copy · per-language history · light/dark theme · offline PWA · zero dependencies
 
@@ -128,7 +128,7 @@ Generate random words in ten languages for writing, language practice or creativ
 
 **Placeholder text, exactly how you need it.**
 
-Generate paragraphs, sentences or an exact word count. Copy the text or download a plain TXT file — no accounts, no tracking, no backend.
+Generate paragraphs, sentences or an exact word count. Copy the text or download a plain TXT file - no accounts, no tracking, no backend.
 
 10 interface languages · 3 length presets · copy & TXT export · light/dark theme · offline PWA · zero dependencies
 
@@ -189,7 +189,7 @@ The priorities behind my tools:
 
 ---
 
-*⭐ If one of these tools saved you three seconds in a grocery aisle — a star costs nothing.*
+*⭐ If one of these tools saved you three seconds in a grocery aisle - a star costs nothing.*
 
 **Built with ❤️ for the web**
 
