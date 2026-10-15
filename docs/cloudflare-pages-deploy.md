@@ -20,6 +20,35 @@ ci o mutare care poate **opri emailul** dacă sari peste pasul 2. Fă pașii în
 
 ---
 
+## UPDATE 2026-10-15 — zona e ACTIVĂ pe Cloudflare. Trei lucruri de făcut acum
+
+Verificat din DNS-ul public după activare:
+
+| Înregistrare | Ce am găsit | Corect |
+|---|---|---|
+| `SOA` | `carl.ns.cloudflare.com` | ✅ zona e activă (NS-ul la parent `.dev` se propagă încă câteva ore — normal) |
+| `A mail` | `104.21.38.92` / `172.67.221.122` = **IP-uri de proxy Cloudflare** | ❌ înregistrarea `mail` a fost importată **proxată (nor portocaliu)**. SMTP-ul nu merge prin proxy → **pune-o DNS-only (nor gri)** |
+| `MX` | `0 freehtml.dev` (apex, proxat) | ❌ schimbă-l în `mail.freehtml.dev`, prioritate `0` |
+| `TXT` SPF | `v=spf1 +a +mx +ip4:176.9.52.113 ~all` | ✅ rămâne valid și după corecții (`+mx` și `+ip4` acoperă serverul) |
+| `TXT _dmarc` | `v=DMARC1; p=none;` | ✅ importat corect |
+| `TXT default._domainkey` | cheia DKIM completă | ✅ importat corect — emailul semnat continuă să funcționeze |
+| `A @` | proxat, încă `176.9.52.113` dedesubt | ⏳ se înlocuiește cu CNAME-ul Pages la pasul 6 |
+
+**De făcut în dashboard, în ordinea asta (2 minute):**
+
+1. **DNS → Records → `mail`** → Edit → **Proxy status: OFF (DNS only)** → Save.
+   Trebuie să rezolve din nou la `176.9.52.113`, nu la IP-uri Cloudflare.
+2. **DNS → Records → `MX`** → Edit → Mail server: `mail.freehtml.dev`, prioritate `0` → Save.
+3. Test: `dig MX freehtml.dev +short` → `0 mail.freehtml.dev`;
+   `dig A mail.freehtml.dev +short` → `176.9.52.113`. Trimite-ți un email de test
+   (Gmail → tine) și confirmă livrarea.
+
+Abia după ce emailul e verde treci la pasul 5 (proiectul Pages) și pasul 6 (custom domain) —
+pentru că pasul 6 înlocuiește `A @` cu un CNAME proxat, moment din care un MX spre apex
+ar fi fost oricum imposibil.
+
+---
+
 ## 1. Pas cu pas
 
 ### Pasul 1 — Adaugă zona în Cloudflare
