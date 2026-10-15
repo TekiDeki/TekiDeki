@@ -47,6 +47,18 @@ Abia după ce emailul e verde treci la pasul 5 (proiectul Pages) și pasul 6 (cu
 pentru că pasul 6 înlocuiește `A @` cu un CNAME proxat, moment din care un MX spre apex
 ar fi fost oricum imposibil.
 
+### ✅ Rezultat verificat (2026-10-15, seara)
+
+Corecțiile aplicate: `mail` = A `176.9.52.113` DNS-only (TTL 300), MX `@` → `mail.freehtml.dev`
+prioritate 0, cele 9 subdomenii cPanel trecute pe DNS-only, SSL/TLS = Full.
+**Email de test livrat cu succes** → calea de mail e confirmată funcțional.
+
+Rămâne de îmbunătățit când e liniște (nu blochează nimic):
+- PTR-ul IP-ului e generic (`server2.extreme-prohosting.com`); ideal ar fi `mail.freehtml.dev`
+  (se cere la hosting, nu din Cloudflare) — rată mai bună de livrare către Gmail/Outlook;
+- SRV-urile caldav/cardav + TXT-urile `path=/` țintesc apex-ul: de șters sau re-țintit spre
+  `mail` după migrarea sitului, dacă nu folosești calendare/contacte cPanel.
+
 ---
 
 ## 1. Pas cu pas
