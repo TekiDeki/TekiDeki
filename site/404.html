@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>404 — this file does not exist · freeHTML.dev</title>
+<meta name="description" content="404 on freeHTML.dev. Nothing here — but the tools are one click away.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<script>
+  try {
+    var t = localStorage.getItem('fhd-theme');
+    if (t) document.documentElement.setAttribute('data-theme', t);
+    else if (window.matchMedia('(prefers-color-scheme: light)').matches) document.documentElement.setAttribute('data-theme', 'light');
+    if (localStorage.getItem('fhd-lang') === 'ro') document.documentElement.setAttribute('lang', 'ro');
+  } catch (e) {}
+</script>
+<style>
+:root{
+  --bg:#080a0e;--surface:#10141b;--border:#232c39;--text:#e9eef5;--muted:#9aa7b8;--faint:#6d7a8b;
+  --accent:#4fd1c5;--on-accent:#04120f;
+  --font-sans:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --font-mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+}
+html[data-theme="light"]{--bg:#f5f6f8;--surface:#fff;--border:#dfe4eb;--text:#0e141c;--muted:#596575;--faint:#7c8898;--accent:#0d8f85;--on-accent:#fff}
+*{box-sizing:border-box}
+body{
+  margin:0;min-height:100svh;display:grid;place-items:center;padding:32px 20px;
+  font-family:var(--font-sans);color:var(--text);background:var(--bg);line-height:1.6;
+  background-image:linear-gradient(rgba(127,127,127,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(127,127,127,.045) 1px,transparent 1px);
+  background-size:44px 44px;
+}
+.box{max-width:560px;width:100%;border:1px solid var(--border);border-radius:16px;background:var(--surface);padding:34px 30px;text-align:left}
+.brand{font-family:var(--font-mono);font-weight:700;font-size:15px;letter-spacing:-.02em;margin-bottom:22px}
+.brand span{color:var(--faint);font-weight:500}
+.brand i{color:var(--accent);font-style:normal}
+h1{font-family:var(--font-mono);font-size:clamp(3rem,14vw,4.6rem);margin:0;letter-spacing:-.05em;line-height:1;color:var(--accent)}
+h2{margin:14px 0 10px;font-size:1.3rem;letter-spacing:-.02em}
+p{margin:0;color:var(--muted);font-size:15px}
+pre{margin:20px 0 0;padding:14px;border:1px solid var(--border);border-radius:10px;background:var(--bg);font-family:var(--font-mono);font-size:12.6px;color:var(--muted);overflow-x:auto}
+pre b{color:var(--text);font-weight:600}
+pre .c{color:var(--faint)}
+.links{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+a.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 17px;border-radius:10px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:14.5px;font-weight:600;text-decoration:none}
+a.btn:hover{border-color:var(--accent)}
+a.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.ro{margin-top:18px;font-size:13.5px;color:var(--faint)}
+</style>
+</head>
+<body>
+<main class="box">
+  <p class="brand"><span>free</span>HTML<i>.dev</i></p>
+  <h1>404</h1>
+  <h2>This file does not exist.</h2>
+  <p>There is no <code class="brand" style="font-size:13px">index.html</code> at that path. On a site made of single files, that is the whole error.</p>
+  <pre><b>$ ls -1 /that/path/</b>
+<span class="c">ls: cannot access '/that/path/': No such file or directory</span></pre>
+  <div class="links">
+    <a class="btn primary" href="/">Back to the tools</a>
+    <a class="btn" href="/#tools">Toolbox</a>
+    <a class="btn" href="https://github.com/TekiDeki" rel="noopener noreferrer">GitHub</a>
+  </div>
+  <p class="ro" lang="ro">Pagina nu există. Întoarce-te la <a href="/" style="color:var(--accent)">unelte</a>.</p>
+</main>
+</body>
+</html>

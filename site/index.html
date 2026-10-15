@@ -1,0 +1,1128 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<title>freeHTML.dev — small tools, one file, zero tracking</title>
+<meta name="description" content="Single-file web tools by Kristian Mario Mišković (@TekiDeki). Eleven small apps that solve one problem well: they run entirely in your browser, work offline and never send your data anywhere.">
+<link rel="canonical" href="https://freehtml.dev/">
+<meta name="author" content="Kristian Mario Mišković">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#080a0e">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#f6f7f9">
+<meta name="color-scheme" content="dark light">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="freeHTML.dev">
+<meta property="og:title" content="freeHTML.dev — small tools, one file, zero tracking">
+<meta property="og:description" content="Eleven single-file web tools. No backend, no analytics, no accounts. They work offline and your data stays in your browser.">
+<meta property="og:url" content="https://freehtml.dev/">
+<meta property="og:image" content="https://freehtml.dev/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ro_RO">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="freeHTML.dev — small tools, one file, zero tracking">
+<meta name="twitter:description" content="Eleven single-file web tools. No backend, no analytics, no accounts.">
+<meta name="twitter:image" content="https://freehtml.dev/assets/og.png">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate icon" href="/assets/icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+
+<script>
+  /* Theme before first paint: no flash, no layout shift. */
+  (function () {
+    try {
+      var saved = localStorage.getItem('fhd-theme');
+      var prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+      var theme = saved || (prefersLight ? 'light' : 'dark');
+      document.documentElement.setAttribute('data-theme', theme);
+      var lang = localStorage.getItem('fhd-lang');
+      if (lang === 'ro') document.documentElement.setAttribute('lang', 'ro');
+    } catch (e) {}
+  })();
+</script>
+
+<style>
+/* ============================================================
+   freeHTML.dev — one file, no dependencies, no third parties.
+   ============================================================ */
+
+/* ---------- tokens ---------- */
+:root{
+  --bg:#080a0e;
+  --bg-grad:#0d1219;
+  --surface:#10141b;
+  --surface-2:#151b24;
+  --surface-3:#1b222d;
+  --border:#232c39;
+  --border-soft:#1a222d;
+  --text:#e9eef5;
+  --muted:#9aa7b8;
+  --faint:#6d7a8b;
+  --accent:#4fd1c5;
+  --accent-strong:#31b8ac;
+  --accent-2:#f6ad55;
+  --on-accent:#04120f;
+  --ring:rgba(79,209,197,.35);
+  --grid-line:rgba(255,255,255,.028);
+  --shadow-sm:0 1px 2px rgba(0,0,0,.45);
+  --shadow-md:0 2px 6px rgba(0,0,0,.35),0 18px 40px -22px rgba(0,0,0,.85);
+  --radius:14px;
+  --radius-sm:10px;
+  --radius-xs:7px;
+  --maxw:1140px;
+  --font-sans:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
+  --font-mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono","DejaVu Sans Mono",monospace;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+html[data-theme="light"]{
+  --bg:#f5f6f8;
+  --bg-grad:#ffffff;
+  --surface:#ffffff;
+  --surface-2:#f3f5f8;
+  --surface-3:#eaeef3;
+  --border:#dfe4eb;
+  --border-soft:#e7ebf1;
+  --text:#0e141c;
+  --muted:#596575;
+  --faint:#7c8898;
+  --accent:#0d8f85;
+  --accent-strong:#0a776f;
+  --accent-2:#b06a12;
+  --on-accent:#ffffff;
+  --ring:rgba(13,143,133,.28);
+  --grid-line:rgba(15,25,40,.035);
+  --shadow-sm:0 1px 2px rgba(16,24,40,.06);
+  --shadow-md:0 2px 5px rgba(16,24,40,.05),0 20px 38px -24px rgba(16,24,40,.28);
+}
+
+/* ---------- base ---------- */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:84px}
+body{
+  margin:0;
+  font-family:var(--font-sans);
+  font-size:16px;
+  line-height:1.6;
+  color:var(--text);
+  background-color:var(--bg);
+  background-image:
+    radial-gradient(900px 520px at 82% -8%,color-mix(in srgb,var(--accent) 9%,transparent),transparent 70%),
+    radial-gradient(760px 460px at 6% 4%,color-mix(in srgb,var(--accent-2) 7%,transparent),transparent 72%),
+    linear-gradient(var(--grid-line) 1px,transparent 1px),
+    linear-gradient(90deg,var(--grid-line) 1px,transparent 1px),
+    linear-gradient(180deg,var(--bg-grad),var(--bg) 420px);
+  background-size:auto,auto,44px 44px,44px 44px,auto;
+  background-attachment:fixed;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
+h1,h2,h3,h4{line-height:1.15;margin:0;font-weight:700;letter-spacing:-.02em}
+p{margin:0}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline;text-underline-offset:3px}
+ul{margin:0;padding:0;list-style:none}
+img,svg{display:block;max-width:100%}
+button,input{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+::selection{background:color-mix(in srgb,var(--accent) 32%,transparent);color:var(--text)}
+
+.wrap{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:20px}
+.mono{font-family:var(--font-mono)}
+.skip{position:absolute;left:-9999px;top:0;z-index:200;background:var(--accent);color:var(--on-accent);padding:10px 16px;border-radius:0 0 var(--radius-xs) 0;font-weight:600}
+.skip:focus{left:0}
+
+/* ---------- top bar ---------- */
+.topbar{
+  position:sticky;top:0;z-index:50;
+  backdrop-filter:saturate(150%) blur(12px);
+  -webkit-backdrop-filter:saturate(150%) blur(12px);
+  background:color-mix(in srgb,var(--bg) 78%,transparent);
+  border-bottom:1px solid var(--border-soft);
+}
+.topbar-in{display:flex;align-items:center;gap:18px;height:64px}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--font-mono);font-size:17px;font-weight:700;letter-spacing:-.03em;color:var(--text);text-decoration:none;flex:0 0 auto}
+.brand:hover{text-decoration:none}
+.brand-mark{
+  width:30px;height:30px;border-radius:9px;display:grid;place-items:center;flex:0 0 auto;
+  background:linear-gradient(150deg,var(--accent),color-mix(in srgb,var(--accent) 45%,var(--accent-2)));
+  color:var(--on-accent);font-size:12px;font-weight:800;
+  box-shadow:0 0 0 1px color-mix(in srgb,var(--accent) 40%,transparent),0 6px 16px -8px var(--accent);
+}
+.brand .b-free{color:var(--muted);font-weight:500}
+.brand .b-dev{color:var(--accent)}
+.nav{display:flex;align-items:center;gap:4px;margin-left:auto}
+.nav a{
+  color:var(--muted);font-size:14px;font-weight:500;padding:7px 11px;border-radius:var(--radius-xs);
+  transition:color .18s var(--ease),background .18s var(--ease);text-decoration:none;
+}
+.nav a:hover{color:var(--text);background:var(--surface-2);text-decoration:none}
+.controls{display:flex;align-items:center;gap:8px;margin-left:auto}
+.nav + .controls{margin-left:0}
+.icon-btn{
+  width:36px;height:36px;display:grid;place-items:center;border-radius:var(--radius-xs);
+  border:1px solid var(--border);background:var(--surface);color:var(--muted);cursor:pointer;
+  transition:color .18s var(--ease),border-color .18s var(--ease),background .18s var(--ease),transform .18s var(--ease);
+}
+.icon-btn:hover{color:var(--text);border-color:color-mix(in srgb,var(--accent) 45%,var(--border));background:var(--surface-2)}
+.icon-btn:active{transform:translateY(1px)}
+.icon-btn svg{width:17px;height:17px}
+.lang-btn{
+  height:36px;padding:0 11px;border-radius:var(--radius-xs);border:1px solid var(--border);
+  background:var(--surface);color:var(--muted);cursor:pointer;font-family:var(--font-mono);
+  font-size:12.5px;font-weight:700;letter-spacing:.04em;display:flex;align-items:center;gap:6px;
+  transition:color .18s var(--ease),border-color .18s var(--ease),background .18s var(--ease);
+}
+.lang-btn:hover{color:var(--text);border-color:color-mix(in srgb,var(--accent) 45%,var(--border));background:var(--surface-2)}
+.lang-btn .dot{width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.theme-toggle .sun{display:none}
+html[data-theme="light"] .theme-toggle .sun{display:block}
+html[data-theme="light"] .theme-toggle .moon{display:none}
+
+/* ---------- hero ---------- */
+.hero{padding:clamp(48px,8vw,92px) 0 clamp(36px,5vw,60px);position:relative}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);gap:clamp(28px,5vw,60px);align-items:center}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:9px;padding:6px 12px 6px 8px;border-radius:999px;
+  border:1px solid var(--border);background:color-mix(in srgb,var(--surface) 70%,transparent);
+  font-family:var(--font-mono);font-size:12.5px;color:var(--muted);margin-bottom:22px;
+}
+.eyebrow .pulse{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 0 var(--ring);animation:pulse 2.6s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 var(--ring)}70%{box-shadow:0 0 0 9px transparent}100%{box-shadow:0 0 0 0 transparent}}
+.hero h1{font-size:clamp(2.15rem,5.4vw,3.5rem);letter-spacing:-.035em}
+.hero h1 em{font-style:normal;color:var(--accent);position:relative;white-space:nowrap}
+.hero h1 .strike{position:relative;color:var(--muted)}
+.hero-lede{margin-top:20px;font-size:clamp(1rem,1.6vw,1.13rem);color:var(--muted);max-width:53ch}
+.hero-lede strong{color:var(--text);font-weight:600}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.stats{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:34px;padding-top:26px;border-top:1px solid var(--border-soft)}
+.stat b{display:block;font-family:var(--font-mono);font-size:1.35rem;color:var(--text);letter-spacing:-.02em;line-height:1.1}
+.stat span{font-size:12.5px;color:var(--faint);text-transform:uppercase;letter-spacing:.07em}
+
+.btn{
+  display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:var(--radius-sm);
+  border:1px solid var(--border);background:var(--surface);color:var(--text);
+  font-size:14.5px;font-weight:600;cursor:pointer;text-decoration:none;
+  transition:transform .18s var(--ease),border-color .18s var(--ease),background .18s var(--ease),box-shadow .18s var(--ease);
+}
+.btn:hover{text-decoration:none;border-color:color-mix(in srgb,var(--accent) 50%,var(--border));background:var(--surface-2);transform:translateY(-1px)}
+.btn:active{transform:translateY(0)}
+.btn svg{width:16px;height:16px;flex:0 0 auto}
+.btn-primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent);box-shadow:0 10px 26px -14px var(--accent)}
+.btn-primary:hover{background:var(--accent-strong);border-color:var(--accent-strong);color:var(--on-accent)}
+.btn-sm{padding:8px 13px;font-size:13.5px;border-radius:var(--radius-xs)}
+
+/* ---------- code panel ---------- */
+.panel{
+  border:1px solid var(--border);border-radius:var(--radius);background:var(--surface);
+  box-shadow:var(--shadow-md);overflow:hidden;transform:perspective(1400px) rotateY(-4deg) rotateX(1.5deg);
+}
+.panel-bar{display:flex;align-items:center;gap:8px;padding:11px 14px;border-bottom:1px solid var(--border-soft);background:var(--surface-2)}
+.panel-bar .dots{display:flex;gap:6px}
+.panel-bar .dots i{width:10px;height:10px;border-radius:50%;background:var(--surface-3);border:1px solid var(--border)}
+.panel-bar .file{font-family:var(--font-mono);font-size:12.5px;color:var(--muted);margin-left:4px}
+.panel-bar .tag{margin-left:auto;font-family:var(--font-mono);font-size:11px;color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 35%,var(--border));padding:2px 8px;border-radius:999px}
+pre.code{margin:0;padding:16px 16px 18px;font-family:var(--font-mono);font-size:12.8px;line-height:1.85;overflow-x:auto;color:var(--muted);tab-size:2}
+pre.code .ln{display:inline-block;width:2.1ch;color:var(--faint);user-select:none;opacity:.7}
+pre.code .t{color:#e06c75}pre.code .a{color:#d19a66}pre.code .s{color:#98c379}pre.code .c{color:var(--faint);font-style:italic}pre.code .k{color:var(--accent)}
+html[data-theme="light"] pre.code .t{color:#c0334d}
+html[data-theme="light"] pre.code .a{color:#a35b12}
+html[data-theme="light"] pre.code .s{color:#3f7d34}
+.panel-foot{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;padding:12px 16px;border-top:1px solid var(--border-soft);background:var(--surface-2);font-family:var(--font-mono);font-size:12px;color:var(--muted)}
+.panel-foot .ok{color:var(--accent)}
+.panel-foot b{color:var(--text);font-weight:600}
+
+/* ---------- sections ---------- */
+section{padding:clamp(44px,6vw,76px) 0}
+.sec-head{max-width:64ch;margin-bottom:32px}
+.sec-kicker{font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.sec-kicker::after{content:"";height:1px;flex:1;background:linear-gradient(90deg,var(--border),transparent)}
+.sec-head h2{font-size:clamp(1.6rem,3.4vw,2.25rem);letter-spacing:-.03em}
+.sec-head p{margin-top:12px;color:var(--muted);font-size:1.02rem}
+
+/* ---------- toolbar (search + filters) ---------- */
+.toolbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:26px}
+.search{position:relative;flex:1 1 260px;min-width:0}
+.search svg{position:absolute;left:13px;top:50%;transform:translateY(-50%);width:16px;height:16px;color:var(--faint);pointer-events:none}
+.search input{
+  width:100%;padding:12px 74px 12px 38px;border-radius:var(--radius-sm);border:1px solid var(--border);
+  background:var(--surface);color:var(--text);font-size:14.5px;transition:border-color .18s var(--ease),box-shadow .18s var(--ease);
+}
+.search input::placeholder{color:var(--faint)}
+.search input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px var(--ring)}
+.search kbd{
+  position:absolute;right:11px;top:50%;transform:translateY(-50%);font-family:var(--font-mono);font-size:11px;
+  color:var(--faint);border:1px solid var(--border);border-bottom-width:2px;border-radius:5px;padding:2px 6px;background:var(--surface-2);pointer-events:none;
+}
+.chips-row{display:flex;flex-wrap:wrap;gap:8px}
+.chip{
+  padding:8px 14px;border-radius:999px;border:1px solid var(--border);background:var(--surface);
+  color:var(--muted);font-size:13.5px;font-weight:500;cursor:pointer;
+  transition:color .18s var(--ease),border-color .18s var(--ease),background .18s var(--ease);
+}
+.chip:hover{color:var(--text);border-color:color-mix(in srgb,var(--accent) 45%,var(--border))}
+.chip[aria-pressed="true"]{background:color-mix(in srgb,var(--accent) 16%,var(--surface));border-color:color-mix(in srgb,var(--accent) 55%,var(--border));color:var(--accent);font-weight:600}
+.count{font-family:var(--font-mono);font-size:12.5px;color:var(--faint);margin-left:auto;white-space:nowrap}
+
+/* ---------- tool cards ---------- */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(325px,1fr));gap:18px}
+.card{
+  position:relative;display:flex;flex-direction:column;gap:14px;padding:20px 20px 16px;
+  border:1px solid var(--border);border-radius:var(--radius);background:var(--surface);
+  box-shadow:var(--shadow-sm);overflow:hidden;
+  transition:transform .22s var(--ease),border-color .22s var(--ease),box-shadow .22s var(--ease),background .22s var(--ease);
+}
+.card::before{content:"";position:absolute;inset:0 auto 0 0;width:3px;background:var(--hue);opacity:.85}
+.card::after{
+  content:"";position:absolute;inset:-40% -20% auto auto;width:220px;height:220px;border-radius:50%;
+  background:radial-gradient(circle,color-mix(in srgb,var(--hue) 22%,transparent),transparent 68%);
+  opacity:0;transition:opacity .3s var(--ease);pointer-events:none;
+}
+.card:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--hue) 45%,var(--border));box-shadow:var(--shadow-md)}
+.card:hover::after{opacity:1}
+.card[hidden]{display:none}
+.card-top{display:flex;gap:13px;align-items:flex-start}
+.glyph{
+  width:42px;height:42px;flex:0 0 auto;border-radius:12px;display:grid;place-items:center;font-size:20px;
+  background:var(--surface-2);background:color-mix(in srgb,var(--hue) 16%,var(--surface));
+  border:1px solid color-mix(in srgb,var(--hue) 28%,var(--border));
+}
+.card-title{font-size:1.06rem;letter-spacing:-.02em}
+.card-title a{color:var(--text)}
+.card-title a:hover{color:var(--accent);text-decoration:none}
+.card-tag{margin-top:5px;font-size:13px;color:var(--hue);font-weight:600;filter:saturate(1.1)}
+html[data-theme="light"] .card-tag{filter:saturate(1.35) brightness(.72)}
+.card-desc{font-size:14.2px;color:var(--muted);line-height:1.62}
+.feats{display:flex;flex-wrap:wrap;gap:6px}
+.feats li{
+  font-family:var(--font-mono);font-size:11.3px;color:var(--muted);padding:3px 8px;border-radius:6px;
+  background:var(--surface-2);border:1px solid var(--border-soft);white-space:nowrap;
+}
+.card-foot{display:flex;align-items:center;gap:8px;margin-top:auto;padding-top:14px;border-top:1px solid var(--border-soft);flex-wrap:wrap}
+.card-foot .btn{flex:0 0 auto}
+.size{
+  margin-left:auto;font-family:var(--font-mono);font-size:11.5px;color:var(--faint);
+  border:1px dashed var(--border);padding:3px 8px;border-radius:6px;white-space:nowrap;
+}
+.empty{display:none;padding:44px 20px;text-align:center;border:1px dashed var(--border);border-radius:var(--radius);color:var(--muted);background:var(--surface)}
+.empty.on{display:block}
+.empty b{display:block;color:var(--text);font-size:1.05rem;margin-bottom:6px}
+
+/* ---------- principles ---------- */
+.principles{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:14px}
+.principle{
+  padding:20px;border:1px solid var(--border);border-radius:var(--radius);background:var(--surface);
+  transition:border-color .2s var(--ease),transform .2s var(--ease),background .2s var(--ease);
+}
+.principle:hover{border-color:color-mix(in srgb,var(--accent) 40%,var(--border));transform:translateY(-2px)}
+.principle .num{font-family:var(--font-mono);font-size:12px;color:var(--accent);letter-spacing:.08em}
+.principle h3{font-size:1rem;margin:9px 0 7px}
+.principle p{font-size:13.8px;color:var(--muted)}
+.quote{
+  margin-top:26px;padding:22px 24px;border-left:3px solid var(--accent);border-radius:0 var(--radius) var(--radius) 0;
+  background:var(--surface);font-size:1.06rem;color:var(--text);font-style:italic;
+}
+.quote cite{display:block;margin-top:9px;font-size:13px;color:var(--faint);font-style:normal;font-family:var(--font-mono)}
+
+/* ---------- shortcuts ---------- */
+.shortcuts{border:1px solid var(--border);border-radius:var(--radius);background:var(--surface);overflow:hidden}
+.sc-row{
+  display:flex;align-items:center;gap:14px;padding:12px 16px;border-bottom:1px solid var(--border-soft);
+  font-family:var(--font-mono);font-size:13.2px;transition:background .18s var(--ease);
+}
+.sc-row:last-child{border-bottom:0}
+.sc-row:hover{background:var(--surface-2)}
+.sc-row .path{color:var(--accent);font-weight:600;flex:0 0 auto}
+.sc-row .arrow{color:var(--faint);flex:0 0 auto}
+.sc-row .target{color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.sc-row .copy{
+  margin-left:auto;flex:0 0 auto;border:1px solid var(--border);background:var(--surface-2);color:var(--muted);
+  border-radius:6px;padding:4px 9px;font-family:var(--font-mono);font-size:11.5px;cursor:pointer;
+  transition:color .18s var(--ease),border-color .18s var(--ease);
+}
+.sc-row .copy:hover{color:var(--text);border-color:color-mix(in srgb,var(--accent) 45%,var(--border))}
+.sc-row .copy.done{color:var(--accent);border-color:color-mix(in srgb,var(--accent) 50%,var(--border))}
+.sc-note{margin-top:14px;font-size:13.5px;color:var(--faint)}
+
+/* ---------- about ---------- */
+.about-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,48px);align-items:start}
+.about-card{padding:24px;border:1px solid var(--border);border-radius:var(--radius);background:var(--surface)}
+.about-card p + p{margin-top:14px}
+.about-card p{color:var(--muted);font-size:14.6px}
+.about-card strong{color:var(--text)}
+.pledge{display:grid;gap:10px}
+.pledge li{display:flex;gap:11px;align-items:flex-start;font-size:14.2px;color:var(--muted)}
+.pledge .tick{
+  width:20px;height:20px;flex:0 0 auto;border-radius:6px;display:grid;place-items:center;margin-top:2px;
+  background:color-mix(in srgb,var(--accent) 16%,var(--surface));color:var(--accent);font-size:11px;font-weight:800;
+  border:1px solid color-mix(in srgb,var(--accent) 30%,var(--border));
+}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--border-soft);padding:34px 0 44px;margin-top:20px}
+.foot{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between}
+.foot-links{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:13.5px}
+.foot-links a{color:var(--muted)}
+.foot-links a:hover{color:var(--accent)}
+.foot-note{font-family:var(--font-mono);font-size:12.3px;color:var(--faint)}
+.foot-note .heart{color:#e2557b}
+
+/* ---------- reveal ---------- */
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- responsive ---------- */
+@media (max-width:960px){
+  .hero-grid{grid-template-columns:1fr;gap:34px}
+  .panel{transform:none}
+  .about-grid{grid-template-columns:1fr}
+  .nav{display:none}
+}
+@media (max-width:560px){
+  .topbar-in{height:58px;gap:10px}
+  .brand{font-size:15.5px}
+  .grid{grid-template-columns:1fr}
+  .stats{gap:16px 20px}
+  .stat b{font-size:1.15rem}
+  .count{margin-left:0;width:100%}
+  .sc-row{flex-wrap:wrap;gap:6px 10px;font-size:12.4px}
+  .sc-row .copy{margin-left:0}
+  .hero-cta .btn{flex:1 1 auto;justify-content:center}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+  .reveal{opacity:1;transform:none}
+  .card:hover{transform:none}
+}
+@media print{
+  .topbar,.toolbar,.hero-cta,.shortcuts,footer .foot-links{display:none}
+  body{background:#fff;color:#000}
+}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://freehtml.dev/#website",
+      "url": "https://freehtml.dev/",
+      "name": "freeHTML.dev",
+      "description": "Single-file web tools: small, fast, private, offline-ready.",
+      "inLanguage": ["en", "ro"],
+      "publisher": { "@id": "https://freehtml.dev/#person" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://freehtml.dev/#person",
+      "name": "Kristian Mario Mišković",
+      "alternateName": "TekiDeki",
+      "url": "https://freehtml.dev/",
+      "sameAs": ["https://github.com/TekiDeki"],
+      "jobTitle": "Independent web tool builder",
+      "knowsAbout": ["HTML", "CSS", "JavaScript", "Progressive Web Apps", "Client-side privacy"]
+    }
+  ]
+}
+</script>
+</head>
+
+<body>
+<a class="skip" href="#tools" data-en="Skip to the tools" data-ro="Sari direct la unelte">Skip to the tools</a>
+
+<header class="topbar">
+  <div class="wrap topbar-in">
+    <a class="brand" href="/" aria-label="freeHTML.dev — home">
+      <span class="brand-mark" aria-hidden="true">&lt;/&gt;</span>
+      <span><span class="b-free">free</span>HTML<span class="b-dev">.dev</span></span>
+    </a>
+
+    <nav class="nav" aria-label="Main">
+      <a href="#tools" data-en="Tools" data-ro="Unelte">Tools</a>
+      <a href="#principles" data-en="How I build" data-ro="Cum construiesc">How I build</a>
+      <a href="#shortcuts" data-en="Shortcuts" data-ro="Scurtături">Shortcuts</a>
+      <a href="#about" data-en="About" data-ro="Despre">About</a>
+    </nav>
+
+    <div class="controls">
+      <button class="lang-btn" id="langBtn" type="button" aria-label="Switch language / Schimbă limba" title="EN / RO">
+        <span class="dot" aria-hidden="true"></span><span id="langLabel">RO</span>
+      </button>
+      <button class="icon-btn theme-toggle" id="themeBtn" type="button" aria-label="Toggle dark / light theme" title="Theme">
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.4v2.2M12 19.4v2.2M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2.4 12h2.2M19.4 12h2.2M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"/></svg>
+      </button>
+      <a class="icon-btn" href="https://github.com/TekiDeki" target="_blank" rel="noopener noreferrer me" aria-label="GitHub — @TekiDeki" title="GitHub">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1.8a10.2 10.2 0 0 0-3.23 19.88c.51.1.7-.22.7-.49l-.01-1.9c-2.6.53-3.28-.63-3.5-1.2-.12-.3-.63-1.23-1.08-1.48-.37-.2-.9-.68-.02-.7.83-.01 1.42.76 1.62 1.08.95 1.6 2.47 1.15 3.07.88.1-.68.37-1.15.67-1.42-2.3-.26-4.7-1.15-4.7-5.1 0-1.13.4-2.06 1.06-2.79-.1-.26-.46-1.32.1-2.75 0 0 .87-.28 2.85 1.07a9.6 9.6 0 0 1 5.2 0c1.98-1.35 2.85-1.07 2.85-1.07.57 1.43.21 2.49.1 2.75.67.73 1.07 1.65 1.07 2.79 0 3.96-2.4 4.84-4.71 5.1.37.32.7.94.7 1.9l-.01 2.82c0 .27.19.6.7.49A10.2 10.2 0 0 0 12 1.8z"/></svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow"><span class="pulse" aria-hidden="true"></span>
+          <span data-en="Kristian Mario Mišković · @TekiDeki · Vršac, Serbia" data-ro="Kristian Mario Mišković · @TekiDeki · Vârșeț, Serbia">Kristian Mario Mišković · @TekiDeki · Vršac, Serbia</span>
+        </p>
+
+        <h1>
+          <span class="i18n" lang="en">Small tools. One file.<br><em>Zero tracking.</em></span>
+          <span class="i18n" lang="ro" hidden>Unelte mici. Un singur fișier.<br><em>Zero urmărire.</em></span>
+        </h1>
+
+        <p class="hero-lede">
+          <span class="i18n" lang="en"><strong>Old man but… coder.</strong> I build single-file web apps that solve exactly one problem well — pure HTML, CSS and JavaScript. No backend, no account, no analytics. Your data never leaves the browser.</span>
+          <span class="i18n" lang="ro" hidden><strong>Bătrân, dar… coder.</strong> Construiesc aplicații web într-un singur fișier, care rezolvă exact o problemă, bine — HTML, CSS și JavaScript curat. Fără backend, fără cont, fără analytics. Datele tale nu părăsesc niciodată browserul.</span>
+        </p>
+
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#tools">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+            <span data-en="Browse the 11 tools" data-ro="Vezi cele 11 unelte">Browse the 11 tools</span>
+          </a>
+          <a class="btn" href="https://github.com/TekiDeki" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1.8a10.2 10.2 0 0 0-3.23 19.88c.51.1.7-.22.7-.49l-.01-1.9c-2.6.53-3.28-.63-3.5-1.2-.12-.3-.63-1.23-1.08-1.48-.37-.2-.9-.68-.02-.7.83-.01 1.42.76 1.62 1.08.95 1.6 2.47 1.15 3.07.88.1-.68.37-1.15.67-1.42-2.3-.26-4.7-1.15-4.7-5.1 0-1.13.4-2.06 1.06-2.79-.1-.26-.46-1.32.1-2.75 0 0 .87-.28 2.85 1.07a9.6 9.6 0 0 1 5.2 0c1.98-1.35 2.85-1.07 2.85-1.07.57 1.43.21 2.49.1 2.75.67.73 1.07 1.65 1.07 2.79 0 3.96-2.4 4.84-4.71 5.1.37.32.7.94.7 1.9l-.01 2.82c0 .27.19.6.7.49A10.2 10.2 0 0 0 12 1.8z"/></svg>
+            <span data-en="Source on GitHub" data-ro="Codul pe GitHub">Source on GitHub</span>
+          </a>
+        </div>
+
+        <div class="stats">
+          <div class="stat"><b>11</b><span data-en="tools" data-ro="unelte">tools</span></div>
+          <div class="stat"><b>1</b><span data-en="file each" data-ro="fișier fiecare">file each</span></div>
+          <div class="stat"><b>0</b><span data-en="trackers" data-ro="trackere">trackers</span></div>
+          <div class="stat"><b>0</b><span data-en="cookies" data-ro="cookie-uri">cookies</span></div>
+          <div class="stat"><b>10</b><span data-en="languages max" data-ro="limbi, maxim">languages max</span></div>
+        </div>
+      </div>
+
+      <div class="panel" aria-hidden="false">
+        <div class="panel-bar">
+          <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="file">which-is-cheaper/index.html</span>
+          <span class="tag">1 file</span>
+        </div>
+<pre class="code"><code><span class="ln">1</span><span class="t">&lt;!doctype html&gt;</span>
+<span class="ln">2</span><span class="t">&lt;html</span> <span class="a">lang</span>=<span class="s">"en"</span><span class="t">&gt;</span>
+<span class="ln">3</span>  <span class="t">&lt;head&gt;</span>
+<span class="ln">4</span>    <span class="t">&lt;title&gt;</span>Which is cheaper?<span class="t">&lt;/title&gt;</span>
+<span class="ln">5</span>    <span class="t">&lt;style&gt;</span><span class="c">/* the whole CSS */</span><span class="t">&lt;/style&gt;</span>
+<span class="ln">6</span>  <span class="t">&lt;/head&gt;</span>
+<span class="ln">7</span>  <span class="t">&lt;body&gt;</span>
+<span class="ln">8</span>    <span class="c">&lt;!-- no build step --&gt;</span>
+<span class="ln">9</span>    <span class="c">&lt;!-- no backend   --&gt;</span>
+<span class="ln">10</span>   <span class="c">&lt;!-- no trackers  --&gt;</span>
+<span class="ln">11</span>   <span class="t">&lt;script&gt;</span><span class="c">/* the whole JS */</span><span class="t">&lt;/script&gt;</span>
+<span class="ln">12</span> <span class="t">&lt;/body&gt;</span>
+<span class="ln">13</span><span class="t">&lt;/html&gt;</span></code></pre>
+        <div class="panel-foot">
+          <span>$ <b>wc -c</b> index.html</span>
+          <span class="ok">→ 18 432 bytes</span>
+          <span data-en="third-party requests:" data-ro="cereri către terți:">third-party requests:</span>
+          <span class="ok">0</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TOOLS ============ -->
+  <section id="tools" aria-labelledby="tools-h">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="sec-kicker"><span data-en="The toolbox" data-ro="Trusa de unelte">The toolbox</span></p>
+        <h2 id="tools-h">
+          <span class="i18n" lang="en">Eleven tools. Eleven real problems.</span>
+          <span class="i18n" lang="ro" hidden>Unsprezece unelte. Unsprezece probleme reale.</span>
+        </h2>
+        <p>
+          <span class="i18n" lang="en">Every one of them is free, installable as an app, and works offline after the first visit. Search in English or Romanian — the index knows both.</span>
+          <span class="i18n" lang="ro" hidden>Fiecare este gratuită, se poate instala ca aplicație și funcționează offline după prima vizită. Caută în engleză sau în română — indexul le știe pe amândouă.</span>
+        </p>
+      </div>
+
+      <div class="toolbar reveal">
+        <div class="search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/></svg>
+          <input id="q" type="search" autocomplete="off" spellcheck="false"
+                 placeholder="Search tools… (e.g. password, poze, bani)"
+                 data-en-ph="Search tools… (e.g. password, images, money)"
+                 data-ro-ph="Caută unelte… (ex. parole, imagini, bani)"
+                 aria-label="Search tools">
+          <kbd>/</kbd>
+        </div>
+        <div class="chips-row" id="chips" role="group" aria-label="Filter by category">
+          <button class="chip" type="button" data-filter="all" aria-pressed="true" data-en="All" data-ro="Toate">All</button>
+          <button class="chip" type="button" data-filter="money" aria-pressed="false" data-en="Money" data-ro="Bani">Money</button>
+          <button class="chip" type="button" data-filter="text" aria-pressed="false" data-en="Text &amp; words" data-ro="Text și cuvinte">Text &amp; words</button>
+          <button class="chip" type="button" data-filter="dev" aria-pressed="false" data-en="Dev &amp; design" data-ro="Dev și design">Dev &amp; design</button>
+          <button class="chip" type="button" data-filter="media" aria-pressed="false" data-en="Media" data-ro="Media">Media</button>
+          <button class="chip" type="button" data-filter="health" aria-pressed="false" data-en="Health" data-ro="Sănătate">Health</button>
+        </div>
+        <p class="count" id="count" aria-live="polite">11 / 11</p>
+      </div>
+
+      <div class="grid" id="grid">
+
+        <article class="card reveal" data-tags="money" data-slug="cheaper" style="--hue:#f2a65a">
+          <div class="card-top">
+            <span class="glyph" aria-hidden="true">🛒</span>
+            <div>
+              <h3 class="card-title"><a href="https://tekideki.github.io/Which-is-cheaper/" target="_blank" rel="noopener noreferrer">Which is cheaper?</a></h3>
+              <p class="card-tag" data-en="Never lose the grocery-aisle math again." data-ro="Nu mai pierde socoteala la raft.">Never lose the grocery-aisle math again.</p>
+            </div>
+          </div>
+          <p class="card-desc" data-en="Type in two products — price and size — and get an instant price-per-unit verdict: “B is 12% cheaper.”" data-ro="Scrii două produse — preț și cantitate — și primești imediat verdictul pe unitate: „B e cu 12% mai ieftin.”">Type in two products — price and size — and get an instant price-per-unit verdict: “B is 12% cheaper.”</p>
+          <ul class="feats">
+            <li>g ↔ kg ↔ oz ↔ lb</li><li>ml ↔ L</li><li data-en="4 languages" data-ro="4 limbi">4 languages</li><li data-en="shareable links" data-ro="linkuri partajabile">shareable links</li><li>offline PWA</li>
+          </ul>
+          <div class="card-foot">
+            <a class="btn btn-sm btn-primary" href="https://tekideki.github.io/Which-is-cheaper/" target="_blank" rel="noopener noreferrer" data-en="Open" data-ro="Deschide">Open</a>
+            <a class="btn btn-sm" href="https://github.com/TekiDeki/Which-is-cheaper" target="_blank" rel="noopener noreferrer" data-en="Source" data-ro="Cod">Source</a>
+            <span class="size">~18 KB</span>
+          </div>
+        </article>
+
+        <article class="card reveal" data-tags="money" data-slug="money-manager" style="--hue:#5ec27a">
+          <div class="card-top">
+            <span class="glyph" aria-hidden="true">💰</span>
+            <div>
+              <h3 class="card-title"><a href="https://tekideki.github.io/Smart-Money-Manager/" target="_blank" rel="noopener noreferrer">Smart Money Manager</a></h3>
+              <p class="card-tag" data-en="Your finances, without handing over your data." data-ro="Finanțele tale, fără să-ți predai datele.">Your finances, without handing over your data.</p>
+            </div>
+          </div>
+          <p class="card-desc" data-en="Track income and expenses, categorise spending and watch interactive charts update in real time. Everything lives in your browser." data-ro="Urmărești veniturile și cheltuielile, le categorisești și vezi grafice interactive actualizate în timp real. Totul rămâne în browserul tău.">Track income and expenses, categorise spending and watch interactive charts update in real time. Everything lives in your browser.</p>
+          <ul class="feats">
+            <li data-en="income &amp; expenses" data-ro="venituri și cheltuieli">income &amp; expenses</li><li data-en="categories" data-ro="categorii">categories</li><li data-en="interactive charts" data-ro="grafice interactive">interactive charts</li><li data-en="installable PWA" data-ro="PWA instalabil">installable PWA</li>
+          </ul>
+          <div class="card-foot">
+            <a class="btn btn-sm btn-primary" href="https://tekideki.github.io/Smart-Money-Manager/" target="_blank" rel="noopener noreferrer" data-en="Open" data-ro="Deschide">Open</a>
+            <a class="btn btn-sm" href="https://github.com/TekiDeki/Smart-Money-Manager" target="_blank" rel="noopener noreferrer" data-en="Source" data-ro="Cod">Source</a>
+            <span class="size" data-en="local only" data-ro="doar local">local only</span>
+          </div>
+        </article>
+
+        <article class="card reveal" data-tags="dev" data-slug="prompts" style="--hue:#c084fc">
+          <div class="card-top">
+            <span class="glyph" aria-hidden="true">🎨</span>
+            <div>
+              <h3 class="card-title"><a href="https://tekideki.github.io/AI-Prompt-Builder/" target="_blank" rel="noopener noreferrer">AI Prompt Builder</a></h3>
+              <p class="card-tag" data-en="The Luminance Master — prompts that actually work." data-ro="The Luminance Master — prompturi care chiar funcționează.">The Luminance Master — prompts that actually work.</p>
+            </div>
+          </div>
+          <p class="card-desc" data-en="Stop guessing which words work. Pick from curated dropdowns — lighting, composition, camera, film stock, atmosphere — and the tool assembles a coherent, engine-specific prompt." data-ro="Nu mai ghici ce cuvinte funcționează. Alegi din liste îngrijite — lumină, compoziție, cameră, tip de film, atmosferă — iar unealta construiește un prompt coerent, specific motorului.">Stop guessing which words work. Pick from curated dropdowns — lighting, composition, camera, film stock, atmosphere — and the tool assembles a coherent, engine-specific prompt.</p>
+          <ul class="feats">
+            <li>Midjourney</li><li>FLUX.1</li><li>Stable Diffusion</li><li>DALL·E 3</li><li data-en="14 presets" data-ro="14 presetări">14 presets</li><li data-en="live prompt score" data-ro="scor live">live prompt score</li>
+          </ul>
+          <div class="card-foot">
+            <a class="btn btn-sm btn-primary" href="https://tekideki.github.io/AI-Prompt-Builder/" target="_blank" rel="noopener noreferrer" data-en="Open" data-ro="Deschide">Open</a>
+            <a class="btn btn-sm" href="https://github.com/TekiDeki/AI-Prompt-Builder" target="_blank" rel="noopener noreferrer" data-en="Source" data-ro="Cod">Source</a>
+            <span class="size">v22.12</span>
+          </div>
+        </article>
+
+        <article class="card reveal" data-tags="health" data-slug="bmi" style="--hue:#60a5fa">
+          <div class="card-top">
+            <span class="glyph" aria-hidden="true">⚖️</span>
+            <div>
+              <h3 class="card-title"><a href="https://tekideki.github.io/BMI-Calculator/" target="_blank" rel="noopener noreferrer">Calculator IMC · BMI</a></h3>
+              <p class="card-tag" data-en="Your BMI in two taps — in four languages." data-ro="IMC-ul tău în două atingeri — în patru limbi.">Your BMI in two taps — in four languages.</p>
+            </div>
+          </div>
+          <p class="card-desc" data-en="Weight plus height, and you get an instant BMI with a clear category. Dark and light theme, shareable language links, works offline." data-ro="Greutate plus înălțime și primești IMC-ul instant, cu o categorie clară. Temă închisă și deschisă, linkuri partajabile pe limbi, funcționează offline.">Weight plus height, and you get an instant BMI with a clear category. Dark and light theme, shareable language links, works offline.</p>
+          <ul class="feats">
+            <li data-en="4 languages + hreflang" data-ro="4 limbi + hreflang">4 languages + hreflang</li><li data-en="dark / light" data-ro="închis / deschis">dark / light</li><li data-en="share button" data-ro="buton de partajare">share button</li><li>offline PWA</li>
+          </ul>
+          <div class="card-foot">
+            <a class="btn btn-sm btn-primary" href="https://tekideki.github.io/BMI-Calculator/" target="_blank" rel="noopener noreferrer" data-en="Open" data-ro="Deschide">Open</a>
+            <a class="btn btn-sm" href="https://github.com/TekiDeki/BMI-Calculator" target="_blank" rel="noopener noreferrer" data-en="Source" data-ro="Cod">Source</a>
+            <span class="size">~17 KB</span>
+          </div>
+        </article>
+
+        <article class="card reveal" data-tags="dev" data-slug="preview" style="--hue:#38bdf8">
+          <div class="card-top">
+            <span class="glyph" aria-hidden="true">📱</span>
+            <div>
+              <h3 class="card-title"><a href="https://tekideki.github.io/Mobile-Preview/" target="_blank" rel="noopener noreferrer">Mobile Preview</a></h3>
+              <p class="card-tag" data-en="Any page, on any device, in seconds." data-ro="Orice pagină, pe orice dispozitiv, în câteva secunde.">Any page, on any device, in seconds.</p>
+            </div>
+          </div>
+          <p class="card-desc" data-en="Load a local HTML file or paste a URL and it renders inside real device frames. For developers, designers and anyone who ships for small screens." data-ro="Încarci un fișier HTML local sau lipești un URL și pagina apare în rame reale de dispozitive. Pentru dezvoltatori, designeri și oricine livrează pentru ecrane mici.">Load a local HTML file or paste a URL and it renders inside real device frames. For developers, designers and anyone who ships for small screens.</p>
+          <ul class="feats">
+            <li data-en="12 devices" data-ro="12 dispozitive">12 devices</li><li data-en="13 aspect ratios" data-ro="13 proporții">13 aspect ratios</li><li data-en="custom sizes" data-ro="dimensiuni proprii">custom sizes</li><li data-en="portrait / landscape" data-ro="portret / landscape">portrait / landscape</li><li>zoom</li>
+          </ul>
+          <div class="card-foot">
+            <a class="btn btn-sm btn-primary" href="https://tekideki.github.io/Mobile-Preview/" target="_blank" rel="noopener noreferrer" data-en="Open" data-ro="Deschide">Open</a>
+            <a class="btn btn-sm" href="https://github.com/TekiDeki/Mobile-Preview" target="_blank" rel="noopener noreferrer" data-en="Source" data-ro="Cod">Source</a>
+            <span class="size" data-en="offline PWA" data-ro="PWA offline">offline PWA</span>
+          </div>
+        </article>
+
+        <article class="card reveal" data-tags="money" data-slug="bets" style="--hue:#f472b6">
+          <div class="card-top">
+            <span class="glyph" aria-hidden="true">📓</span>
+            <div>
+              <h3 class="card-title"><a href="https://tekideki.github.io/Bet-Tracker/" target="_blank" rel="noopener noreferrer">Bet Tracker</a></h3>
+              <p class="card-tag" data-en="A private bet journal — not betting advice." data-ro="Un jurnal privat de pariuri — nu sfaturi de pariere.">A private bet journal — not betting advice.</p>
+            </div>
+          </div>
+          <p class="card-desc" data-en="Record and settle bets, review net profit and settled-bet ROI, and export JSON backups. No account, no tracking — the data stays in your browser." data-ro="Înregistrezi și lichidezi pariuri, vezi profitul net și ROI-ul pe pariuri închise și exporți copii JSON. Fără cont, fără urmărire — datele rămân în browserul tău.">Record and settle bets, review net profit and settled-bet ROI, and export JSON backups. No account, no tracking — the data stays in your browser.</p>
+          <ul class="feats">
+            <li data-en="4 languages" data-ro="4 limbi">4 languages</li><li data-en="edit records" data-ro="editare înregistrări">edit records</li><li data-en="per-record currency" data-ro="monedă per pariu">per-record currency</li><li data-en="JSON export" data-ro="export JSON">JSON export</li>
+          </ul>
+          <div class="card-foot">
+            <a class="btn btn-sm btn-primary" href="https://tekideki.github.io/Bet-Tracker/" target="_blank" rel="noopener noreferrer" data-en="Open" data-ro="Deschide">Open</a>
+            <a class="btn btn-sm" href="https://github.com/TekiDeki/Bet-Tracker" target="_blank" rel="noopener noreferrer" data-en="Source" data-ro="Cod">Source</a>
+            <span class="size">Apache-2.0</span>
+          </div>
+        </article>
+
+        <article class="card reveal" data-tags="text" data-slug="words" style="--hue:#a3e635">
+          <div class="card-top">
+            <span class="glyph" aria-hidden="true">🔤</span>
+            <div>
+              <h3 class="card-title"><a href="https://tekideki.github.io/Generator-Random-Word/" target="_blank" rel="noopener noreferrer">LexiGen · Random Word</a></h3>
+              <p class="card-tag" data-en="Find a word. Start an idea." data-ro="Găsește un cuvânt. Pornește o idee.">Find a word. Start an idea.</p>
+            </div>
+          </div>
+          <p class="card-desc" data-en="Generate random words in ten languages for writing, language practice or creative prompts. Filter by length, copy a word, revisit recent history — all locally." data-ro="Generezi cuvinte aleatorii în zece limbi, pentru scris, exersat limbi sau idei creative. Filtrezi după lungime, copiezi un cuvânt, revezi istoricul recent — totul local.">Generate random words in ten languages for writing, language practice or creative prompts. Filter by length, copy a word, revisit recent history — all locally.</p>
+          <ul class="feats">
+            <li data-en="10 languages" data-ro="10 limbi">10 languages</li><li data-en="strict filters" data-ro="filtre stricte">strict filters</li><li>copy</li><li data-en="per-language history" data-ro="istoric pe limbi">per-language history</li><li data-en="zero dependencies" data-ro="zero dependențe">zero dependencies</li>
+          </ul>
+          <div class="card-foot">
+            <a class="btn btn-sm btn-primary" href="https://tekideki.github.io/Generator-Random-Word/" target="_blank" rel="noopener noreferrer" data-en="Open" data-ro="Deschide">Open</a>
+            <a class="btn btn-sm" href="https://github.com/TekiDeki/Generator-Random-Word" target="_blank" rel="noopener noreferrer" data-en="Source" data-ro="Cod">Source</a>
+            <span class="size" data-en="offline PWA" data-ro="PWA offline">offline PWA</span>
+          </div>
+        </article>
+
+        <article class="card reveal" data-tags="text dev" data-slug="lorem" style="--hue:#94a3b8">
+          <div class="card-top">
+            <span class="glyph" aria-hidden="true">¶</span>
+            <div>
+              <h3 class="card-title"><a href="https://tekideki.github.io/Generator-Lorem-Ipsum/" target="_blank" rel="noopener noreferrer">Lorem Ipsum Generator</a></h3>
+              <p class="card-tag" data-en="Placeholder text, exactly how you need it." data-ro="Text de umplutură, exact cum îți trebuie.">Placeholder text, exactly how you need it.</p>
+            </div>
+          </div>
+          <p class="card-desc" data-en="Generate paragraphs, sentences or an exact word count. Copy the text or download a plain TXT file — no accounts, no tracking, no backend." data-ro="Generezi paragrafe, propoziții sau un număr exact de cuvinte. Copiezi textul sau descarci un fișier TXT simplu — fără conturi, fără urmărire, fără backend.">Generate paragraphs, sentences or an exact word count. Copy the text or download a plain TXT file — no accounts, no tracking, no backend.</p>
+          <ul class="feats">
+            <li data-en="10 interface languages" data-ro="10 limbi de interfață">10 interface languages</li><li data-en="3 length presets" data-ro="3 presetări de lungime">3 length presets</li><li>copy</li><li data-en="TXT export" data-ro="export TXT">TXT export</li>
+          </ul>
+          <div class="card-foot">
+            <a class="btn btn-sm btn-primary" href="https://tekideki.github.io/Generator-Lorem-Ipsum/" target="_blank" rel="noopener noreferrer" data-en="Open" data-ro="Deschide">Open</a>
+            <a class="btn btn-sm" href="https://github.com/TekiDeki/Generator-Lorem-Ipsum" target="_blank" rel="noopener noreferrer" data-en="Source" data-ro="Cod">Source</a>
+            <span class="size" data-en="zero dependencies" data-ro="zero dependențe">zero dependencies</span>
+          </div>
+        </article>
+
+        <article class="card reveal" data-tags="dev" data-slug="pass" style="--hue:#fbbf24">
+          <div class="card-top">
+            <span class="glyph" aria-hidden="true">🔐</span>
+            <div>
+              <h3 class="card-title"><a href="https://tekideki.github.io/Password-Generator/" target="_blank" rel="noopener noreferrer">Password Generator</a></h3>
+              <p class="card-tag" data-en="Random by design. Private by default." data-ro="Aleator prin design. Privat din start.">Random by design. Private by default.</p>
+            </div>
+          </div>
+          <p class="card-desc" data-en="Passwords generated locally with Web Crypto. Choose length and character sets, reveal only when needed, copy or export TXT after a plaintext warning." data-ro="Parole generate local cu Web Crypto. Alegi lungimea și seturile de caractere, le dezvălui doar când trebuie, copiezi sau exporți TXT după un avertisment clar.">Passwords generated locally with Web Crypto. Choose length and character sets, reveal only when needed, copy or export TXT after a plaintext warning.</p>
+          <ul class="feats">
+            <li data-en="8–128 characters" data-ro="8–128 de caractere">8–128 characters</li><li data-en="batches up to 100" data-ro="serii de până la 100">batches up to 100</li><li data-en="entropy estimate" data-ro="estimare de entropie">entropy estimate</li><li data-en="10 languages" data-ro="10 limbi">10 languages</li>
+          </ul>
+          <div class="card-foot">
+            <a class="btn btn-sm btn-primary" href="https://tekideki.github.io/Password-Generator/" target="_blank" rel="noopener noreferrer" data-en="Open" data-ro="Deschide">Open</a>
+            <a class="btn btn-sm" href="https://github.com/TekiDeki/Password-Generator" target="_blank" rel="noopener noreferrer" data-en="Source" data-ro="Cod">Source</a>
+            <span class="size">Web Crypto</span>
+          </div>
+        </article>
+
+        <article class="card reveal" data-tags="media" data-slug="qr" style="--hue:#2dd4bf">
+          <div class="card-top">
+            <span class="glyph" aria-hidden="true">📷</span>
+            <div>
+              <h3 class="card-title"><a href="https://tekideki.github.io/QR-Scanner/" target="_blank" rel="noopener noreferrer">QR Scanner</a></h3>
+              <p class="card-tag" data-en="Point, scan, know. Nothing is uploaded." data-ro="Țintești, scanezi, afli. Nimic nu se încarcă.">Point, scan, know. Nothing is uploaded.</p>
+            </div>
+          </div>
+          <p class="card-desc" data-en="Scan QR codes and barcodes with the camera or from an image, and read product details for EAN/UPC codes straight from Open Food Facts. Content is understood, not just printed." data-ro="Scanezi coduri QR și de bare cu camera sau dintr-o imagine și citești detaliile produselor EAN/UPC direct din Open Food Facts. Conținutul este înțeles, nu doar afișat.">Scan QR codes and barcodes with the camera or from an image, and read product details for EAN/UPC codes straight from Open Food Facts. Content is understood, not just printed.</p>
+          <ul class="feats">
+            <li>QR</li><li>EAN / UPC</li><li>Code 128</li><li>DataMatrix</li><li>Open Food Facts</li><li data-en="history + JSON" data-ro="istoric + JSON">history + JSON</li>
+          </ul>
+          <div class="card-foot">
+            <a class="btn btn-sm btn-primary" href="https://tekideki.github.io/QR-Scanner/" target="_blank" rel="noopener noreferrer" data-en="Open" data-ro="Deschide">Open</a>
+            <a class="btn btn-sm" href="https://github.com/TekiDeki/QR-Scanner" target="_blank" rel="noopener noreferrer" data-en="Source" data-ro="Cod">Source</a>
+            <span class="size" data-en="4 languages" data-ro="4 limbi">4 languages</span>
+          </div>
+        </article>
+
+        <article class="card reveal" data-tags="media dev" data-slug="img" style="--hue:#fb7185">
+          <div class="card-top">
+            <span class="glyph" aria-hidden="true">🖼️</span>
+            <div>
+              <h3 class="card-title"><a href="https://tekideki.github.io/Image-Compressor/" target="_blank" rel="noopener noreferrer">Image Compressor</a></h3>
+              <p class="card-tag" data-en="Smaller photos. Without the metadata." data-ro="Fotografii mai mici. Fără metadate.">Smaller photos. Without the metadata.</p>
+            </div>
+          </div>
+          <p class="card-desc" data-en="Batch compress and resize images right in the browser, and get them back with EXIF, GPS, camera and timestamp data removed. Download single files or the whole batch as one ZIP." data-ro="Comprimi și redimensionezi imagini în lot, direct în browser, și le primești înapoi fără EXIF, GPS, cameră și datare. Descarci fișiere individual sau tot lotul într-un ZIP.">Batch compress and resize images right in the browser, and get them back with EXIF, GPS, camera and timestamp data removed. Download single files or the whole batch as one ZIP.</p>
+          <ul class="feats">
+            <li data-en="batch up to 60" data-ro="lot până la 60">batch up to 60</li><li data-en="EXIF &amp; GPS stripped" data-ro="EXIF și GPS eliminate">EXIF &amp; GPS stripped</li><li>JPEG / WebP / PNG</li><li data-en="ZIP download" data-ro="descărcare ZIP">ZIP download</li>
+          </ul>
+          <div class="card-foot">
+            <a class="btn btn-sm btn-primary" href="https://tekideki.github.io/Image-Compressor/" target="_blank" rel="noopener noreferrer" data-en="Open" data-ro="Deschide">Open</a>
+            <a class="btn btn-sm" href="https://github.com/TekiDeki/Image-Compressor" target="_blank" rel="noopener noreferrer" data-en="Source" data-ro="Cod">Source</a>
+            <span class="size" data-en="4 languages" data-ro="4 limbi">4 languages</span>
+          </div>
+        </article>
+
+      </div>
+
+      <p class="empty" id="empty">
+        <b data-en="Nothing matches that." data-ro="Nimic nu se potrivește.">Nothing matches that.</b>
+        <span data-en="Try another word, or press Esc to clear the search." data-ro="Încearcă alt cuvânt sau apasă Esc pentru a șterge căutarea.">Try another word, or press Esc to clear the search.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ PRINCIPLES ============ -->
+  <section id="principles" aria-labelledby="principles-h">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="sec-kicker"><span data-en="How I build" data-ro="Cum construiesc">How I build</span></p>
+        <h2 id="principles-h">
+          <span class="i18n" lang="en">Six rules I don't break.</span>
+          <span class="i18n" lang="ro" hidden>Șase reguli pe care nu le încalc.</span>
+        </h2>
+        <p>
+          <span class="i18n" lang="en">Constraints are the whole point. They keep the tools fast, cheap to host and honest about your data.</span>
+          <span class="i18n" lang="ro" hidden>Constrângerile sunt esențiale. Ele țin uneltele rapide, ieftin de găzduit și cinstite față de datele tale.</span>
+        </p>
+      </div>
+
+      <div class="principles">
+        <div class="principle reveal">
+          <p class="num">01</p>
+          <h3 data-en="Single file" data-ro="Un singur fișier">Single file</h3>
+          <p data-en="One index.html holds the whole app — markup, CSS and JavaScript together. Nothing to build, nothing to bundle." data-ro="Un singur index.html conține toată aplicația — markup, CSS și JavaScript împreună. Nimic de compilat, nimic de împachetat.">One index.html holds the whole app — markup, CSS and JavaScript together. Nothing to build, nothing to bundle.</p>
+        </div>
+        <div class="principle reveal">
+          <p class="num">02</p>
+          <h3 data-en="Privacy first" data-ro="Confidențialitate mai întâi">Privacy first</h3>
+          <p data-en="All data stays in your browser. No backend, no analytics, no tracking pixels, no cookie banner to dismiss." data-ro="Toate datele rămân în browserul tău. Fără backend, fără analytics, fără pixeli de urmărire, fără banner de cookie-uri.">All data stays in your browser. No backend, no analytics, no tracking pixels, no cookie banner to dismiss.</p>
+        </div>
+        <div class="principle reveal">
+          <p class="num">03</p>
+          <h3 data-en="Offline by default" data-ro="Offline din start">Offline by default</h3>
+          <p data-en="Service worker plus web app manifest: open it once, then it works on a plane, in a basement, on a farm." data-ro="Service worker și manifest: îl deschizi o dată, apoi funcționează în avion, la subsol, la țară fără semnal.">Service worker plus web app manifest: open it once, then it works on a plane, in a basement, on a farm.</p>
+        </div>
+        <div class="principle reveal">
+          <p class="num">04</p>
+          <h3 data-en="Mobile-first" data-ro="Mobile-first">Mobile-first</h3>
+          <p data-en="Big touch targets, responsive layout, light and dark themes, no horizontal scrolling on a small phone." data-ro="Ținte mari pentru degete, layout responsiv, teme deschisă și închisă, fără derulare orizontală pe un telefon mic.">Big touch targets, responsive layout, light and dark themes, no horizontal scrolling on a small phone.</p>
+        </div>
+        <div class="principle reveal">
+          <p class="num">05</p>
+          <h3 data-en="Dependencies with purpose" data-ro="Dependențe cu scop">Dependencies with purpose</h3>
+          <p data-en="A library only when it clearly improves quality — kept light, bundled locally where practical, licence respected." data-ro="O bibliotecă doar când îmbunătățește clar calitatea — ținută ușoară, împachetată local unde se poate, cu licența respectată.">A library only when it clearly improves quality — kept light, bundled locally where practical, licence respected.</p>
+        </div>
+        <div class="principle reveal">
+          <p class="num">06</p>
+          <h3 data-en="Free to host" data-ro="Găzduire gratuită">Free to host</h3>
+          <p data-en="Static files on a free tier — GitHub Pages today, Cloudflare's edge network for this site. No servers, no bills." data-ro="Fișiere statice pe un plan gratuit — GitHub Pages pentru unelte, rețeaua Cloudflare pentru acest sit. Fără servere, fără facturi.">Static files on a free tier — GitHub Pages today, Cloudflare's edge network for this site. No servers, no bills.</p>
+        </div>
+      </div>
+
+      <blockquote class="quote reveal">
+        <span class="i18n" lang="en">“The best code is the code you don't have to ship.”</span>
+        <span class="i18n" lang="ro" hidden>„Cel mai bun cod este codul pe care nu trebuie să-l livrezi.”</span>
+        <cite>— @TekiDeki</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ============ SHORTCUTS ============ -->
+  <section id="shortcuts" aria-labelledby="shortcuts-h">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="sec-kicker"><span data-en="Shortcuts" data-ro="Scurtături">Shortcuts</span></p>
+        <h2 id="shortcuts-h">
+          <span class="i18n" lang="en">Short URLs you can actually remember.</span>
+          <span class="i18n" lang="ro" hidden>Adrese scurte pe care chiar le poți ține minte.</span>
+        </h2>
+        <p>
+          <span class="i18n" lang="en">Every tool also answers on a short path on this domain, then hands you over to the live app. Click a row to copy it.</span>
+          <span class="i18n" lang="ro" hidden>Fiecare unealtă răspunde și pe o cale scurtă pe acest domeniu, apoi te trimite la aplicația live. Dă clic pe un rând ca să o copiezi.</span>
+        </p>
+      </div>
+
+      <div class="shortcuts reveal" id="shortcutList">
+        <div class="sc-row"><span class="path">freehtml.dev/cheaper</span><span class="arrow" aria-hidden="true">→</span><span class="target">Which is cheaper?</span><button class="copy" type="button" data-copy="https://freehtml.dev/cheaper" data-en="copy" data-ro="copiază">copy</button></div>
+        <div class="sc-row"><span class="path">freehtml.dev/money</span><span class="arrow" aria-hidden="true">→</span><span class="target">Smart Money Manager</span><button class="copy" type="button" data-copy="https://freehtml.dev/money" data-en="copy" data-ro="copiază">copy</button></div>
+        <div class="sc-row"><span class="path">freehtml.dev/prompts</span><span class="arrow" aria-hidden="true">→</span><span class="target">AI Prompt Builder</span><button class="copy" type="button" data-copy="https://freehtml.dev/prompts" data-en="copy" data-ro="copiază">copy</button></div>
+        <div class="sc-row"><span class="path">freehtml.dev/bmi</span><span class="arrow" aria-hidden="true">→</span><span class="target">BMI Calculator</span><button class="copy" type="button" data-copy="https://freehtml.dev/bmi" data-en="copy" data-ro="copiază">copy</button></div>
+        <div class="sc-row"><span class="path">freehtml.dev/preview</span><span class="arrow" aria-hidden="true">→</span><span class="target">Mobile Preview</span><button class="copy" type="button" data-copy="https://freehtml.dev/preview" data-en="copy" data-ro="copiază">copy</button></div>
+        <div class="sc-row"><span class="path">freehtml.dev/bets</span><span class="arrow" aria-hidden="true">→</span><span class="target">Bet Tracker</span><button class="copy" type="button" data-copy="https://freehtml.dev/bets" data-en="copy" data-ro="copiază">copy</button></div>
+        <div class="sc-row"><span class="path">freehtml.dev/words</span><span class="arrow" aria-hidden="true">→</span><span class="target">LexiGen · Random Word</span><button class="copy" type="button" data-copy="https://freehtml.dev/words" data-en="copy" data-ro="copiază">copy</button></div>
+        <div class="sc-row"><span class="path">freehtml.dev/lorem</span><span class="arrow" aria-hidden="true">→</span><span class="target">Lorem Ipsum Generator</span><button class="copy" type="button" data-copy="https://freehtml.dev/lorem" data-en="copy" data-ro="copiază">copy</button></div>
+        <div class="sc-row"><span class="path">freehtml.dev/pass</span><span class="arrow" aria-hidden="true">→</span><span class="target">Password Generator</span><button class="copy" type="button" data-copy="https://freehtml.dev/pass" data-en="copy" data-ro="copiază">copy</button></div>
+        <div class="sc-row"><span class="path">freehtml.dev/qr</span><span class="arrow" aria-hidden="true">→</span><span class="target">QR Scanner</span><button class="copy" type="button" data-copy="https://freehtml.dev/qr" data-en="copy" data-ro="copiază">copy</button></div>
+        <div class="sc-row"><span class="path">freehtml.dev/img</span><span class="arrow" aria-hidden="true">→</span><span class="target">Image Compressor</span><button class="copy" type="button" data-copy="https://freehtml.dev/img" data-en="copy" data-ro="copiază">copy</button></div>
+      </div>
+      <p class="sc-note mono">
+        <span class="i18n" lang="en">Served as 302 redirects by Cloudflare Pages — the apps stay on GitHub Pages, where their service workers and offline installs already live.</span>
+        <span class="i18n" lang="ro" hidden>Servite ca redirectări 302 de Cloudflare Pages — aplicațiile rămân pe GitHub Pages, unde service workerele și instalările offline funcționează deja.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section id="about" aria-labelledby="about-h">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="sec-kicker"><span data-en="About" data-ro="Despre">About</span></p>
+        <h2 id="about-h">
+          <span class="i18n" lang="en">One person, one editor, no framework.</span>
+          <span class="i18n" lang="ro" hidden>Un om, un editor, niciun framework.</span>
+        </h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-card reveal">
+          <p>
+            <span class="i18n" lang="en">I'm <strong>Kristian Mario Mišković</strong>, <span class="mono">@TekiDeki</span>, writing code from Vršac, Serbia. I've been around long enough to remember when a website was a folder of files — and I still think that's a perfectly good way to build one.</span>
+            <span class="i18n" lang="ro" hidden>Sunt <strong>Kristian Mario Mišković</strong>, <span class="mono">@TekiDeki</span>, și scriu cod din Vârșeț, Serbia. Am prin preajmă suficientă vreme cât să țin minte când un sit era un dosar cu fișiere — și încă cred că e un mod perfect de bun de a-l construi.</span>
+          </p>
+          <p>
+            <span class="i18n" lang="en">These tools started as answers to small annoyances: which jar of coffee is actually cheaper, what BMI category am I in, how do I strip GPS data from 40 photos before posting them. None of them needed a server, so none of them got one.</span>
+            <span class="i18n" lang="ro" hidden>Uneltele astea au început ca răspunsuri la mici enervări: ce borcan de cafea e de fapt mai ieftin, în ce categorie de IMC mă aflu, cum scot datele GPS din 40 de fotografii înainte să le public. Niciuna nu avea nevoie de un server, așa că niciuna nu a primit unul.</span>
+          </p>
+          <p>
+            <span class="i18n" lang="en">If one of them saves you three seconds in a grocery aisle, a star on GitHub costs nothing — and a bug report costs even less.</span>
+            <span class="i18n" lang="ro" hidden>Dacă una dintre ele îți economisește trei secunde la raft, un star pe GitHub nu costă nimic — iar un raport de bug costă și mai puțin.</span>
+          </p>
+        </div>
+
+        <div class="reveal">
+          <h3 style="font-size:1rem;margin-bottom:14px">
+            <span class="i18n" lang="en">What this site will never do</span>
+            <span class="i18n" lang="ro" hidden>Ce nu va face niciodată acest sit</span>
+          </h3>
+          <ul class="pledge">
+            <li><span class="tick" aria-hidden="true">✓</span><span data-en="No analytics, no tracking pixels, no advertising IDs." data-ro="Fără analytics, fără pixeli de urmărire, fără identificatori de publicitate.">No analytics, no tracking pixels, no advertising IDs.</span></li>
+            <li><span class="tick" aria-hidden="true">✓</span><span data-en="No cookies — so no cookie banner either." data-ro="Fără cookie-uri — deci nici banner de cookie-uri.">No cookies — so no cookie banner either.</span></li>
+            <li><span class="tick" aria-hidden="true">✓</span><span data-en="No accounts, no sign-up, no newsletter form." data-ro="Fără conturi, fără înscriere, fără formular de newsletter.">No accounts, no sign-up, no newsletter form.</span></li>
+            <li><span class="tick" aria-hidden="true">✓</span><span data-en="No third-party fonts, scripts or CDNs on this page — every byte comes from this domain." data-ro="Fără fonturi, scripturi sau CDN-uri terțe pe această pagină — fiecare octet vine de pe acest domeniu.">No third-party fonts, scripts or CDNs on this page — every byte comes from this domain.</span></li>
+            <li><span class="tick" aria-hidden="true">✓</span><span data-en="No paywalls. Free now, free later, Apache-2.0 where a licence applies." data-ro="Fără paywall. Gratuit acum, gratuit mai târziu, Apache-2.0 acolo unde se aplică o licență.">No paywalls. Free now, free later, Apache-2.0 where a licence applies.</span></li>
+          </ul>
+
+          <div class="hero-cta" style="margin-top:24px">
+            <a class="btn" href="https://github.com/TekiDeki" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4 1.5-4-2.5-6-3m12 5v-3.9c0-1 .1-1.4-.5-2 2.9-.3 4.6-1.4 4.6-5a3.9 3.9 0 0 0-1.1-2.7 3.6 3.6 0 0 0-.1-2.7s-.9-.3-3 1.1a10.3 10.3 0 0 0-5.4 0C7.4 3.7 6.5 4 6.5 4a3.6 3.6 0 0 0-.1 2.7A3.9 3.9 0 0 0 5.3 9.4c0 3.6 1.7 4.7 4.6 5-.6.6-.6 1.2-.5 2V20"/></svg>
+              <span data-en="github.com/TekiDeki" data-ro="github.com/TekiDeki">github.com/TekiDeki</span>
+            </a>
+            <a class="btn" href="https://github.com/TekiDeki/TekiDeki" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+              <span data-en="Profile README" data-ro="README de profil">Profile README</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <p class="foot-note">
+      <span data-en="© " data-ro="© ">© </span><span id="year">2026</span> Kristian Mario Mišković ·
+      <span class="i18n" lang="en">Built with <span class="heart">♥</span>, HTML, CSS and stubbornness.</span>
+      <span class="i18n" lang="ro" hidden>Făcut cu <span class="heart">♥</span>, HTML, CSS și încăpățânare.</span>
+    </p>
+    <nav class="foot-links" aria-label="Footer">
+      <a href="#tools" data-en="Tools" data-ro="Unelte">Tools</a>
+      <a href="#principles" data-en="Principles" data-ro="Principii">Principles</a>
+      <a href="#shortcuts" data-en="Shortcuts" data-ro="Scurtături">Shortcuts</a>
+      <a href="https://github.com/TekiDeki" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="/manifest.webmanifest" data-en="Manifest" data-ro="Manifest">Manifest</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+  var root = document.documentElement;
+
+  /* ---------- theme ---------- */
+  var themeBtn = document.getElementById('themeBtn');
+  function setTheme(t, save) {
+    root.setAttribute('data-theme', t);
+    if (themeBtn) themeBtn.setAttribute('aria-label', t === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+    if (save) { try { localStorage.setItem('fhd-theme', t); } catch (e) {} }
+  }
+  if (themeBtn) {
+    themeBtn.addEventListener('click', function () {
+      setTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark', true);
+    });
+  }
+  try {
+    window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', function (ev) {
+      var saved = null;
+      try { saved = localStorage.getItem('fhd-theme'); } catch (e) {}
+      if (!saved) setTheme(ev.matches ? 'light' : 'dark', false);
+    });
+  } catch (e) {}
+
+  /* ---------- language ---------- */
+  var LANG_KEY = 'fhd-lang';
+  var langBtn = document.getElementById('langBtn');
+  var langLabel = document.getElementById('langLabel');
+  var translatables = Array.prototype.slice.call(document.querySelectorAll('[data-en]'));
+
+  function currentLang() { return root.getAttribute('lang') === 'ro' ? 'ro' : 'en'; }
+
+  function applyLang(lang) {
+    root.setAttribute('lang', lang);
+    translatables.forEach(function (el) {
+      var v = el.getAttribute('data-' + lang);
+      if (v !== null) el.textContent = v;
+      var ph = el.getAttribute('data-' + lang + '-ph');
+      if (ph !== null) el.setAttribute('placeholder', ph);
+    });
+    Array.prototype.forEach.call(document.querySelectorAll('.i18n'), function (el) {
+      el.hidden = el.getAttribute('lang') !== lang;
+    });
+    if (langLabel) langLabel.textContent = lang === 'ro' ? 'EN' : 'RO';
+    if (langBtn) langBtn.title = lang === 'ro' ? 'Treci la engleză' : 'Switch to Romanian';
+    try { localStorage.setItem(LANG_KEY, lang); } catch (e) {}
+  }
+
+  if (langBtn) {
+    langBtn.addEventListener('click', function () {
+      applyLang(currentLang() === 'ro' ? 'en' : 'ro');
+    });
+  }
+  var stored = null;
+  try { stored = localStorage.getItem(LANG_KEY); } catch (e) {}
+  applyLang(stored === 'ro' ? 'ro' : (stored === 'en' ? 'en' : currentLang()));
+
+  /* ---------- search + filter ---------- */
+  var grid = document.getElementById('grid');
+  var cards = grid ? Array.prototype.slice.call(grid.querySelectorAll('.card')) : [];
+  var input = document.getElementById('q');
+  var countEl = document.getElementById('count');
+  var emptyEl = document.getElementById('empty');
+  var chips = Array.prototype.slice.call(document.querySelectorAll('#chips .chip'));
+  var activeFilter = 'all';
+
+  function normalize(s) {
+    return (s || '').toLowerCase()
+      .replace(/[șş]/g, 's').replace(/[țţ]/g, 't').replace(/ă/g, 'a').replace(/â/g, 'a').replace(/î/g, 'i')
+      .replace(/[čć]/g, 'c').replace(/[ž]/g, 'z').replace(/[š]/g, 's')
+      .replace(/\s+/g, ' ').trim();
+  }
+
+  /* index every card in both languages so a Romanian query finds Romanian text */
+  cards.forEach(function (card) {
+    var parts = [card.getAttribute('data-slug') || '', card.getAttribute('data-tags') || ''];
+    card.querySelectorAll('[data-en],[data-ro],h3,.feats li,.size').forEach(function (el) {
+      parts.push(el.textContent, el.getAttribute('data-en') || '', el.getAttribute('data-ro') || '');
+    });
+    card._index = normalize(parts.join(' '));
+  });
+
+  function apply() {
+    var q = normalize(input ? input.value : '');
+    var shown = 0;
+    cards.forEach(function (card) {
+      var okTag = activeFilter === 'all' || (' ' + (card.getAttribute('data-tags') || '') + ' ').indexOf(' ' + activeFilter + ' ') > -1;
+      var okQuery = !q || q.split(' ').every(function (term) { return card._index.indexOf(term) > -1; });
+      var visible = okTag && okQuery;
+      card.hidden = !visible;
+      if (visible) shown++;
+    });
+    if (countEl) countEl.textContent = shown + ' / ' + cards.length;
+    if (emptyEl) emptyEl.classList.toggle('on', shown === 0);
+  }
+
+  if (input) {
+    input.addEventListener('input', apply);
+    input.addEventListener('keydown', function (ev) {
+      if (ev.key === 'Escape') { input.value = ''; apply(); input.blur(); }
+    });
+  }
+  chips.forEach(function (chip) {
+    chip.addEventListener('click', function () {
+      activeFilter = chip.getAttribute('data-filter');
+      chips.forEach(function (c) { c.setAttribute('aria-pressed', String(c === chip)); });
+      apply();
+    });
+  });
+
+  /* "/" and Ctrl/Cmd+K focus the search field */
+  document.addEventListener('keydown', function (ev) {
+    var tag = (ev.target && ev.target.tagName) || '';
+    var typing = tag === 'INPUT' || tag === 'TEXTAREA' || (ev.target && ev.target.isContentEditable);
+    if (!typing && (ev.key === '/' || ((ev.ctrlKey || ev.metaKey) && ev.key.toLowerCase() === 'k'))) {
+      if (input) { ev.preventDefault(); input.focus(); input.select(); }
+    }
+  });
+  apply();
+
+  /* ---------- copy shortcuts ---------- */
+  document.querySelectorAll('.copy').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var text = btn.getAttribute('data-copy') || '';
+      var done = function () {
+        var prev = btn.textContent;
+        btn.classList.add('done');
+        btn.textContent = currentLang() === 'ro' ? 'copiat ✓' : 'copied ✓';
+        setTimeout(function () { btn.classList.remove('done'); btn.textContent = prev; }, 1400);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, done);
+      } else {
+        try {
+          var ta = document.createElement('textarea');
+          ta.value = text; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0';
+          document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
+        } catch (e) {}
+        done();
+      }
+    });
+  });
+
+  /* ---------- reveal on scroll ---------- */
+  var revealables = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) { entry.target.classList.add('in'); io.unobserve(entry.target); }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+    revealables.forEach(function (el, i) { el.style.transitionDelay = Math.min(i % 6, 5) * 40 + 'ms'; io.observe(el); });
+  } else {
+    revealables.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  /* ---------- footer year ---------- */
+  var yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+  /* ---------- service worker ---------- */
+  if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost' || location.hostname === '127.0.0.1')) {
+    window.addEventListener('load', function () {
+      navigator.serviceWorker.register('/sw.js').catch(function () { /* offline is a bonus, not a requirement */ });
+    });
+  }
+})();
+</script>
+</body>
+</html>
