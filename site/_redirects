@@ -1,0 +1,21 @@
+# Cloudflare Pages — redirect rules
+# Docs: https://developers.cloudflare.com/pages/configuration/redirects/
+#
+# 302 (not 301) on purpose: the apps stay canonical on tekideki.github.io,
+# where their service workers, manifests and offline installs already live.
+# A 301 would teach browsers (and Google) that the GitHub Pages URL is gone.
+
+/cheaper   https://tekideki.github.io/Which-is-cheaper/          302
+/money     https://tekideki.github.io/Smart-Money-Manager/       302
+/prompts   https://tekideki.github.io/AI-Prompt-Builder/         302
+/bmi       https://tekideki.github.io/BMI-Calculator/            302
+/preview   https://tekideki.github.io/Mobile-Preview/            302
+/bets      https://tekideki.github.io/Bet-Tracker/               302
+/words     https://tekideki.github.io/Generator-Random-Word/     302
+/lorem     https://tekideki.github.io/Generator-Lorem-Ipsum/     302
+/pass      https://tekideki.github.io/Password-Generator/        302
+/qr        https://tekideki.github.io/QR-Scanner/                302
+/img       https://tekideki.github.io/Image-Compressor/          302
+
+/github    https://github.com/TekiDeki                           302
+/star      https://github.com/TekiDeki/TekiDeki                  302
