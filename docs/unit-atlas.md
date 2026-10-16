@@ -59,7 +59,7 @@ Nu există cereri pentru fonturi, biblioteci, API-uri sau analytics în aplicaț
 
 Linkurile partajate includ valoarea și unitățile în fragment. Nu sunt trimise serverului ca parte a cererii HTTP, dar destinatarul linkului le vede. Descărcările HTML nu includ datele utilizatorului.
 
-Fișierul descărcat funcționează offline fără service worker. La găzduire pe GitHub Pages, `sw.js` din repository-ul dedicat cache-uie shell-ul aplicației și servește pagina din cache când rețeaua lipsește. Service worker-ul sitului cache-uie doar pagina principală, pagina 404 și manifestul: nu livrează convertorul și nu cache-uie instrumentele externe. Nu se promite instalarea convertorului ca PWA separat.
+Fișierul descărcat funcționează offline fără service worker. La găzduire pe GitHub Pages, `sw.js` din repository-ul dedicat cache-uie shell-ul aplicației și servește pagina din cache când rețeaua lipsește. Service worker-ul sitului cache-uiește doar shell-ul hub-ului (pagina principală, pagina 404, manifestul, iconițele și cardul Open Graph): nu livrează convertorul și nu cache-uiește instrumentele externe. Nu se promite instalarea convertorului ca PWA separat.
 
 ## Verificare
 
@@ -93,10 +93,10 @@ npm test
 
 Opțional: `ATLAS_BASE` schimbă adresa serverului; `ATLAS_CHROMIUM_PATH` alege un executabil Chromium existent.
 
-Suita verifică 787 de perechi de conversie dus-întors, valori de referință, parsarea numerelor, traduceri, salvare, clipboard, linkuri, HTML portabil fără rețea, shell-ul offline, patru lățimi de ecran (320, 375, 768 și 1440 px) și audit axe WCAG A/AA pe ambele teme și dialog. Auditul automat nu înlocuiește evaluarea manuală cu tehnologii asistive. Workflow-ul GitHub rulează aceeași suită la PR și push relevant.
+Suita din repository-ul dedicat verifică 787 de perechi de conversie dus-întors, valori de referință, parsarea numerelor, traduceri, salvare, clipboard, linkuri, HTML portabil fără rețea, shell-ul offline, patru lățimi de ecran (320, 375, 768 și 1440 px) și audit axe WCAG A/AA pe ambele teme și dialog. Auditul automat nu înlocuiește evaluarea manuală cu tehnologii asistive. Suita din acest repository verifică integrarea din pagina principală (vezi mai jos); workflow-ul GitHub rulează suita relevantă la PR și push.
 
 În acest repository, suita verifică pagina principală: cele 12 carduri, căutarea Unit Atlas în cele patru limbi, scurtătura `/convert/`, cache-ul shell-ului și faptul că pagina principală nu mai conține copia convertorului.
 
 ## Convenție de tipografie
 
-În tot ce se scrie pentru acest proiect se folosește „-” (cratime), nu linia lungă. Fișierul HTML livrat nu conține cratime lungă (U+2014), iar suita de teste verifică acest lucru la fiecare descărcare.
+În tot ce se scrie pentru acest proiect se folosește „-” (cratime), nu linia lungă. Fișierele din `site/`, `docs/` și `README.md` nu conțin cratimă lungă (U+2014). Suita de teste verifică acest lucru la fiecare rulare.
