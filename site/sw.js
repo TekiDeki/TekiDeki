@@ -3,7 +3,7 @@
    The tools themselves live on tekideki.github.io and register their own
    service workers there, so we never try to cache cross-origin content. */
 
-const VERSION = 'fhd-v4';
+const VERSION = 'fhd-v5';
 
 /* Short paths that 302 to GitHub Pages — let the network handle those,
    never serve the cached hub page in their place. */
