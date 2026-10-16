@@ -592,15 +592,15 @@ footer{border-top:1px solid var(--border-soft);padding:34px 0 44px;margin-top:20
           <div class="card-top">
             <span class="glyph" aria-hidden="true">⇄</span>
             <div>
-              <h3 class="card-title"><a href="/convert/">Unit Atlas · Unit Converter</a></h3>
+              <h3 class="card-title"><a href="https://tekideki.github.io/Unit-Converter/" target="_blank" rel="noopener noreferrer">Unit Atlas · Unit Converter</a></h3>
               <p class="card-tag" data-i18n="convert.tag">A world of measures. Made simple.</p>
             </div>
           </div>
           <p class="card-desc" data-i18n="convert.desc">11 international categories plus Romanian and Serbian land measures. Instant conversions, saved references and shareable links, in one downloadable HTML file.</p>
-          <ul class="feats"><li data-i18n="convert.f1">11 + 1 categories</li><li data-i18n="convert.f2">local land measures</li><li data-i18n="convert.f3">4 languages</li><li data-i18n="convert.f4">downloadable HTML</li></ul>
+          <ul class="feats"><li data-i18n="convert.f1">11 + 1 categories</li><li data-i18n="convert.f2">local land measures</li><li data-i18n="convert.f3">4 languages</li><li data-i18n="convert.f4">downloadable HTML</li><li data-i18n="convert.f5">own repository</li></ul>
           <div class="card-foot">
-            <a class="btn btn-sm btn-primary" href="/convert/" data-i18n="open">Open</a>
-            <a class="btn btn-sm" href="https://github.com/TekiDeki/TekiDeki/blob/main/site/convert/index.html" target="_blank" rel="noopener noreferrer" data-i18n="src">Source</a>
+            <a class="btn btn-sm btn-primary" href="https://tekideki.github.io/Unit-Converter/" target="_blank" rel="noopener noreferrer" data-i18n="open">Open</a>
+            <a class="btn btn-sm" href="https://github.com/TekiDeki/Unit-Converter" target="_blank" rel="noopener noreferrer" data-i18n="src">Source</a>
             <span class="size" data-i18n="convert.f3">4 languages</span>
           </div>
         </article>
@@ -878,7 +878,7 @@ footer{border-top:1px solid var(--border-soft);padding:34px 0 44px;margin-top:20
       <div class="sec-head reveal">
         <p class="sec-kicker"><span data-i18n="sc.kicker">Shortcuts</span></p>
         <h2 id="shortcuts-h" data-i18n="sc.h2">Short URLs you can actually remember.</h2>
-        <p data-i18n="sc.lede">Short addresses for every tool. Unit Atlas opens here; the other shortcuts take you to the live apps. Use the copy button to share an address.</p>
+        <p data-i18n="sc.lede">Short addresses for every tool. Each one redirects to the live app on GitHub Pages, Unit Atlas included. Use the copy button to share an address.</p>
       </div>
 
       <div class="shortcuts reveal" id="shortcutList">
@@ -895,7 +895,7 @@ footer{border-top:1px solid var(--border-soft);padding:34px 0 44px;margin-top:20
         <div class="sc-row"><span class="path">freehtml.dev/qr</span><span class="arrow" aria-hidden="true">→</span><span class="target">QR Scanner</span><button class="copy" type="button" data-copy="https://freehtml.dev/qr" data-i18n="copy.btn">copy</button></div>
         <div class="sc-row"><span class="path">freehtml.dev/img</span><span class="arrow" aria-hidden="true">→</span><span class="target">Image Compressor</span><button class="copy" type="button" data-copy="https://freehtml.dev/img" data-i18n="copy.btn">copy</button></div>
       </div>
-      <p class="sc-note mono" data-i18n="sc.note">Unit Atlas is served directly at /convert/. Other shortcuts use 302 redirects to GitHub Pages, where those apps manage their own offline support.</p>
+      <p class="sc-note mono" data-i18n="sc.note">Unit Atlas now lives in its own repository and is served from tekideki.github.io/Unit-Converter. All shortcuts use 302 redirects to GitHub Pages, where each app manages its own offline support.</p>
     </div>
   </section>
 
@@ -968,6 +968,7 @@ var I18N = {
     "convert.f2": "local land measures",
     "convert.f3": "4 languages",
     "convert.f4": "downloadable HTML",
+    "convert.f5": "own repository",
 
     "skip": "Skip to the tools",
     "nav.tools": "Tools", "nav.how": "How I build", "nav.shortcuts": "Shortcuts", "nav.about": "About",
@@ -1027,8 +1028,8 @@ var I18N = {
     "p6.t": "Free to host", "p6.d": "Static files on a free tier - GitHub Pages for the tools, Cloudflare's edge network for this site. No servers, no bills.",
     "quote": "“The best code is the code you don't have to ship.”",
     "sc.kicker": "Shortcuts", "sc.h2": "Short URLs you can actually remember.",
-    "sc.lede": "Short addresses for every tool. Unit Atlas opens here; the other shortcuts take you to the live apps. Use the copy button to share an address.",
-    "sc.note": "Unit Atlas is served directly at /convert/. Other shortcuts use 302 redirects to GitHub Pages, where those apps manage their own offline support.",
+    "sc.lede": "Short addresses for every tool. Each one redirects to the live app on GitHub Pages, Unit Atlas included. Use the copy button to share an address.",
+    "sc.note": "Unit Atlas now lives in its own repository and is served from tekideki.github.io/Unit-Converter. All shortcuts use 302 redirects to GitHub Pages, where each app manages its own offline support.",
     "about.kicker": "About", "about.h2": "One person, one editor, no framework.",
     "about.p1": "I'm <strong>Kristian Mario Mišković</strong>, <span class=\"mono\">@TekiDeki</span>, writing code from Vršac, Serbia. I've been around long enough to remember when a website was a folder of files - and I still think that's a perfectly good way to build one.",
     "about.p2": "These tools started as answers to small annoyances: which jar of coffee is actually cheaper, what BMI category am I in, how do I strip GPS data from 40 photos before posting them. None of them needed a server, so none of them got one.",
@@ -1050,6 +1051,7 @@ var I18N = {
     "convert.f2": "măsuri funciare locale",
     "convert.f3": "4 limbi",
     "convert.f4": "HTML descărcabil",
+    "convert.f5": "repository propriu",
 
     "skip": "Sari direct la unelte",
     "nav.tools": "Unelte", "nav.how": "Cum construiesc", "nav.shortcuts": "Scurtături", "nav.about": "Despre",
@@ -1109,8 +1111,8 @@ var I18N = {
     "p6.t": "Găzduire gratuită", "p6.d": "Fișiere statice pe un plan gratuit - GitHub Pages pentru unelte, rețeaua Cloudflare pentru acest sit. Fără servere, fără facturi.",
     "quote": "„Cel mai bun cod este codul pe care nu trebuie să-l livrezi.”",
     "sc.kicker": "Scurtături", "sc.h2": "Adrese scurte pe care chiar le poți ține minte.",
-    "sc.lede": "Adrese scurte pentru fiecare unealtă. Unit Atlas se deschide aici; celelalte scurtături te trimit la aplicațiile live. Folosește butonul de copiere pentru a partaja o adresă.",
-    "sc.note": "Unit Atlas este servit direct la /convert/. Celelalte scurtături folosesc redirectări 302 către GitHub Pages, unde aplicațiile își gestionează suportul offline.",
+    "sc.lede": "Adrese scurte pentru fiecare unealtă. Fiecare trimite la aplicația live de pe GitHub Pages, inclusiv Unit Atlas. Folosește butonul de copiere pentru a partaja o adresă.",
+    "sc.note": "Unit Atlas are acum un repository propriu și este servit de la tekideki.github.io/Unit-Converter. Toate scurtăturile folosesc redirectări 302 către GitHub Pages, unde fiecare aplicație își gestionează suportul offline.",
     "about.kicker": "Despre", "about.h2": "Un om, un editor, niciun framework.",
     "about.p1": "Sunt <strong>Kristian Mario Mišković</strong>, <span class=\"mono\">@TekiDeki</span>, și scriu cod din Vârșeț, Serbia. Am prin preajmă suficientă vreme cât să țin minte când un sit era un dosar cu fișiere - și încă cred că e un mod perfect de bun de a-l construi.",
     "about.p2": "Uneltele astea au început ca răspunsuri la mici enervări: ce borcan de cafea e de fapt mai ieftin, în ce categorie de IMC mă aflu, cum scot datele GPS din 40 de fotografii înainte să le public. Niciuna nu avea nevoie de un server, așa că niciuna nu a primit unul.",
@@ -1132,6 +1134,7 @@ var I18N = {
     "convert.f2": "lokalne mere zemljišta",
     "convert.f3": "4 jezika",
     "convert.f4": "HTML za preuzimanje",
+    "convert.f5": "sopstveni repozitorijum",
 
     "skip": "Preskoči na alatke",
     "nav.tools": "Alatke", "nav.how": "Kako gradim", "nav.shortcuts": "Prečice", "nav.about": "O meni",
@@ -1191,8 +1194,8 @@ var I18N = {
     "p6.t": "Besplatan hosting", "p6.d": "Statički fajlovi na besplatnom planu - GitHub Pages za alatke, Cloudflare-ova mreža za ovaj sajt. Bez servera, bez računa.",
     "quote": "Najbolji kod je onaj koji ne moraš da isporučiš.",
     "sc.kicker": "Prečice", "sc.h2": "Kratke adrese koje stvarno možeš zapamtiti.",
-    "sc.lede": "Kratke adrese za svaku alatku. Unit Atlas se otvara ovde; ostale prečice vode do aplikacija. Dugmetom za kopiranje podeli adresu.",
-    "sc.note": "Unit Atlas se prikazuje direktno na /convert/. Ostale prečice koriste 302 preusmerenja na GitHub Pages, gde aplikacije upravljaju offline podrškom.",
+    "sc.lede": "Kratke adrese za svaku alatku. Svaka vodi do žive aplikacije na GitHub Pages, uključujući Unit Atlas. Dugmetom za kopiranje podeli adresu.",
+    "sc.note": "Unit Atlas je sada u sopstvenom repozitorijumu i serviran je sa tekideki.github.io/Unit-Converter. Sve prečice koriste 302 preusmerenja na GitHub Pages, gde svaka aplikacija upravlja offline podrškom.",
     "about.kicker": "O meni", "about.h2": "Jedan čovek, jedan editor, nijedan framework.",
     "about.p1": "Ja sam <strong>Kristian Mario Mišković</strong>, <span class=\"mono\">@TekiDeki</span>, i pišem kod iz Vršca, Srbija. Dugo sam tu da pamtim kad je sajt bio folder s fajlovima - i još mislim da je to sasvim dobar način da se napravi.",
     "about.p2": "Ove alatke su počele kao odgovori na male nervoze: koja tegla kafe je stvarno jeftinija, u kojoj BMI kategoriji sam, kako da skinem GPS podatke sa 40 fotografija pre objave. Nijednoj nije trebao server, pa nijedna nije ni dobila jedan.",
@@ -1214,6 +1217,7 @@ var I18N = {
     "convert.f2": "локалне мере земљишта",
     "convert.f3": "4 језика",
     "convert.f4": "HTML за преузимање",
+    "convert.f5": "сопствен репозиторијум",
 
     "skip": "Прескочи на алатке",
     "nav.tools": "Алатке", "nav.how": "Како градим", "nav.shortcuts": "Пречице", "nav.about": "О мени",
@@ -1273,8 +1277,8 @@ var I18N = {
     "p6.t": "Бесплатан хостинг", "p6.d": "Статички фајлови на бесплатном плану - GitHub Pages за алатке, Cloudflare-ова мрежа за овај сајт. Без сервера, без рачуна.",
     "quote": "Најбољи код је онај који не мораш да испоручиш.",
     "sc.kicker": "Пречице", "sc.h2": "Кратке адресе које стварно можеш запамтити.",
-    "sc.lede": "Кратке адресе за сваку алатку. Unit Atlas се отвара овде; остале пречице воде до апликација. Дугметом за копирање подели адресу.",
-    "sc.note": "Unit Atlas се приказује директно на /convert/. Остале пречице користе 302 преусмерења на GitHub Pages, где апликације управљају offline подршком.",
+    "sc.lede": "Кратке адресе за сваку алатку. Свака води до живе апликације на GitHub Pages, укључујући Unit Atlas. Дугметом за копирање подели адресу.",
+    "sc.note": "Unit Atlas је сада у сопственом репозиторијуму и сервира се са tekideki.github.io/Unit-Converter. Све пречице користе 302 преусмерења на GitHub Pages, где свака апликација управља offline подрšком.",
     "about.kicker": "О мени", "about.h2": "Један човек, један editor, ниједан framework.",
     "about.p1": "Ја сам <strong>Кристиан Марио Мишковић</strong>, <span class=\"mono\">@TekiDeki</span>, и пишем код из Вршца, Србија. Дуго сам ту да памтим кад је сајт био фасцикла с фајловима - и још мислим да је то сасвим добар начин да се направи.",
     "about.p2": "Ове алатке су почеле као одговори на мале нервозе: која тегла кафе је стварно јефтинија, у којој BMI категорији сам, како да скинем GPS податке са 40 фотографија пре објаве. Ниједној није требао сервер, па ниједна није ни добила један.",
