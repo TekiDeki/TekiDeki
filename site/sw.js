@@ -1,76 +1,54 @@
-/* freeHTML.dev — service worker
-   Cache the shell so the hub page opens offline after the first visit.
-   The tools themselves live on tekideki.github.io and register their own
-   service workers there, so we never try to cache cross-origin content. */
-
-const VERSION = 'fhd-v5';
-
-/* Short paths that 302 to GitHub Pages — let the network handle those,
-   never serve the cached hub page in their place. */
+/* freeHTML.dev - cache same-origin pages under their own keys.
+   External tools keep their own service workers. */
+const VERSION = 'fhd-v6-unit-atlas';
 const SHORTCUTS = [
   '/cheaper', '/money', '/prompts', '/bmi', '/preview', '/bets',
   '/words', '/lorem', '/pass', '/qr', '/img', '/github', '/star'
 ];
-
 const SHELL = [
-  '/',
-  '/index.html',
-  '/manifest.webmanifest',
-  '/assets/favicon.svg',
-  '/assets/icon-192.png',
-  '/assets/icon-512.png',
-  '/assets/og.png'
+  '/', '/index.html', '/convert/', '/convert/index.html', '/404.html',
+  '/manifest.webmanifest', '/assets/favicon.svg', '/assets/icon-192.png',
+  '/assets/icon-512.png', '/assets/og.png'
 ];
-
-self.addEventListener('install', (event) => {
-  event.waitUntil(
-    caches.open(VERSION)
-      .then((cache) => cache.addAll(SHELL).catch(() => undefined))
-      .then(() => self.skipWaiting())
-  );
+function pageKey(path) {
+  if (path === '/' || path === '/index.html') return '/index.html';
+  if (['/convert', '/convert/', '/convert/index.html'].includes(path)) return '/convert/index.html';
+  return null;
+}
+self.addEventListener('install', event => {
+  event.waitUntil(caches.open(VERSION)
+    .then(cache => cache.addAll(SHELL))
+    .then(() => self.skipWaiting()));
 });
-
-self.addEventListener('activate', (event) => {
-  event.waitUntil(
-    caches.keys()
-      .then((keys) => Promise.all(keys.filter((k) => k !== VERSION).map((k) => caches.delete(k))))
-      .then(() => self.clients.claim())
-  );
+self.addEventListener('activate', event => {
+  event.waitUntil(caches.keys()
+    .then(keys => Promise.all(keys.filter(k => k.startsWith('fhd-') && k !== VERSION).map(k => caches.delete(k))))
+    .then(() => self.clients.claim()));
 });
-
-self.addEventListener('fetch', (event) => {
+self.addEventListener('fetch', event => {
   const req = event.request;
-  if (req.method !== 'GET') return;
-
   const url = new URL(req.url);
-  if (url.origin !== self.location.origin) return;   // never touch the tools' origin
-  if (SHORTCUTS.indexOf(url.pathname.replace(/\/$/, '')) > -1) return; // let 302s pass through untouched
-
-  // Navigations: network first, fall back to the cached shell, then offline page.
+  if (req.method !== 'GET' || url.origin !== self.location.origin) return;
+  if (SHORTCUTS.includes(url.pathname.replace(/\/$/, ''))) return;
   if (req.mode === 'navigate') {
-    event.respondWith(
-      fetch(req)
-        .then((res) => {
-          const copy = res.clone();
-          caches.open(VERSION).then((cache) => cache.put('/index.html', copy)).catch(() => undefined);
-          return res;
-        })
-        .catch(() => caches.match('/index.html').then((hit) => hit || caches.match('/404.html')).then((r) => r || Response.error()))
-    );
+    const key = pageKey(url.pathname);
+    event.respondWith(fetch(req).then(res => {
+      if (key && res.ok && !res.redirected) {
+        const copy = res.clone();
+        event.waitUntil(caches.open(VERSION).then(cache => cache.put(key, copy)).catch(() => {}));
+      }
+      return res;
+    }).catch(async () => (key && await caches.match(key)) || await caches.match('/404.html') || Response.error()));
     return;
   }
-
-  // Static assets: cache first, refresh in the background.
-  event.respondWith(
-    caches.match(req).then((hit) => {
-      const network = fetch(req).then((res) => {
-        if (res && res.status === 200 && res.type === 'basic') {
-          const copy = res.clone();
-          caches.open(VERSION).then((cache) => cache.put(req, copy)).catch(() => undefined);
-        }
-        return res;
-      }).catch(() => hit);
-      return hit || network;
-    })
-  );
+  // Retain refresh work even when a cached response is returned immediately.
+  const refresh = fetch(req).then(async res => {
+    if (res.status === 200 && res.type === 'basic' && !res.redirected) {
+      const cache = await caches.open(VERSION);
+      await cache.put(req, res.clone());
+    }
+    return res;
+  });
+  event.waitUntil(refresh.catch(() => {}));
+  event.respondWith(caches.match(req).then(hit => hit || refresh).catch(() => Response.error()));
 });
