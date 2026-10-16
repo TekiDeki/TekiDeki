@@ -3,7 +3,7 @@ on:
   pull_request:
     paths: ['site/**', 'tests/**', 'docs/**', 'README.md', 'package*.json', '.github/workflows/unit-atlas.yml']
   push:
-    branches: [main, arena/5c7e4105-unit-converter]
+    branches: [main]
     paths: ['site/**', 'tests/**', 'docs/**', 'README.md', 'package*.json', '.github/workflows/unit-atlas.yml']
 permissions:
   contents: read

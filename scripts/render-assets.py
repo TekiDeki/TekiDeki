@@ -152,12 +152,12 @@ def og() -> Image.Image:
 
     # lede
     f_p = font("DejaVuSans.ttf", 27)
-    d.text((78, 386), "Eleven single-file web apps that solve one problem well.", font=f_p, fill=MUTED)
+    d.text((78, 386), "Twelve single-file web apps that solve one problem well.", font=f_p, fill=MUTED)
     d.text((78, 424), "No backend. No analytics. No accounts. Works offline.", font=f_p, fill=MUTED)
 
     # pills
     f_pill = font("DejaVuSansMono-Bold.ttf", 21)
-    pills = ["11 tools", "0 trackers", "0 cookies", "1 file each", "Apache-2.0"]
+    pills = ["12 tools", "0 trackers", "0 cookies", "1 file each", "Apache-2.0"]
     x = 78
     y = 492
     for label in pills:

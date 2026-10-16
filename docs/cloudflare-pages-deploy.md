@@ -1,142 +1,115 @@
-# freehtml.dev → Cloudflare Pages · ghid de deploy
+# freeHTML.dev - Cloudflare, ghid de deploy
 
-Ghid pentru mutarea sitului din `site/` pe Cloudflare Pages, cu domeniul `freehtml.dev`.
-Tot ce e mai jos e verificat pe DNS-ul public la data de **2026-10-15**.
+Ghid pentru publicarea sitului din `site/` pe Cloudflare, pentru domeniul `freehtml.dev`.
 
----
+Valorile specifice infrastructurii (IP-uri, furnizorul de hosting, serverul de e-mail) nu sunt scrise în repository. Acolo unde apar, folosește placeholderele din tabelul de mai jos.
 
-## 0. Starea reală a domeniului (înainte să atingi ceva)
+| Placeholder | Ce reprezintă |
+|---|---|
+| `<IP-MAIL>` | adresa IPv4 a serverului de e-mail, cea din înregistrarea `A mail` din zona veche |
+| `<NS-VECHI-1>`, `<NS-VECHI-2>` | nameserverele actuale ale domeniului, la registrator |
+| `<NS-CF-1>`, `<NS-CF-2>` | nameserverele primite de la Cloudflare la adăugarea zonei |
 
-| Ce | Valoare curentă | Ce înseamnă |
-|---|---|---|
-| Nameservere | `ns3.extreme-prohosting.com`, `ns4.extreme-prohosting.com` | Zona **NU** e încă pe Cloudflare. Domeniul e administrat de extreme-prohosting. |
-| `A @` | `176.9.52.113` (Hetzner) | Un server de hosting clasic răspunde acum pe domeniu. |
-| `A mail` | `176.9.52.113` | Același server. |
-| `MX` | `0 freehtml.dev` | **Emailul e live pe acest domeniu**, servit de același server. |
-| `TXT` (SPF) | `v=spf1 +a +mx +ip4:176.9.52.113 ~all` | Există configurare de email (SPF). Verifică și `_dmarc` / `default._domainkey` în panoul vechi. |
-
-**Consecința importantă:** migrarea nameserverelor nu e doar „pun situl pe Cloudflare”,
-ci o mutare care poate **opri emailul** dacă sari peste pasul 2. Fă pașii în ordine.
+**Regula de bază:** emailul se mută înainte de nameserverele. Fă pașii în ordinea de mai jos. Dacă sari peste pasul 2, migrarea poate opri e-mailul domeniului.
 
 ---
 
-## UPDATE 2026-10-15 — zona e ACTIVĂ pe Cloudflare. Trei lucruri de făcut acum
+## 0. Inventar înainte de orice modificare
 
-Verificat din DNS-ul public după activare:
+Înainte să atingi ceva, notează înregistrările existente din panoul DNS actual:
 
-| Înregistrare | Ce am găsit | Corect |
-|---|---|---|
-| `SOA` | `carl.ns.cloudflare.com` | ✅ zona e activă (NS-ul la parent `.dev` se propagă încă câteva ore — normal) |
-| `A mail` | `104.21.38.92` / `172.67.221.122` = **IP-uri de proxy Cloudflare** | ❌ înregistrarea `mail` a fost importată **proxată (nor portocaliu)**. SMTP-ul nu merge prin proxy → **pune-o DNS-only (nor gri)** |
-| `MX` | `0 freehtml.dev` (apex, proxat) | ❌ schimbă-l în `mail.freehtml.dev`, prioritate `0` |
-| `TXT` SPF | `v=spf1 +a +mx +ip4:176.9.52.113 ~all` | ✅ rămâne valid și după corecții (`+mx` și `+ip4` acoperă serverul) |
-| `TXT _dmarc` | `v=DMARC1; p=none;` | ✅ importat corect |
-| `TXT default._domainkey` | cheia DKIM completă | ✅ importat corect — emailul semnat continuă să funcționeze |
-| `A @` | proxat, încă `176.9.52.113` dedesubt | ⏳ se înlocuiește cu CNAME-ul Pages la pasul 6 |
-
-**De făcut în dashboard, în ordinea asta (2 minute):**
-
-1. **DNS → Records → `mail`** → Edit → **Proxy status: OFF (DNS only)** → Save.
-   Trebuie să rezolve din nou la `176.9.52.113`, nu la IP-uri Cloudflare.
-2. **DNS → Records → `MX`** → Edit → Mail server: `mail.freehtml.dev`, prioritate `0` → Save.
-3. Test: `dig MX freehtml.dev +short` → `0 mail.freehtml.dev`;
-   `dig A mail.freehtml.dev +short` → `176.9.52.113`. Trimite-ți un email de test
-   (Gmail → tine) și confirmă livrarea.
-
-Abia după ce emailul e verde treci la pasul 5 (proiectul Pages) și pasul 6 (custom domain) —
-pentru că pasul 6 înlocuiește `A @` cu un CNAME proxat, moment din care un MX spre apex
-ar fi fost oricum imposibil.
-
-### ✅ Rezultat verificat (2026-10-15, seara)
-
-Corecțiile aplicate: `mail` = A `176.9.52.113` DNS-only (TTL 300), MX `@` → `mail.freehtml.dev`
-prioritate 0, cele 9 subdomenii cPanel trecute pe DNS-only, SSL/TLS = Full.
-**Email de test livrat cu succes** → calea de mail e confirmată funcțional.
-
-Rămâne de îmbunătățit când e liniște (nu blochează nimic):
-- PTR-ul IP-ului e generic (`server2.extreme-prohosting.com`); ideal ar fi `mail.freehtml.dev`
-  (se cere la hosting, nu din Cloudflare) — rată mai bună de livrare către Gmail/Outlook;
-- SRV-urile caldav/cardav + TXT-urile `path=/` țintesc apex-ul: de șters sau re-țintit spre
-  `mail` după migrarea sitului, dacă nu folosești calendare/contacte cPanel.
+| Înregistrare | De ce contează |
+|---|---|
+| `A @` | serverul care răspunde acum pe domeniu |
+| `A mail` | serverul de e-mail (`<IP-MAIL>`), trebuie să rămână DNS-only |
+| `MX` | serverul care primește e-mailul domeniului |
+| `TXT` SPF | autorizează serverele care trimit e-mail |
+| `TXT _dmarc` și `TXT default._domainkey` | semnătura și politica DMARC/DKIM, dacă există |
+| subdomeniile de servicii (calendar, contacte, webmail) | de verificat dacă sunt folosite |
 
 ---
 
 ## 1. Pas cu pas
 
-### Pasul 1 — Adaugă zona în Cloudflare
+### Pasul 1 - Adaugă zona în Cloudflare
 
-1. În dashboard: **Websites → Add a site** → `freehtml.dev` → plan **Free** (e suficient pentru tot ce urmează).
-2. Cloudflare scanează DNS-ul existent și importă înregistrările (`A`, `MX`, `TXT`).
-3. **Nu apăsa încă pe „Done / Continue” la final** — mai întâi pasul 2.
+1. În dashboard: **Websites → Add a site** → `freehtml.dev` → planul **Free**.
+2. Cloudflare scanează DNS-ul existent și importă înregistrările.
+3. **Nu apăsa încă pe „Done / Continue” la final.** Mai întâi fă pasul 2.
 
-### Pasul 2 — Salvează emailul (obligatoriu, înainte de mutarea NS)
+### Pasul 2 - Salvează e-mailul (obligatoriu, înainte de mutarea nameserverelor)
 
-În **DNS → Records** (zona proaspăt importată):
+În **DNS → Records**, pentru zona proaspăt importată:
 
-1. Adaugă/verifică: `A  mail  176.9.52.113`  cu **Proxy OFF** (nor gri, „DNS only”).
-   Emailul nu poate trece niciodată prin proxy-ul Cloudflare — SMTP-ul are nevoie de IP-ul real.
-2. Schimbă înregistrarea `MX` din `freehtml.dev` în `mail.freehtml.dev`, prioritate `0`.
-   *De ce:* după migrare, apex-ul (`freehtml.dev`) devine un CNAME aplatizat către Pages, proxat.
-   Un `MX` care arată spre o înregistrare proxată nu funcționează — serverele de mail nu pot
-   livra SMTP către IP-urile de proxy Cloudflare.
-3. Păstrează `TXT` cu SPF așa cum e (`+ip4:176.9.52.113` acoperă serverul indiferent de nume).
-   Dacă în panoul vechi există și `DKIM` (`default._domainkey.freehtml.dev` etc.) sau `_dmarc`,
-   copiază-le manual în Cloudflare — scanerul nu le vede întotdeauna.
-4. Verificare după pasul 4: `dig MX freehtml.dev +short` trebuie să dea `0 mail.freehtml.dev`,
-   iar `dig A mail.freehtml.dev +short` trebuie să dea `176.9.52.113`. Trimite-ți un email de test.
+1. Verifică `A mail` → `<IP-MAIL>` cu **Proxy OFF** (nor gri, „DNS only”).
+   Traficul SMTP nu trece prin proxy-ul Cloudflare, deci are nevoie de IP-ul real.
+2. Schimbă `MX` din `freehtml.dev` în `mail.freehtml.dev`, prioritate `0`.
+   *De ce:* după migrare, apexul (`freehtml.dev`) devine o înregistrare proxată către Pages.
+   Un `MX` care arată spre o înregistrare proxată nu funcționează, pentru că serverele de e-mail
+   nu pot livra SMTP către IP-urile proxy-ului Cloudflare.
+3. Păstrează SPF așa cum e, dacă `+ip4:<IP-MAIL>` sau `+mx` acoperă serverul. Copiază manual în Cloudflare
+   înregistrările DKIM (`default._domainkey`) și DMARC (`_dmarc`), dacă există. Scanerul nu le vede întotdeauna.
+4. Verificare, după pasul 4 (când propagarea e gata):
+   - `dig MX freehtml.dev +short` → `0 mail.freehtml.dev`
+   - `dig A mail.freehtml.dev +short` → `<IP-MAIL>`
 
-### Pasul 3 — Pregătește apex-ul pentru Pages
+   Trimite un e-mail de test și confirmă livrarea (inclusiv în Gmail sau Outlook).
 
-- Înregistrarea `A @ → 176.9.52.113` importată de Cloudflare **intră în conflict** cu custom domain-ul
-  Pages. O ștergi la pasul 5, când Cloudflare îți cere explicit asta (îți arată el care).
-- Până atunci, las-o proxată OFF sau ON — nu contează, situl vechi rămâne accesibil.
+### Pasul 3 - Pregătește apexul pentru Pages
 
-### Pasul 4 — Mută nameserverele la registrator
+- Înregistrarea `A @` importată de Cloudflare intră în conflict cu domeniul personalizat al Pages.
+  O ștergi la pasul 6, când Cloudflare îți cere explicit asta și îți arată care înregistrare.
+- Până atunci, poți lăsa `A @` cu proxy OFF sau ON. Situl vechi rămâne accesibil.
 
-1. Cloudflare îți dă doi nameserveri (ex. `anna.ns.cloudflare.com` / `bob.ns.cloudflare.com`).
-2. În panoul unde e cumpărat/administrat domeniul (extreme-prohosting sau registratorul),
-   înlocuiește `ns3/ns4.extreme-prohosting.com` cu cei doi de la Cloudflare.
-3. Dacă registratorul are **DNSSEC** activat pe `.dev`: dezactivează-l înainte de mutare,
-   apoi reactivează-l din Cloudflare (îți dă DS records noi). Altfel domeniul poate rezolva „broken”.
-4. Propagare: de obicei minute; oficial până la 24 h. Verifică cu `dig NS freehtml.dev +short`.
+### Pasul 4 - Mută nameserverele la registrator
 
-### Pasul 5 — Creează proiectul Pages din acest repo
+1. Cloudflare îți dă doi nameserveri (`<NS-CF-1>`, `<NS-CF-2>`).
+2. În panoul unde e administrat domeniul, înlocuiește `<NS-VECHI-1>` și `<NS-VECHI-2>` cu cei de la Cloudflare.
+3. Dacă registratorul are **DNSSEC** activat pe `.dev`, dezactivează-l înainte de mutare, apoi reactivează-l
+   din Cloudflare (care îți dă înregistrările DS noi). Altfel, domeniul poate rezolva ca „broken”.
+4. Propagarea durează de obicei minute, oficial până la 24 de ore. Verifică cu `dig NS freehtml.dev +short`.
+
+### Pasul 5 - Creează proiectul Pages din acest repository
 
 **Workers & Pages → Create application → Pages → Connect to Git**
 
 | Câmp | Valoare |
 |---|---|
 | Repository | `TekiDeki/TekiDeki` |
-| Production branch | `main` (după ce branch-ul `arena/…` e combinat în `main`) |
+| Production branch | `main` |
 | Framework preset | `None` |
 | **Root directory** | `site` |
-| Build command | *(gol — nu există build step, e HTML curat)* |
+| Build command | *(gol: nu există pas de build, e HTML static)* |
 | Build output directory | *(gol)* |
 
-Deploy. Primești imediat `https://<nume-proiect>.pages.dev`, cu `_headers`, `_redirects`,
-`robots.txt`, `sitemap.xml` și `404.html` deja active — nu trebuie configurat nimic suplimentar.
+Deploy. Primești imediat o adresă `https://<nume-proiect>.pages.dev`. `_headers`, `_redirects`,
+`robots.txt`, `sitemap.xml` și `404.html` sunt active fără configurare suplimentară.
 
-> **Variantă fără Git** (deploy manual de pe laptopul tău):
+> **Notă:** repository-ul conține și `wrangler.jsonc`, cu `assets.directory` pe `./site`, adică o configurație de Workers cu assets.
+> Înainte de a conecta proiectul, confirmă în dashboard ce produs Cloudflare deservește `main` (Pages sau Workers),
+> ca să nu existe două deploy-uri concurente pentru același site.
+
+> **Variantă fără Git** (deploy manual, de pe calculatorul tău):
 > ```bash
 > npx wrangler login
 > npx wrangler pages deploy site --project-name freehtml-dev
 > ```
-> Fiecare rulare publică o versiune nouă; rollback = un click în dashboard.
+> Fiecare rulare publică o versiune nouă. Rollback-ul e un click în dashboard.
 
-### Pasul 6 — Leagă domeniul
+### Pasul 6 - Leagă domeniul
 
 1. În proiectul Pages: **Custom domains → Add custom domain** → `freehtml.dev`.
-2. Cloudflare detectează conflictul cu `A @` și îți propune să-l înlocuiască cu CNAME-ul către
+2. Cloudflare detectează conflictul cu `A @` și propune înlocuirea lui cu un CNAME către
    `<nume-proiect>.pages.dev` (apex flattening). Acceptă.
-3. SSL: Universal SSL se emite singur în câteva minute; TLS 1.3 + HTTP/3 active automat.
-4. **www:** recomand o Redirect Rule (nu un al doilea custom domain):
+3. SSL: certificatul Universal SSL se emite singur în câteva minute. TLS 1.3 și HTTP/3 sunt active automat.
+4. **www:** recomandat este o regulă de redirect (nu un al doilea domeniu personalizat):
    **Rules → Redirect Rules → Create rule**
    - *When:* `Hostname` `equals` `www.freehtml.dev`
-   - *Then:* `Static` → `https://freehtml.dev/`, păstrează path + query, status **301**
-   Dacă observi că Pages răspunde înainte de regulă, alternativ: adaugă și `www.freehtml.dev`
-   ca al doilea custom domain în Pages.
+   - *Then:* `Static` → `https://freehtml.dev/`, cu path și query păstrate, status **301**
 
-### Pasul 7 — Checklist final
+   Dacă Pages răspunde înaintea regulii, alternativ adaugă `www.freehtml.dev` ca al doilea domeniu personalizat în Pages.
+
+### Pasul 7 - Verificare finală
 
 ```bash
 # situl răspunde și trimite header-ele din _headers
@@ -148,38 +121,34 @@ curl -sI https://freehtml.dev/cheaper | grep -i location
 # 404-ul personalizat
 curl -s -o /dev/null -w "%{http_code}\n" https://freehtml.dev/nu-exista
 
-# emailul a supraviețuit mutării
+# e-mailul a supraviețuit mutării
 dig MX freehtml.dev +short          # → 0 mail.freehtml.dev
-dig A  mail.freehtml.dev +short     # → 176.9.52.113  (și proxy OFF în dashboard)
+dig A  mail.freehtml.dev +short     # → <IP-MAIL>, cu proxy OFF în dashboard
 ```
 
-Apoi: PageSpeed Insights (țintă 100/100/100/100 — situl nu are niciun request terț)
-și ssllabs.com (țintă A+).
+Apoi: PageSpeed Insights (țintă 100/100/100/100; situl nu are niciun request terț) și ssllabs.com (țintă A+).
 
 ---
 
-## 2. Ce primești gratis de la Cloudflare aici
+## 2. Ce primești gratuit de la Cloudflare
 
-- **Pages:** bandwidth nelimitat, 500 build-uri/lună, deploy-uri cu URL propriu + rollback.
-- **Edge:** CDN global, Brotli, HTTP/3, TLS 1.3, DDoS basic — fără niciun config.
-- **`_headers` / `_redirects`:** respectate automat la fiecare deploy (CSP-ul și 302-urile din repo).
-- **Zone analytics:** statistici de trafic *server-side*, fără niciun script în pagină —
-  singura formă de „analitică” care nu contrazice principiul „zero tracking”.
-  (Cloudflare Web Analytics ar băga un script terț în pagină → nu-l folosi.)
-- **Redirect Rules / Cache Rules:** pentru www→apex și orice scurtătură viitoare.
+- **Pages:** lățime de bandă nelimitată, 500 de build-uri pe lună, deploy-uri cu URL propriu și rollback.
+- **Edge:** CDN global, Brotli, HTTP/3, TLS 1.3 și protecție DDoS de bază, fără configurare.
+- **`_headers` și `_redirects`:** respectate automat la fiecare deploy (CSP-ul și redirecturile 302 din repository).
+- **Statistici de zonă:** trafic măsurat pe server, fără niciun script în pagină. Este singura formă de analitică
+  compatibilă cu principiul „zero tracking”. Cloudflare Web Analytics adaugă un script terț în pagină, deci nu se folosește.
+- **Redirect Rules și Cache Rules:** pentru www → apex și pentru orice scurtătură viitoare.
 
 ## 3. De ce scurtăturile din `_redirects` sunt 302, nu 301
 
-Uneltele rămân canonice pe `tekideki.github.io/…`, unde au service worker, manifest și
-instalare PWA deja funcționale. Un 301 ar învăța browserele și Google că adresa de pe
-GitHub Pages „a dispărut”. Când (dacă) muți uneltele *pe* freehtml.dev, ștergi liniile
-corespunzătoare din `_redirects` și le servești direct din `site/`.
+Uneltele rămân canonice pe `tekideki.github.io/...`, unde sunt deja funcționale service worker-ul, manifestul și
+instalarea ca PWA. Un 301 ar învăța browserele și motoarele de căutare că adresa de pe GitHub Pages a dispărut.
+Când (dacă) o unealtă se mută pe `freehtml.dev`, se șterg liniile ei din `_redirects` și se servește direct din `site/`.
 
 ## 4. Rollback
 
-- **Sit:** fiecare deploy Pages are URL propriu și buton de *Restore*; iar repo-ul e sursa
-  adevărului (`site/` + branch istoric).
-- **Domeniu:** nameserverele pot fi puse înapoi pe `ns3/ns4.extreme-prohosting.com` oricând;
-  vechiul server rămâne neatins până confirmi că emailul și situl merg de pe Cloudflare.
-- **Email:** dacă ceva e în neregulă după mutare, corectezi MX/A `mail` în Cloudflare DNS
-  (propagare în minute, TTL mic recomandat: 300).
+- **Sit:** fiecare deploy Pages are URL propriu și buton de *Restore*. Repository-ul este sursa adevărului (`site/` din `main`).
+- **Domeniu:** nameserverele vechi (notate la pasul 0) pot fi puse înapoi oricând. Serverul vechi rămâne neatins
+  până când e-mailul și situl merg de pe Cloudflare.
+- **E-mail:** dacă ceva nu merge după mutare, corectezi `MX` și `A mail` în Cloudflare DNS.
+  Propagarea durează câteva minute, cu TTL mic recomandat (300 de secunde).
