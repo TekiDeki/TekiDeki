@@ -1,10 +1,14 @@
-# Cloudflare Pages — redirect rules
+# Cloudflare Pages - redirect rules
 # Docs: https://developers.cloudflare.com/pages/configuration/redirects/
 #
 # 302 (not 301) on purpose: the apps stay canonical on tekideki.github.io,
 # where their service workers, manifests and offline installs already live.
 # A 301 would teach browsers (and Google) that the GitHub Pages URL is gone.
+# Unit Atlas has its own repository (TekiDeki/Unit-Converter) and is served
+# from GitHub Pages as well, so /convert is a redirect like all the others.
 
+/convert   https://tekideki.github.io/Unit-Converter/            302
+/convert/  https://tekideki.github.io/Unit-Converter/            302
 /cheaper   https://tekideki.github.io/Which-is-cheaper/          302
 /money     https://tekideki.github.io/Smart-Money-Manager/       302
 /prompts   https://tekideki.github.io/AI-Prompt-Builder/         302

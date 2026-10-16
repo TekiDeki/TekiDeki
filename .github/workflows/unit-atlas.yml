@@ -1,10 +1,10 @@
-name: Unit Atlas tests
+name: Unit Atlas integration tests
 on:
   pull_request:
-    paths: ['site/**', 'tests/**', 'package*.json', '.github/workflows/unit-atlas.yml']
+    paths: ['site/**', 'tests/**', 'docs/**', 'README.md', 'package*.json', '.github/workflows/unit-atlas.yml']
   push:
-    branches: [main, arena/2ddf1e7d-tekideki]
-    paths: ['site/**', 'tests/**', 'package*.json', '.github/workflows/unit-atlas.yml']
+    branches: [main, arena/5c7e4105-unit-converter]
+    paths: ['site/**', 'tests/**', 'docs/**', 'README.md', 'package*.json', '.github/workflows/unit-atlas.yml']
 permissions:
   contents: read
 jobs:
@@ -19,7 +19,7 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npx playwright install --with-deps chromium
-      - name: Browser, conversion and accessibility tests
+      - name: Hub integration, offline shell and live deployment tests
         run: |
           python3 -m http.server 8080 --bind 0.0.0.0 --directory site &
           SERVER_PID=$!

@@ -1,18 +1,17 @@
 /* freeHTML.dev - cache same-origin pages under their own keys.
    External tools keep their own service workers. */
-const VERSION = 'fhd-v6-unit-atlas';
+const VERSION = 'fhd-v7-unit-atlas';
 const SHORTCUTS = [
-  '/cheaper', '/money', '/prompts', '/bmi', '/preview', '/bets',
+  '/convert', '/cheaper', '/money', '/prompts', '/bmi', '/preview', '/bets',
   '/words', '/lorem', '/pass', '/qr', '/img', '/github', '/star'
 ];
 const SHELL = [
-  '/', '/index.html', '/convert/', '/convert/index.html', '/404.html',
+  '/', '/index.html', '/404.html',
   '/manifest.webmanifest', '/assets/favicon.svg', '/assets/icon-192.png',
   '/assets/icon-512.png', '/assets/og.png'
 ];
 function pageKey(path) {
   if (path === '/' || path === '/index.html') return '/index.html';
-  if (['/convert', '/convert/', '/convert/index.html'].includes(path)) return '/convert/index.html';
   return null;
 }
 self.addEventListener('install', event => {

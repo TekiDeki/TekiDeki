@@ -25,7 +25,7 @@ Twelve tools. Twelve real problems. Built to be useful.
 
 <br>
 
-### ⇄ [Unit Atlas · Unit Converter](https://freehtml.dev/convert/)
+### ⇄ [Unit Atlas · Unit Converter](https://tekideki.github.io/Unit-Converter/)
 
 **A world of measures. Made simple.**
 
@@ -33,8 +33,10 @@ Twelve tools. Twelve real problems. Built to be useful.
 
 One standalone HTML file · zero dependencies · precision control · all-unit equivalents · light / dark · offline HTML download
 
-[![Live demo](https://img.shields.io/badge/live-demo-success?style=flat-square)](https://freehtml.dev/convert/)
-[![Source](https://img.shields.io/badge/repo-source-181717?style=flat-square)](site/convert/index.html)
+Lives in its own repository: [TekiDeki/Unit-Converter](https://github.com/TekiDeki/Unit-Converter).
+
+[![Live demo](https://img.shields.io/badge/live-demo-success?style=flat-square&logo=githubpages&logoColor=white)](https://tekideki.github.io/Unit-Converter/)
+[![Source](https://img.shields.io/badge/repo-source-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/TekiDeki/Unit-Converter)
 
 <br>
 
@@ -216,6 +218,7 @@ The priorities behind my tools:
 
 | App | Link |
 |:---:|:---|
+| ⇄ Unit Atlas · Unit Converter | **[tekideki.github.io/Unit-Converter](https://tekideki.github.io/Unit-Converter/)** |
 | 🛒 Which is cheaper? | **[tekideki.github.io/Which-is-cheaper](https://tekideki.github.io/Which-is-cheaper/)** |
 | 💰 Smart Money Manager | **[tekideki.github.io/Smart-Money-Manager](https://tekideki.github.io/Smart-Money-Manager/)** |
 | 🎨 AI Prompt Builder | **[tekideki.github.io/AI-Prompt-Builder](https://tekideki.github.io/AI-Prompt-Builder/)** |
