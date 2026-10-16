@@ -11,7 +11,7 @@ I build small, fast web tools that solve one problem well, with privacy and simp
 Single-file apps. Privacy first. Offline-ready.
 
 [![Website](https://img.shields.io/badge/website-freeHTML.dev-blue?style=flat-square)](https://freehtml.dev/)
-[![Projects](https://img.shields.io/badge/projects-11-brightgreen?style=flat-square)](#-what-im-building)
+[![Projects](https://img.shields.io/badge/projects-12-brightgreen?style=flat-square)](#-what-im-building)
 [![Focus](https://img.shields.io/badge/focus-privacy%20first-brightgreen?style=flat-square)](#-how-i-build)
 [![Made with](https://img.shields.io/badge/made%20with-HTML%20%2F%20CSS%20%2F%20JS-yellow?style=flat-square)](#-how-i-build)
 
@@ -21,7 +21,20 @@ Single-file apps. Privacy first. Offline-ready.
 
 ## 🚀 What I'm building
 
-Eleven tools. Eleven real problems. Built to be useful.
+Twelve tools. Twelve real problems. Built to be useful.
+
+<br>
+
+### ⇄ [Unit Atlas · Unit Converter](https://freehtml.dev/convert/)
+
+**A world of measures. Made simple.**
+
+11 international conversion categories plus Romanian and Serbian land measures, with explicit regional conventions. English, Romanian, Serbian Latin and Serbian Cyrillic. Saved conversions stay in the browser; shareable links carry only the conversion you choose to share.
+
+One standalone HTML file · zero dependencies · precision control · all-unit equivalents · light / dark · offline HTML download
+
+[![Live demo](https://img.shields.io/badge/live-demo-success?style=flat-square)](https://freehtml.dev/convert/)
+[![Source](https://img.shields.io/badge/repo-source-181717?style=flat-square)](site/convert/index.html)
 
 <br>
 
