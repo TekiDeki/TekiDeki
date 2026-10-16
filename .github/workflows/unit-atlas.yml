@@ -1,0 +1,28 @@
+name: Unit Atlas tests
+on:
+  pull_request:
+    paths: ['site/**', 'tests/**', 'package*.json', '.github/workflows/unit-atlas.yml']
+  push:
+    branches: [main, arena/2ddf1e7d-tekideki]
+    paths: ['site/**', 'tests/**', 'package*.json', '.github/workflows/unit-atlas.yml']
+permissions:
+  contents: read
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: Browser, conversion and accessibility tests
+        run: |
+          python3 -m http.server 8080 --bind 0.0.0.0 --directory site &
+          SERVER_PID=$!
+          trap 'kill "$SERVER_PID"' EXIT
+          node -e "const net=require('net');let tries=0;function ready(){const s=net.connect(8080,'127.0.0.1',()=>s.end());s.on('error',()=>{if(++tries>50)process.exit(1);setTimeout(ready,100);});}ready();"
+          npm test

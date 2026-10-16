@@ -1,7 +1,7 @@
 {
-  "name": "freeHTML.dev — small tools, one file, zero tracking",
+  "name": "freeHTML.dev - small tools, one file, zero tracking",
   "short_name": "freeHTML.dev",
-  "description": "Eleven single-file web tools by @TekiDeki. No backend, no analytics, no accounts. Everything runs in your browser and works offline.",
+  "description": "Twelve single-file web tools by @TekiDeki. No backend, no analytics, no accounts. Everything runs in your browser and works offline.",
   "id": "/",
   "start_url": "/",
   "scope": "/",
