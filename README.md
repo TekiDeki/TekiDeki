@@ -8,12 +8,13 @@
 
 I build small, fast web tools that solve one problem well, with privacy and simplicity in mind.
 
-Single-file apps. Privacy first. Offline-ready.
+Vršac, Serbia. Single-file apps. Privacy first. Offline-ready.
 
 [![Website](https://img.shields.io/badge/website-freeHTML.dev-blue?style=flat-square)](https://freehtml.dev/)
 [![Projects](https://img.shields.io/badge/projects-12-brightgreen?style=flat-square)](#-what-im-building)
 [![Focus](https://img.shields.io/badge/focus-privacy%20first-brightgreen?style=flat-square)](#-how-i-build)
 [![Made with](https://img.shields.io/badge/made%20with-HTML%20%2F%20CSS%20%2F%20JS-yellow?style=flat-square)](#-how-i-build)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](LICENSE)
 
 </div>
 
@@ -237,6 +238,6 @@ The priorities behind my tools:
 
 *⭐ If one of these tools saved you three seconds in a grocery aisle - a star costs nothing.*
 
-**Built with ❤️ for the web**
+**Built with ❤️ for the web · [Apache-2.0](LICENSE)**
 
 </div>

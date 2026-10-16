@@ -1,6 +1,6 @@
 /* freeHTML.dev - cache same-origin pages under their own keys.
    External tools keep their own service workers. */
-const VERSION = 'fhd-v7-unit-atlas';
+const VERSION = 'fhd-v8-profile';
 const SHORTCUTS = [
   '/convert', '/cheaper', '/money', '/prompts', '/bmi', '/preview', '/bets',
   '/words', '/lorem', '/pass', '/qr', '/img', '/github', '/star'
