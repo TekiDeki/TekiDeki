@@ -8,7 +8,21 @@ const { chromium } = require('playwright');
 const assert = require('node:assert/strict');
 const base = process.env.ATLAS_BASE || 'http://localhost:8080';
 const APP = 'https://tekideki.github.io/Unit-Converter/';
+const fs = require('node:fs');
+const path = require('node:path');
+const ROOT = path.join(__dirname, '..');
+// Typography rule (docs/unit-atlas.md): project text uses '-', never the long dash.
+function listFiles(dir) {
+ return fs.readdirSync(dir, {withFileTypes: true}).flatMap(entry => {
+  const full = path.join(dir, entry.name);
+  return entry.isDirectory() ? listFiles(full) : [full];
+ });
+}
 (async () => {
+ const EM_DASH = '\u2014';
+ const scanned = [path.join(ROOT, 'README.md'), ...listFiles(path.join(ROOT, 'site')), ...listFiles(path.join(ROOT, 'docs'))];
+ const longDashes = scanned.filter(file => fs.readFileSync(file, 'utf8').includes(EM_DASH)).map(file => path.relative(ROOT, file));
+ assert.deepEqual(longDashes, [], 'long dash (U+2014) found, use "-" instead');
  const browser = await chromium.launch({executablePath: process.env.ATLAS_CHROMIUM_PATH || undefined, args: ['--no-sandbox', '--disable-dev-shm-usage', '--no-zygote'], headless: true});
  const context = await browser.newContext({viewport: {width: 1440, height: 1100}, permissions: ['clipboard-read', 'clipboard-write']});
  const page = await context.newPage();

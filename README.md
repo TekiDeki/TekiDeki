@@ -159,7 +159,7 @@ Generate paragraphs, sentences or an exact word count. Copy the text or download
 
 Generate passwords locally with Web Crypto. Choose length and character sets, reveal only when needed, copy or export TXT after a plaintext warning. No saved passwords, accounts or tracking.
 
-8–128 characters · batches up to 100 · 10 interface languages · estimated entropy · light/dark theme · offline PWA · HTTPS/localhost required
+8-128 characters · batches up to 100 · 10 interface languages · estimated entropy · light/dark theme · offline PWA · HTTPS/localhost required
 
 [![Live demo](https://img.shields.io/badge/live-demo-success?style=flat-square&logo=githubpages&logoColor=white)](https://tekideki.github.io/Password-Generator/)
 [![Repo](https://img.shields.io/badge/repo-source-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/TekiDeki/Password-Generator)
@@ -177,7 +177,7 @@ QR + EAN/UPC/Code 128/DataMatrix · Open Food Facts enrichment with local cache 
 
 [![Live demo](https://img.shields.io/badge/live-demo-success?style=flat-square&logo=githubpages&logoColor=white)](https://tekideki.github.io/QR-Scanner/)
 [![Repo](https://img.shields.io/badge/repo-source-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/TekiDeki/QR-Scanner)
-[![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](https://github.com/TekiDeki/QR-Scanner/blob/main/LI
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](https://github.com/TekiDeki/QR-Scanner/blob/main/LICENSE)
 
 <br>
 
@@ -191,7 +191,7 @@ Batch up to 60 images · EXIF and GPS stripped · quality and max width · JPEG 
 
 [![Live demo](https://img.shields.io/badge/live-demo-success?style=flat-square&logo=githubpages&logoColor=white)](https://tekideki.github.io/Image-Compressor/)
 [![Repo](https://img.shields.io/badge/repo-source-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/TekiDeki/Image-Compressor)
-[![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](https://github.com/TekiDeki/Image-Compressor/blob/main/LICENSE)CENSE)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](https://github.com/TekiDeki/Image-Compressor/blob/main/LICENSE)
 
 ---
 
