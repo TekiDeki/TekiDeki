@@ -11,7 +11,7 @@ I build small, fast web tools that solve one problem well, with privacy and simp
 Vršac, Serbia. Single-file apps. Privacy first. Offline-ready.
 
 [![Website](https://img.shields.io/badge/website-freeHTML.dev-blue?style=flat-square)](https://freehtml.dev/)
-[![Projects](https://img.shields.io/badge/projects-14-brightgreen?style=flat-square)](#-what-im-building)
+[![Projects](https://img.shields.io/badge/projects-15-brightgreen?style=flat-square)](#-what-im-building)
 [![Focus](https://img.shields.io/badge/focus-privacy%20first-brightgreen?style=flat-square)](#-how-i-build)
 [![Made with](https://img.shields.io/badge/made%20with-HTML%20%2F%20CSS%20%2F%20JS-yellow?style=flat-square)](#-how-i-build)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](LICENSE)
@@ -23,7 +23,7 @@ Vršac, Serbia. Single-file apps. Privacy first. Offline-ready.
 
 ## 🚀 What I'm building
 
-Fourteen tools. Fourteen real problems. Built to be useful.
+Fifteen tools. Fifteen real problems. Built to be useful.
 
 <br>
 
@@ -217,6 +217,22 @@ Batch up to 60 images · EXIF and GPS stripped · quality and max width · JPEG 
 [![Repo](https://img.shields.io/badge/repo-source-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/TekiDeki/Image-Compressor)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](https://github.com/TekiDeki/Image-Compressor/blob/main/LICENSE)
 
+<br>
+
+### 🔊 [Text-to-Speech Reader](https://github.com/TekiDeki/Text-to-Speech-Reader)
+
+**Listen to text with voices available in your browser.**
+
+Paste text or load a `.txt` file, split it into chapters and listen with browser voices. Choose a voice and adjust the speed. The interface is available in English, Romanian, Serbian Latin and Serbian Cyrillic. Audio-file export is not included.
+
+Local voices process text on the device; online voices may send text to their provider for synthesis. Voice availability depends on the browser, operating system, locale and installed or online voices.
+
+Four interface languages · chapter playback · voice selection · speed control · offline support with a local voice · Apache-2.0
+
+[![Live demo](https://img.shields.io/badge/live-demo-success?style=flat-square&logo=githubpages&logoColor=white)](https://tekideki.github.io/Text-to-Speech-Reader/)
+[![Repo](https://img.shields.io/badge/repo-source-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/TekiDeki/Text-to-Speech-Reader)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](https://github.com/TekiDeki/Text-to-Speech-Reader/blob/main/LICENSE)
+
 ---
 
 ## 🧠 How I build
@@ -227,7 +243,7 @@ The priorities behind my tools:
 |---|---|
 | 🪶 **Dependencies with purpose** | Use well-chosen libraries when they improve quality. Keep them lightweight, bundle locally where practical, and respect their licenses. |
 | 📄 **Single file** | One `index.html` holds the whole app. CSS and JS included. |
-| 🔒 **Privacy first** | All data stays in your browser. No backend, no analytics, no tracking. |
+| 🔒 **Privacy first** | Most tools process data locally. Online speech voices may send text to their provider; each tool explains its own privacy limits. No app backend or analytics. |
 | 📦 **Offline by default** | Service workers & web app manifests. Install it like a native app. |
 | 🚀 **Free to host** | GitHub Pages. No servers, no bills. |
 | 📱 **Mobile-first** | Big touch targets, responsive layout, light & dark themes. |
@@ -256,6 +272,7 @@ The priorities behind my tools:
 | 🔐 Password Generator | **[tekideki.github.io/Password-Generator](https://tekideki.github.io/Password-Generator/)** |
 | 📷 QR Scanner | **[tekideki.github.io/QR-Scanner](https://tekideki.github.io/QR-Scanner/)** |
 | 🖼️ Image Compressor | **[tekideki.github.io/Image-Compressor](https://tekideki.github.io/Image-Compressor/)** |
+| 🔊 Text-to-Speech Reader | **[tekideki.github.io/Text-to-Speech-Reader](https://tekideki.github.io/Text-to-Speech-Reader/)** |
 
 **Personal site:** [freeHTML.dev](https://freehtml.dev/)
 
