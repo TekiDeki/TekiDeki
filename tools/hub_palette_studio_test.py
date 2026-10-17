@@ -21,7 +21,7 @@ SITE = ROOT / "site"
 APP = "https://tekideki.github.io/Palette-Studio/"
 SOURCE = "https://github.com/TekiDeki/Palette-Studio"
 SHORT = "https://freehtml.dev/palette"
-TOTAL_CARDS = 17
+TOTAL_CARDS = 18
 checks = [0]
 
 

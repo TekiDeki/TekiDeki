@@ -21,7 +21,7 @@ SITE = ROOT / "site"
 APP = "https://tekideki.github.io/Cycle-Calendar/"
 SOURCE = "https://github.com/TekiDeki/Cycle-Calendar"
 SHORT = "https://freehtml.dev/cycle-calendar"
-TOTAL_CARDS = 17
+TOTAL_CARDS = 18
 checks = [0]
 
 
@@ -94,7 +94,7 @@ def main():
         # ------------------------------------------------------------- sw version
         sw = (SITE / "sw.js").read_text(encoding="utf-8")
         check("'/cycle-calendar'" in sw, "the service worker knows the /cycle-calendar shortcut")
-        check("fhd-v15-cycle-calendar" in sw, "the cache version mentions the new tool")
+        check("fhd-v16-photo-sheet" in sw, "the cache version mentions the new tool")
 
         # --------------------------------------------------------- four locales
         expected = [
