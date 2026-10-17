@@ -22,6 +22,7 @@
 /pass      https://tekideki.github.io/Password-Generator/        302
 /qr        https://tekideki.github.io/QR-Scanner/                302
 /img       https://tekideki.github.io/Image-Compressor/          302
+/tts-reader https://tekideki.github.io/Text-to-Speech-Reader/ 302
 
 /github    https://github.com/TekiDeki                           302
 /star      https://github.com/TekiDeki/TekiDeki                  302
