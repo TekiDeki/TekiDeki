@@ -11,7 +11,7 @@ I build small, fast web tools that solve one problem well, with privacy and simp
 Vršac, Serbia. Single-file apps. Privacy first. Offline-ready.
 
 [![Website](https://img.shields.io/badge/website-freeHTML.dev-blue?style=flat-square)](https://freehtml.dev/)
-[![Projects](https://img.shields.io/badge/projects-17-brightgreen?style=flat-square)](#-what-im-building)
+[![Projects](https://img.shields.io/badge/projects-18-brightgreen?style=flat-square)](#-what-im-building)
 [![Focus](https://img.shields.io/badge/focus-privacy%20first-brightgreen?style=flat-square)](#-how-i-build)
 [![Made with](https://img.shields.io/badge/made%20with-HTML%20%2F%20CSS%20%2F%20JS-yellow?style=flat-square)](#-how-i-build)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](LICENSE)
@@ -23,7 +23,7 @@ Vršac, Serbia. Single-file apps. Privacy first. Offline-ready.
 
 ## 🚀 What I'm building
 
-Seventeen tools. Seventeen real problems. Built to be useful.
+Eighteen tools. Eighteen real problems. Built to be useful.
 
 <br>
 
@@ -261,6 +261,20 @@ Flow and symptoms · own-average predictions · fertile window and ovulation · 
 [![Repo](https://img.shields.io/badge/repo-source-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/TekiDeki/Cycle-Calendar)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](https://github.com/TekiDeki/Cycle-Calendar/blob/main/LICENSE)
 
+<br>
+
+### 👤 [Photo Sheet](https://github.com/TekiDeki/Photo-Sheet)
+
+**Passport photos, printed at home.**
+
+Crops one photo to the size a document asks for, 35 x 45 mm for Schengen visas and most of Europe, 30 x 40 mm for the Romanian identity card, 51 x 51 mm for the United States, or any custom size. Three guide bands show where the crown, the eyes and the chin belong, taken from the published ICAO and EU ranges. The cropped photo is then laid out on a 10 x 15, 13 x 18 cm or A4 sheet at 300 dpi with corner cut marks, ready to print or download as a PNG that carries its own density. English first, with Romanian and Serbian in both scripts.
+
+Millimetre guides · six photos per 10 x 15 sheet · 300 dpi print and PNG · honest quality chips · 4 languages · offline PWA
+
+[![Live demo](https://img.shields.io/badge/live-demo-success?style=flat-square&logo=githubpages&logoColor=white)](https://tekideki.github.io/Photo-Sheet/)
+[![Repo](https://img.shields.io/badge/repo-source-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/TekiDeki/Photo-Sheet)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](https://github.com/TekiDeki/Photo-Sheet/blob/main/LICENSE)
+
 ---
 
 ## 🧠 How I build
@@ -303,6 +317,7 @@ The priorities behind my tools:
 | 🔊 Text-to-Speech Reader | **[tekideki.github.io/Text-to-Speech-Reader](https://tekideki.github.io/Text-to-Speech-Reader/)** |
 | 🎨 Palette Studio | **[tekideki.github.io/Palette-Studio](https://tekideki.github.io/Palette-Studio/)** |
 | 📅 Cycle Calendar | **[tekideki.github.io/Cycle-Calendar](https://tekideki.github.io/Cycle-Calendar/)** |
+| 👤 Photo Sheet | **[tekideki.github.io/Photo-Sheet](https://tekideki.github.io/Photo-Sheet/)** |
 
 **Personal site:** [freeHTML.dev](https://freehtml.dev/)
 
