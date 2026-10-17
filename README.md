@@ -11,7 +11,7 @@ I build small, fast web tools that solve one problem well, with privacy and simp
 Vršac, Serbia. Single-file apps. Privacy first. Offline-ready.
 
 [![Website](https://img.shields.io/badge/website-freeHTML.dev-blue?style=flat-square)](https://freehtml.dev/)
-[![Projects](https://img.shields.io/badge/projects-16-brightgreen?style=flat-square)](#-what-im-building)
+[![Projects](https://img.shields.io/badge/projects-17-brightgreen?style=flat-square)](#-what-im-building)
 [![Focus](https://img.shields.io/badge/focus-privacy%20first-brightgreen?style=flat-square)](#-how-i-build)
 [![Made with](https://img.shields.io/badge/made%20with-HTML%20%2F%20CSS%20%2F%20JS-yellow?style=flat-square)](#-how-i-build)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](LICENSE)
@@ -23,7 +23,7 @@ Vršac, Serbia. Single-file apps. Privacy first. Offline-ready.
 
 ## 🚀 What I'm building
 
-Sixteen tools. Sixteen real problems. Built to be useful.
+Seventeen tools. Seventeen real problems. Built to be useful.
 
 <br>
 
@@ -247,6 +247,20 @@ Palette from an image · seven harmonies · WCAG AA / AAA · 8 colour blindness 
 [![Repo](https://img.shields.io/badge/repo-source-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/TekiDeki/Palette-Studio)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](https://github.com/TekiDeki/Palette-Studio/blob/main/LICENSE)
 
+<br>
+
+### 📅 [Cycle Calendar](https://github.com/TekiDeki/Cycle-Calendar)
+
+**Your cycle, on your device.**
+
+A menstrual calendar that logs flow, symptoms, mood, notes and basal temperature, groups those days into periods and predicts the next ones from your own averages. The fertile window, the estimated ovulation day and the PMS window are drawn straight onto the calendar, and Insights shows every cycle length, the shortest and longest cycle and the variation between them. Logged days always win over an estimate. English first, with Romanian and Serbian in both scripts.
+
+Flow and symptoms · own-average predictions · fertile window and ovulation · backup export / import · print summary · 4 languages · offline PWA
+
+[![Live demo](https://img.shields.io/badge/live-demo-success?style=flat-square&logo=githubpages&logoColor=white)](https://tekideki.github.io/Cycle-Calendar/)
+[![Repo](https://img.shields.io/badge/repo-source-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/TekiDeki/Cycle-Calendar)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](https://github.com/TekiDeki/Cycle-Calendar/blob/main/LICENSE)
+
 ---
 
 ## 🧠 How I build
@@ -288,6 +302,7 @@ The priorities behind my tools:
 | 🖼️ Image Compressor | **[tekideki.github.io/Image-Compressor](https://tekideki.github.io/Image-Compressor/)** |
 | 🔊 Text-to-Speech Reader | **[tekideki.github.io/Text-to-Speech-Reader](https://tekideki.github.io/Text-to-Speech-Reader/)** |
 | 🎨 Palette Studio | **[tekideki.github.io/Palette-Studio](https://tekideki.github.io/Palette-Studio/)** |
+| 📅 Cycle Calendar | **[tekideki.github.io/Cycle-Calendar](https://tekideki.github.io/Cycle-Calendar/)** |
 
 **Personal site:** [freeHTML.dev](https://freehtml.dev/)
 
