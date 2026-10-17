@@ -11,7 +11,7 @@ I build small, fast web tools that solve one problem well, with privacy and simp
 Vršac, Serbia. Single-file apps. Privacy first. Offline-ready.
 
 [![Website](https://img.shields.io/badge/website-freeHTML.dev-blue?style=flat-square)](https://freehtml.dev/)
-[![Projects](https://img.shields.io/badge/projects-15-brightgreen?style=flat-square)](#-what-im-building)
+[![Projects](https://img.shields.io/badge/projects-16-brightgreen?style=flat-square)](#-what-im-building)
 [![Focus](https://img.shields.io/badge/focus-privacy%20first-brightgreen?style=flat-square)](#-how-i-build)
 [![Made with](https://img.shields.io/badge/made%20with-HTML%20%2F%20CSS%20%2F%20JS-yellow?style=flat-square)](#-how-i-build)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](LICENSE)
@@ -23,7 +23,7 @@ Vršac, Serbia. Single-file apps. Privacy first. Offline-ready.
 
 ## 🚀 What I'm building
 
-Fifteen tools. Fifteen real problems. Built to be useful.
+Sixteen tools. Sixteen real problems. Built to be useful.
 
 <br>
 
@@ -233,6 +233,20 @@ Four interface languages · chapter playback · voice selection · speed control
 [![Repo](https://img.shields.io/badge/repo-source-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/TekiDeki/Text-to-Speech-Reader)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](https://github.com/TekiDeki/Text-to-Speech-Reader/blob/main/LICENSE)
 
+<br>
+
+### 🎨 [Palette Studio](https://github.com/TekiDeki/Palette-Studio)
+
+**Every color, measured. Nothing uploaded.**
+
+Pull a palette out of a photograph with k-means, build harmonies and gradients from it, and measure WCAG 2.x contrast with a suggestion for the nearest accessible color. The same palette is then shown through the eight most common color vision deficiencies, using all 33 matrices published by Machado, Oliveira and Fernandes (2009) applied in linear RGB. Export as CSS variables, Tailwind, SCSS, JSON, SVG or PNG.
+
+Palette from an image · seven harmonies · WCAG AA / AAA · 8 colour blindness simulations · CSS / Tailwind / SCSS / JSON / SVG / PNG · 4 languages · offline PWA
+
+[![Live demo](https://img.shields.io/badge/live-demo-success?style=flat-square&logo=githubpages&logoColor=white)](https://tekideki.github.io/Palette-Studio/)
+[![Repo](https://img.shields.io/badge/repo-source-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/TekiDeki/Palette-Studio)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](https://github.com/TekiDeki/Palette-Studio/blob/main/LICENSE)
+
 ---
 
 ## 🧠 How I build
@@ -273,6 +287,7 @@ The priorities behind my tools:
 | 📷 QR Scanner | **[tekideki.github.io/QR-Scanner](https://tekideki.github.io/QR-Scanner/)** |
 | 🖼️ Image Compressor | **[tekideki.github.io/Image-Compressor](https://tekideki.github.io/Image-Compressor/)** |
 | 🔊 Text-to-Speech Reader | **[tekideki.github.io/Text-to-Speech-Reader](https://tekideki.github.io/Text-to-Speech-Reader/)** |
+| 🎨 Palette Studio | **[tekideki.github.io/Palette-Studio](https://tekideki.github.io/Palette-Studio/)** |
 
 **Personal site:** [freeHTML.dev](https://freehtml.dev/)
 
