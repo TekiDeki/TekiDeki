@@ -11,7 +11,7 @@ I build small, fast web tools that solve one problem well, with privacy and simp
 Vršac, Serbia. Single-file apps. Privacy first. Offline-ready.
 
 [![Website](https://img.shields.io/badge/website-freeHTML.dev-blue?style=flat-square)](https://freehtml.dev/)
-[![Projects](https://img.shields.io/badge/projects-13-brightgreen?style=flat-square)](#-what-im-building)
+[![Projects](https://img.shields.io/badge/projects-14-brightgreen?style=flat-square)](#-what-im-building)
 [![Focus](https://img.shields.io/badge/focus-privacy%20first-brightgreen?style=flat-square)](#-how-i-build)
 [![Made with](https://img.shields.io/badge/made%20with-HTML%20%2F%20CSS%20%2F%20JS-yellow?style=flat-square)](#-how-i-build)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](LICENSE)
@@ -23,7 +23,7 @@ Vršac, Serbia. Single-file apps. Privacy first. Offline-ready.
 
 ## 🚀 What I'm building
 
-Twelve tools. Twelve real problems. Built to be useful.
+Fourteen tools. Fourteen real problems. Built to be useful.
 
 <br>
 
@@ -135,6 +135,20 @@ Enter a loan and see the monthly payment, total interest, payoff date and a full
 
 Monthly payment · extra payments with savings · full schedule · balance chart · CSV export · 4 languages · offline PWA · Apache-2.0
 
+### ⚡ [Circuit Lab](https://github.com/TekiDeki/Circuit-Simulator)
+
+**Build it on a breadboard. Press Simulate. See what happens.**
+
+Place batteries, resistors, LEDs, transistors, relays and sensors on a breadboard, then simulate currents, voltages and power. An LED without a resistor burns, and stays burned. Learn with 10 lessons, 60 quiz cards and 12 broken circuits to repair.
+
+Breadboard · 12 part types · burn mechanics · 10 lessons · 60 quiz cards · 12 broken circuits · works on tablets · 4 languages · offline PWA · Apache-2.0
+
+[![Live demo](https://img.shields.io/badge/live-demo-success?style=flat-square&logo=githubpages&logoColor=white)](https://tekideki.github.io/Circuit-Simulator/)
+[![Repo](https://img.shields.io/badge/repo-source-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/TekiDeki/Circuit-Simulator)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](https://github.com/TekiDeki/Circuit-Simulator/blob/main/LICENSE)
+
+<br>
+
 ### 🔤 [LexiGen · Random Word Generator](https://github.com/TekiDeki/Generator-Random-Word)
 
 **Find a word. Start an idea.**
@@ -235,6 +249,7 @@ The priorities behind my tools:
 | ⚖️ BMI Calculator | **[tekideki.github.io/BMI-Calculator](https://tekideki.github.io/BMI-Calculator/)** |
 | 📱 Mobile Preview | **[tekideki.github.io/Mobile-Preview](https://tekideki.github.io/Mobile-Preview/)** |
 | 🏦 Loan & Amortization Calculator | **[tekideki.github.io/Loan-Calculator](https://tekideki.github.io/Loan-Calculator/)** |
+| ⚡ Circuit Lab | **[tekideki.github.io/Circuit-Simulator](https://tekideki.github.io/Circuit-Simulator/)** |
 | 📓 Bet Tracker | **[tekideki.github.io/Bet-Tracker](https://tekideki.github.io/Bet-Tracker/)** |
 | 🔤 LexiGen | **[tekideki.github.io/Generator-Random-Word](https://tekideki.github.io/Generator-Random-Word/)** |
 | ¶ Lorem Ipsum | **[tekideki.github.io/Generator-Lorem-Ipsum](https://tekideki.github.io/Generator-Lorem-Ipsum/)** |
