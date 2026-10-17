@@ -28,7 +28,7 @@ function listFiles(dir) {
  const page = await context.newPage();
  const errors = []; page.on('pageerror', e => errors.push(e.message));
  await page.goto(base + '/');
- assert.equal(await page.locator('.card[data-slug]').count(), 12);
+ assert.equal(await page.locator('.card[data-slug]').count(), 13);
  // the card points at the dedicated repository
  const card = page.locator('.card[data-slug="convert"]');
  assert.equal(await card.count(), 1);
@@ -70,7 +70,7 @@ function listFiles(dir) {
  // offline: the hub opens from the cache, the converter is not served from it
  await context.setOffline(true);
  await page.goto(base + '/');
- assert.equal(await page.locator('.card[data-slug]').count(), 12);
+ assert.equal(await page.locator('.card[data-slug]').count(), 13);
  await page.goto(base + '/convert/').catch(() => {});
  assert.equal(await page.locator('.category').count(), 0);
  await context.setOffline(false);
