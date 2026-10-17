@@ -131,9 +131,9 @@ Record and settle bets, review net profit and settled-bet ROI, and export JSON b
 
 **Find a word. Start an idea.**
 
-Generate random words in ten languages for writing, language practice or creative prompts. Filter by length, copy a word and revisit recent history - all locally.
+Generate random words in four languages for writing, language practice or creative prompts. Filter by length, copy a word and revisit recent history - all locally.
 
-10 languages · strict filters · copy · per-language history · light/dark theme · offline PWA · zero dependencies
+4 languages · strict filters · copy · per-language history · light/dark theme · offline PWA · zero dependencies
 
 [![Live demo](https://img.shields.io/badge/live-demo-success?style=flat-square&logo=githubpages&logoColor=white)](https://tekideki.github.io/Generator-Random-Word/)
 [![Repo](https://img.shields.io/badge/repo-source-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/TekiDeki/Generator-Random-Word)
@@ -147,7 +147,7 @@ Generate random words in ten languages for writing, language practice or creativ
 
 Generate paragraphs, sentences or an exact word count. Copy the text or download a plain TXT file - no accounts, no tracking, no backend.
 
-10 interface languages · 3 length presets · copy & TXT export · light/dark theme · offline PWA · zero dependencies
+4 interface languages · 3 length presets · copy & TXT export · light/dark theme · offline PWA · zero dependencies
 
 [![Live demo](https://img.shields.io/badge/live-demo-success?style=flat-square&logo=githubpages&logoColor=white)](https://tekideki.github.io/Generator-Lorem-Ipsum/)
 [![Repo](https://img.shields.io/badge/repo-source-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/TekiDeki/Generator-Lorem-Ipsum)
@@ -161,7 +161,7 @@ Generate paragraphs, sentences or an exact word count. Copy the text or download
 
 Generate passwords locally with Web Crypto. Choose length and character sets, reveal only when needed, copy or export TXT after a plaintext warning. No saved passwords, accounts or tracking.
 
-8-128 characters · batches up to 100 · 10 interface languages · estimated entropy · light/dark theme · offline PWA · HTTPS/localhost required
+8-128 characters · batches up to 100 · 4 interface languages · estimated entropy · light/dark theme · offline PWA · HTTPS/localhost required
 
 [![Live demo](https://img.shields.io/badge/live-demo-success?style=flat-square&logo=githubpages&logoColor=white)](https://tekideki.github.io/Password-Generator/)
 [![Repo](https://img.shields.io/badge/repo-source-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/TekiDeki/Password-Generator)
