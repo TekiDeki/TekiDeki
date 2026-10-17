@@ -11,7 +11,7 @@ I build small, fast web tools that solve one problem well, with privacy and simp
 Vršac, Serbia. Single-file apps. Privacy first. Offline-ready.
 
 [![Website](https://img.shields.io/badge/website-freeHTML.dev-blue?style=flat-square)](https://freehtml.dev/)
-[![Projects](https://img.shields.io/badge/projects-12-brightgreen?style=flat-square)](#-what-im-building)
+[![Projects](https://img.shields.io/badge/projects-13-brightgreen?style=flat-square)](#-what-im-building)
 [![Focus](https://img.shields.io/badge/focus-privacy%20first-brightgreen?style=flat-square)](#-how-i-build)
 [![Made with](https://img.shields.io/badge/made%20with-HTML%20%2F%20CSS%20%2F%20JS-yellow?style=flat-square)](#-how-i-build)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](LICENSE)
@@ -127,6 +127,14 @@ Record and settle bets, review net profit and settled-bet ROI, and export JSON b
 
 <br>
 
+### 🏦 [Loan & Amortization Calculator](https://github.com/TekiDeki/Loan-Calculator)
+
+**Monthly payment, total interest and a full repayment plan.**
+
+Enter a loan and see the monthly payment, total interest, payoff date and a full schedule. Test extra payments, export CSV. Everything stays in your browser.
+
+Monthly payment · extra payments with savings · full schedule · balance chart · CSV export · 4 languages · offline PWA · Apache-2.0
+
 ### 🔤 [LexiGen · Random Word Generator](https://github.com/TekiDeki/Generator-Random-Word)
 
 **Find a word. Start an idea.**
@@ -226,6 +234,7 @@ The priorities behind my tools:
 | 🎨 AI Prompt Builder | **[tekideki.github.io/AI-Prompt-Builder](https://tekideki.github.io/AI-Prompt-Builder/)** |
 | ⚖️ BMI Calculator | **[tekideki.github.io/BMI-Calculator](https://tekideki.github.io/BMI-Calculator/)** |
 | 📱 Mobile Preview | **[tekideki.github.io/Mobile-Preview](https://tekideki.github.io/Mobile-Preview/)** |
+| 🏦 Loan & Amortization Calculator | **[tekideki.github.io/Loan-Calculator](https://tekideki.github.io/Loan-Calculator/)** |
 | 📓 Bet Tracker | **[tekideki.github.io/Bet-Tracker](https://tekideki.github.io/Bet-Tracker/)** |
 | 🔤 LexiGen | **[tekideki.github.io/Generator-Random-Word](https://tekideki.github.io/Generator-Random-Word/)** |
 | ¶ Lorem Ipsum | **[tekideki.github.io/Generator-Lorem-Ipsum](https://tekideki.github.io/Generator-Lorem-Ipsum/)** |
