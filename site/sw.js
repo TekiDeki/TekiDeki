@@ -1,9 +1,9 @@
 /* freeHTML.dev - cache same-origin pages under their own keys.
    External tools keep their own service workers. */
-const VERSION = 'fhd-v13-tts-reader';
+const VERSION = 'fhd-v14-palette-studio';
 const SHORTCUTS = [
   '/convert', '/cheaper', '/money', '/prompts', '/bmi', '/preview', '/bets',
-  '/words', '/lorem', '/pass', '/qr', '/img', '/tts-reader', '/github', '/star'
+  '/words', '/lorem', '/pass', '/qr', '/img', '/tts-reader', '/palette', '/github', '/star'
 ];
 const SHELL = [
   '/', '/index.html', '/404.html',
