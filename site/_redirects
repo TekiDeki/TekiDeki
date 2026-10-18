@@ -26,6 +26,8 @@
 /palette   https://tekideki.github.io/Palette-Studio/        302
 /cycle-calendar https://tekideki.github.io/Cycle-Calendar/ 302
 /photo-sheet https://tekideki.github.io/Photo-Sheet/ 302
+/zones        https://tekideki.github.io/Meeting-Planner/      302
+/zones/       https://tekideki.github.io/Meeting-Planner/      302
 
 /github    https://github.com/TekiDeki                           302
 /star      https://github.com/TekiDeki/TekiDeki                  302
