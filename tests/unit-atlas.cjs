@@ -29,6 +29,18 @@ function listFiles(dir) {
  const errors = []; page.on('pageerror', e => errors.push(e.message));
  await page.goto(base + '/');
  assert.equal(await page.locator('.card[data-slug]').count(), 19);
+ // every number in the copy has to follow the cards, not a typed figure:
+ // the hero button said 16 while the page listed 19.
+ const cardTotal = await page.locator('.card[data-slug]').count();
+ for (const lg of ['en', 'ro', 'sr-latn', 'sr-cyr']) {
+  await page.locator('#langBtn').click();
+  await page.locator('#langList button[data-lang="' + lg + '"]').click();
+  const cta = await page.locator('[data-i18n="hero.cta1"]').innerText();
+  assert.match(cta, new RegExp('\\b' + cardTotal + '\\b'), lg + ': the hero button must quote the real tool count, got ' + cta);
+  assert.equal(await page.locator('#count').innerText(), cardTotal + ' / ' + cardTotal, lg + ': the counter must match the cards');
+ }
+ await page.locator('#langBtn').click();
+ await page.locator('#langList button[data-lang="en"]').click();
  // the card points at the dedicated repository
  const card = page.locator('.card[data-slug="convert"]');
  assert.equal(await card.count(), 1);
