@@ -11,7 +11,7 @@ I build small, fast web tools that solve one problem well, with privacy and simp
 Vršac, Serbia. Single-file apps. Privacy first. Offline-ready.
 
 [![Website](https://img.shields.io/badge/website-freeHTML.dev-blue?style=flat-square)](https://freehtml.dev/)
-[![Projects](https://img.shields.io/badge/projects-18-brightgreen?style=flat-square)](#-what-im-building)
+[![Projects](https://img.shields.io/badge/projects-19-brightgreen?style=flat-square)](#-what-im-building)
 [![Focus](https://img.shields.io/badge/focus-privacy%20first-brightgreen?style=flat-square)](#-how-i-build)
 [![Made with](https://img.shields.io/badge/made%20with-HTML%20%2F%20CSS%20%2F%20JS-yellow?style=flat-square)](#-how-i-build)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](LICENSE)
@@ -23,7 +23,7 @@ Vršac, Serbia. Single-file apps. Privacy first. Offline-ready.
 
 ## 🚀 What I'm building
 
-Eighteen tools. Eighteen real problems. Built to be useful.
+Nineteen tools. Nineteen real problems. Built to be useful.
 
 <br>
 
@@ -275,6 +275,20 @@ Millimetre guides · six photos per 10 x 15 sheet · 300 dpi print and PNG · ho
 [![Repo](https://img.shields.io/badge/repo-source-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/TekiDeki/Photo-Sheet)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](https://github.com/TekiDeki/Photo-Sheet/blob/main/LICENSE)
 
+### 🌍 [Meeting Planner](https://github.com/TekiDeki/Meeting-Planner)
+
+**The hour that works for every city in the room.**
+
+Put the cities of a call side by side and see which hours fall inside working hours for all of them. Columns are cities, rows are hours in the first city, and every cell is coloured by whether it is working time, awake time or the middle of the night. Above the table a single sentence says when everyone is free, or how close you got when nobody is. It handles half hour and quarter hour zones exactly, and it ships no offset table at all: offsets come from the browser's own `Intl` data, so a country changing its daylight saving rules needs no update here. Pick any row to read that hour in every city and copy the message, or send the address of the page, because the cities and the day travel in the link.
+
+Best-hour grid · daylight saving from the browser · half hour zones exact · shareable link · undo · 4 languages · offline PWA
+
+[![Live demo](https://img.shields.io/badge/live-demo-success?style=flat-square&logo=githubpages&logoColor=white)](https://tekideki.github.io/Meeting-Planner/)
+[![Repo](https://img.shields.io/badge/repo-source-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/TekiDeki/Meeting-Planner)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](https://github.com/TekiDeki/Meeting-Planner/blob/main/LICENSE)
+
+<br>
+
 ---
 
 ## 🧠 How I build
@@ -318,6 +332,7 @@ The priorities behind my tools:
 | 🎨 Palette Studio | **[tekideki.github.io/Palette-Studio](https://tekideki.github.io/Palette-Studio/)** |
 | 📅 Cycle Calendar | **[tekideki.github.io/Cycle-Calendar](https://tekideki.github.io/Cycle-Calendar/)** |
 | 👤 Photo Sheet | **[tekideki.github.io/Photo-Sheet](https://tekideki.github.io/Photo-Sheet/)** |
+| 🌍 Meeting Planner | **[tekideki.github.io/Meeting-Planner](https://tekideki.github.io/Meeting-Planner/)** |
 
 **Personal site:** [freeHTML.dev](https://freehtml.dev/)
 
