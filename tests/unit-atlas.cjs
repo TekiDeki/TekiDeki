@@ -28,16 +28,21 @@ function listFiles(dir) {
  const page = await context.newPage();
  const errors = []; page.on('pageerror', e => errors.push(e.message));
  await page.goto(base + '/');
- assert.equal(await page.locator('.card[data-slug]').count(), 21);
  // every number in the copy has to follow the cards, not a typed figure:
  // the hero button said 16 while the page listed 19.
  const cardTotal = await page.locator('.card[data-slug]').count();
+ assert(cardTotal > 0, 'the hub lists no tools at all');
  for (const lg of ['en', 'ro', 'sr-latn', 'sr-cyr']) {
   await page.locator('#langBtn').click();
   await page.locator('#langList button[data-lang="' + lg + '"]').click();
   const cta = await page.locator('[data-i18n="hero.cta1"]').innerText();
   assert.match(cta, new RegExp('\\b' + cardTotal + '\\b'), lg + ': the hero button must quote the real tool count, got ' + cta);
   assert.equal(await page.locator('#count').innerText(), cardTotal + ' / ' + cardTotal, lg + ': the counter must match the cards');
+  assert.equal(await page.locator('#statTools').innerText(), String(cardTotal), lg + ': the hero counter must match the cards');
+  const h2 = await page.locator('#tools-h').innerText();
+  assert(!h2.includes('{n}'), lg + ': a placeholder was left in the section title: ' + h2);
+  const nums = h2.match(/\d+/g) || [];
+  assert(nums.length > 0 && nums.every(n => Number(n) === cardTotal), lg + ': the section title must count like the cards, got ' + h2);
  }
  await page.locator('#langBtn').click();
  await page.locator('#langList button[data-lang="en"]').click();
@@ -82,7 +87,7 @@ function listFiles(dir) {
  // offline: the hub opens from the cache, the converter is not served from it
  await context.setOffline(true);
  await page.goto(base + '/');
- assert.equal(await page.locator('.card[data-slug]').count(), 21);
+ assert.equal(await page.locator('.card[data-slug]').count(), cardTotal, 'offline: the same tools must be listed');
  await page.goto(base + '/convert/').catch(() => {});
  assert.equal(await page.locator('.category').count(), 0);
  await context.setOffline(false);

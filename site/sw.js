@@ -1,6 +1,6 @@
 /* freeHTML.dev - cache same-origin pages under their own keys.
    External tools keep their own service workers. */
-const VERSION = 'fhd-v20-sign-pdf';
+const VERSION = 'fhd-v21-counted';
 const SHORTCUTS = [
   '/convert', '/cheaper', '/money', '/prompts', '/bmi', '/preview', '/bets',
   '/words', '/lorem', '/pass', '/qr', '/img', '/tts-reader', '/palette', '/cycle-calendar', '/photo-sheet', '/zones', '/pdf', '/sign', '/github', '/star'

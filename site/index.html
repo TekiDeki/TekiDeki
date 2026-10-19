@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
 <title>freeHTML.dev - small tools, one file, zero tracking</title>
-<meta name="description" content="Single-file web tools by Kristian Mario Mišković (@TekiDeki). Twenty one small apps: no backend or account, with privacy notes for features that use external providers.">
+<meta name="description" content="Single-file web tools by Kristian Mario Mišković (@TekiDeki). Small apps with no backend or account, and privacy notes for features that use external providers.">
 <link rel="canonical" href="https://freehtml.dev/">
 <meta name="author" content="Kristian Mario Mišković">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#080a0e">
@@ -15,7 +15,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="freeHTML.dev">
 <meta property="og:title" content="freeHTML.dev - small tools, one file, zero tracking">
-<meta property="og:description" content="Twenty single-file web tools. No backend, analytics or accounts. Privacy notes explain when a feature may send data to an external provider.">
+<meta property="og:description" content="Single-file web tools. No backend, analytics or accounts. Privacy notes explain when a feature may send data to an external provider.">
 <meta property="og:url" content="https://freehtml.dev/">
 <meta property="og:image" content="https://freehtml.dev/assets/og.png">
 <meta property="og:image:width" content="1200">
@@ -25,7 +25,7 @@
 <meta property="og:locale:alternate" content="sr_RS">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="freeHTML.dev - small tools, one file, zero tracking">
-<meta name="twitter:description" content="Twenty single-file web tools. No backend, analytics or accounts. Privacy notes explain when a feature may send data to an external provider.">
+<meta name="twitter:description" content="Single-file web tools. No backend, analytics or accounts. Privacy notes explain when a feature may send data to an external provider.">
 <meta name="twitter:image" content="https://freehtml.dev/assets/og.png">
 
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
@@ -511,7 +511,7 @@ footer{border-top:1px solid var(--border-soft);padding:34px 0 44px;margin-top:20
         <div class="hero-cta">
           <a class="btn btn-primary" href="#tools">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
-            <span data-i18n="hero.cta1">Browse the 19 tools</span>
+            <span data-i18n="hero.cta1">Browse the tools</span>
           </a>
           <a class="btn" href="https://github.com/TekiDeki" target="_blank" rel="noopener noreferrer">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1.8a10.2 10.2 0 0 0-3.23 19.88c.51.1.7-.22.7-.49l-.01-1.9c-2.6.53-3.28-.63-3.5-1.2-.12-.3-.63-1.23-1.08-1.48-.37-.2-.9-.68-.02-.7.83-.01 1.42.76 1.62 1.08.95 1.6 2.47 1.15 3.07.88.1-.68.37-1.15.67-1.42-2.3-.26-4.7-1.15-4.7-5.1 0-1.13.4-2.06 1.06-2.79-.1-.26-.46-1.32.1-2.75 0 0 .87-.28 2.85 1.07a9.6 9.6 0 0 1 5.2 0c1.98-1.35 2.85-1.07 2.85-1.07.57 1.43.21 2.49.1 2.75.67.73 1.07 1.65 1.07 2.79 0 3.96-2.4 4.84-4.71 5.1.37.32.7.94.7 1.9l-.01 2.82c0 .27.19.6.7.49A10.2 10.2 0 0 0 12 1.8z"/></svg>
@@ -520,7 +520,7 @@ footer{border-top:1px solid var(--border-soft);padding:34px 0 44px;margin-top:20
         </div>
 
         <div class="stats">
-          <div class="stat"><b>21</b><span data-i18n="stat.tools">tools</span></div>
+          <div class="stat"><b id="statTools"></b><span data-i18n="stat.tools">tools</span></div>
           <div class="stat"><b>1</b><span data-i18n="stat.file">file each</span></div>
           <div class="stat"><b>0</b><span data-i18n="stat.trackers">trackers</span></div>
           <div class="stat"><b>0</b><span data-i18n="stat.cookies">cookies</span></div>
@@ -562,7 +562,7 @@ footer{border-top:1px solid var(--border-soft);padding:34px 0 44px;margin-top:20
     <div class="wrap">
       <div class="sec-head reveal">
         <p class="sec-kicker"><span data-i18n="tools.kicker">The toolbox</span></p>
-        <h2 id="tools-h" data-i18n="tools.h2">Twenty tools. Twenty real problems.</h2>
+        <h2 id="tools-h" data-i18n="tools.h2">{n} tools. {n} real problems.</h2>
         <p data-i18n="tools.lede">Every tool is free. Most are installable; Unit Atlas also downloads as a standalone HTML file. Offline support keeps them useful without a connection. Search in any of the four languages - the index knows them all.</p>
       </div>
 
@@ -583,7 +583,7 @@ footer{border-top:1px solid var(--border-soft);padding:34px 0 44px;margin-top:20
           <button class="chip" type="button" data-filter="media" aria-pressed="false" data-i18n="chips.media">Media</button>
           <button class="chip" type="button" data-filter="health" aria-pressed="false" data-i18n="chips.health">Health</button>
         </div>
-        <p class="count" id="count" aria-live="polite">21 / 21</p>
+        <p class="count" id="count" aria-live="polite"></p>
       </div>
 
       <div class="grid" id="grid">
@@ -1161,7 +1161,7 @@ var I18N = {
     "hero.cta1": "Browse the {n} tools", "hero.cta2": "Source on GitHub",
     "stat.tools": "tools", "stat.file": "file each", "stat.trackers": "trackers", "stat.cookies": "cookies", "stat.langs": "languages",
     "panel.req": "third-party requests:",
-    "tools.kicker": "The toolbox", "tools.h2": "Twenty tools. Twenty real problems.",
+    "tools.kicker": "The toolbox", "tools.h2": "{n} tools. {n} real problems.",
     "zones.tag": "The hour that works for every city in the room.", "zones.desc": "Add the cities and see which hours fall inside working hours for all of them. Offsets come from the browser, so daylight saving is never stale. The cities and the day travel in the link, and nothing is uploaded.", "zones.f1": "best hour", "zones.f2": "daylight saving", "zones.f3": "shareable link", "zones.f4": "works offline", "zones.badge": "local only",
     "pdf.tag": "Merge, split and rotate PDFs without uploading them.", "pdf.desc": "Drop several PDFs or images, put the pages in the order you want, turn the ones that came out sideways, and download one clean file. You can also pull a page range out of the document. Everything happens in the tab: no server, no account.", "pdf.f1": "merge and split", "pdf.f2": "rotate pages", "pdf.f3": "images to PDF", "pdf.f4": "works offline", "pdf.badge": "local only",
     "sign.tag": "Put your signature on a PDF without uploading it.", "sign.desc": "Open a PDF, draw, type or photograph a signature, and drop it on the page. Drag it into place, pull a corner to resize it, add today's date, and download the file with the signature drawn into the page. The document never leaves the tab.", "sign.f1": "draw or type", "sign.f2": "photo of a signature", "sign.f3": "today's date", "sign.f4": "works offline", "sign.badge": "local only",
@@ -1254,7 +1254,7 @@ var I18N = {
     "hero.cta1": "Vezi cele {n} unelte", "hero.cta2": "Codul pe GitHub",
     "stat.tools": "unelte", "stat.file": "fișier fiecare", "stat.trackers": "trackere", "stat.cookies": "cookie-uri", "stat.langs": "limbi",
     "panel.req": "cereri către terți:",
-    "tools.kicker": "Trusa de unelte", "tools.h2": "Douăzeci de unelte. Douăzeci de probleme reale.",
+    "tools.kicker": "Trusa de unelte", "tools.h2": "{n} unelte. {n} probleme reale.",
     "zones.tag": "Ora care merge pentru fiecare oraș din discuție.", "zones.desc": "Adaugi orașele și vezi care ore cad în programul de lucru al tuturor. Diferențele de fus vin din browser, deci ora de vară nu rămâne niciodată în urmă. Orașele și ziua călătoresc în link, iar nimic nu se încarcă.", "zones.f1": "ora cea mai bună", "zones.f2": "ora de vară", "zones.f3": "link de trimis", "zones.f4": "merge offline", "zones.badge": "doar local",
     "pdf.tag": "Unește, taie și rotește PDF-uri fără să le încarci nicăieri.", "pdf.desc": "Trage mai multe PDF-uri sau imagini, pune paginile în ordinea dorită, rotește-le pe cele care au ieșit întoarse și descarcă un singur fișier curat. Poți scoate și un interval de pagini din document. Totul se întâmplă în tab: fără server, fără cont.", "pdf.f1": "unește și taie", "pdf.f2": "rotește pagini", "pdf.f3": "imagini în PDF", "pdf.f4": "merge offline", "pdf.badge": "doar local",
     "sign.tag": "Pune semnătura pe un PDF fără să îl încarci nicăieri.", "sign.desc": "Deschide un PDF, desenează, scrie sau fotografiază o semnătură și pune-o pe pagină. Trage-o la locul ei, trage de un colț ca să o mărești, adaugă data de azi și descarcă fișierul cu semnătura desenată în pagină. Documentul nu părăsește niciodată tabul.", "sign.f1": "desenează sau scrie", "sign.f2": "poză cu semnătura", "sign.f3": "data de azi", "sign.f4": "merge offline", "sign.badge": "doar local",
@@ -1347,7 +1347,7 @@ var I18N = {
     "hero.cta1": "Pogledaj {n} alatki", "hero.cta2": "Izvor na GitHub-u",
     "stat.tools": "alatki", "stat.file": "po jedna datoteka", "stat.trackers": "trakera", "stat.cookies": "kolačića", "stat.langs": "jezika",
     "panel.req": "zahtevi trećim stranama:",
-    "tools.kicker": "Kutija sa alatkama", "tools.h2": "Dvadeset alatki. Dvadeset stvarnih problema.",
+    "tools.kicker": "Kutija sa alatkama", "tools.h2": "{n} alatki. {n} stvarnih problema.",
     "zones.tag": "Čas koji odgovara svakom gradu u razgovoru.", "zones.desc": "Dodaš gradove i vidiš koji časovi padaju u radno vreme svih njih. Razlike u zonama dolaze iz pregledača, pa letnje vreme nikad ne zaostaje. Gradovi i dan putuju u linku, i ništa se ne otprema.", "zones.f1": "najbolji čas", "zones.f2": "letnje vreme", "zones.f3": "link za slanje", "zones.f4": "radi offline", "zones.badge": "samo lokalno",
     "pdf.tag": "Spoji, razdvoji i rotiraj PDF bez otpremanja.", "pdf.desc": "Prevuci više PDF-ova ili slika, poređaj strane kako želiš, okreni one koje su ispale naopako i preuzmi jedan čist fajl. Možeš i da izdvojiš opseg strana iz dokumenta. Sve se dešava u tabu: bez servera, bez naloga.", "pdf.f1": "spajanje i razdvajanje", "pdf.f2": "rotiranje strana", "pdf.f3": "slike u PDF", "pdf.f4": "radi offline", "pdf.badge": "samo lokalno",
     "sign.tag": "Stavi potpis na PDF bez otpremanja.", "sign.desc": "Otvori PDF, nacrtaj, ukucaj ili fotografiši potpis i spusti ga na stranu. Prevuci ga na mesto, povuci ugao da promeniš veličinu, dodaj današnji datum i preuzmi fajl sa potpisom nacrtanim u stranu. Dokument nikad ne napušta tab.", "sign.f1": "crtaj ili kucaj", "sign.f2": "slika potpisa", "sign.f3": "današnji datum", "sign.f4": "radi offline", "sign.badge": "samo lokalno",
@@ -1440,7 +1440,7 @@ var I18N = {
     "hero.cta1": "Погледај {n} алатки", "hero.cta2": "Извор на GitHub-у",
     "stat.tools": "алатки", "stat.file": "по једна датотека", "stat.trackers": "тракера", "stat.cookies": "колачића", "stat.langs": "језика",
     "panel.req": "захтеви трећим странама:",
-    "tools.kicker": "Кутија са алаткама", "tools.h2": "Двадесет алатки. Двадесет стварних проблема.",
+    "tools.kicker": "Кутија са алаткама", "tools.h2": "{n} алатки. {n} стварних проблема.",
     "zones.tag": "Час који одговара сваком граду у разговору.", "zones.desc": "Додаш градове и видиш који часови падају у радно време свих њих. Разлике у зонама долазе из прегледача, па летње време никад не заостаје. Градови и дан путују у линку, и ништа се не отпрема.", "zones.f1": "најбољи час", "zones.f2": "летње време", "zones.f3": "линк за слање", "zones.f4": "ради offline", "zones.badge": "само локално",
     "pdf.tag": "Споји, раздвоји и ротирај PDF без отпремања.", "pdf.desc": "Превуци више PDF-ова или слика, поређај стране како желиш, окрени оне које су испале наопако и преузми један чист фајл. Можеш и да издвојиш опсег страна из документа. Све се дешава у табу: без сервера, без налога.", "pdf.f1": "спајање и раздвајање", "pdf.f2": "ротирање страна", "pdf.f3": "слике у PDF", "pdf.f4": "ради offline", "pdf.badge": "само локално",
     "sign.tag": "Стави потпис на PDF без отпремања.", "sign.desc": "Отвори PDF, нацртај, укуцај или фотографиши потпис и спусти га на страну. Превуци га на место, повуци угао да промениш величину, додај данашњи датум и преузми фајл са потписом нацртаним у страну. Документ никад не напушта таб.", "sign.f1": "цртај или куцај", "sign.f2": "слика потписа", "sign.f3": "данашњи датум", "sign.f4": "ради offline", "sign.badge": "само локално",
@@ -1574,7 +1574,7 @@ var I18N = {
     var total = document.querySelectorAll('.card[data-slug]').length;
     document.querySelectorAll('[data-i18n]').forEach(function (el) {
       var v = L[el.getAttribute('data-i18n')];
-      if (v !== undefined) el.textContent = String(v).replace('{n}', total);
+      if (v !== undefined) el.textContent = String(v).replace(/\{n\}/g, total);
     });
     document.querySelectorAll('[data-i18n-html]').forEach(function (el) {
       var v = L[el.getAttribute('data-i18n-html')];
@@ -1584,6 +1584,11 @@ var I18N = {
       var v = L[el.getAttribute('data-i18n-ph')];
       if (v !== undefined) el.setAttribute('placeholder', v);
     });
+
+    /* the hero counter is a number, so it cannot live in the translation file;
+     * it follows the cards like every other count on the page */
+    var statTools = document.getElementById('statTools');
+    if (statTools) statTools.textContent = total;
 
     if (langLabel) langLabel.textContent = LABEL[lang];
     if (langList) {
