@@ -11,7 +11,7 @@ I build small, fast web tools that solve one problem well, with privacy and simp
 Vršac, Serbia. Single-file apps. Privacy first. Offline-ready.
 
 [![Website](https://img.shields.io/badge/website-freeHTML.dev-blue?style=flat-square)](https://freehtml.dev/)
-[![Projects](https://img.shields.io/badge/projects-19-brightgreen?style=flat-square)](#-what-im-building)
+[![Projects](https://img.shields.io/badge/projects-20-brightgreen?style=flat-square)](#-what-im-building)
 [![Focus](https://img.shields.io/badge/focus-privacy%20first-brightgreen?style=flat-square)](#-how-i-build)
 [![Made with](https://img.shields.io/badge/made%20with-HTML%20%2F%20CSS%20%2F%20JS-yellow?style=flat-square)](#-how-i-build)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](LICENSE)
@@ -23,7 +23,7 @@ Vršac, Serbia. Single-file apps. Privacy first. Offline-ready.
 
 ## 🚀 What I'm building
 
-Nineteen tools. Nineteen real problems. Built to be useful.
+Twenty tools. Twenty real problems. Built to be useful.
 
 <br>
 
@@ -287,6 +287,18 @@ Best-hour grid · daylight saving from the browser · half hour zones exact · s
 [![Repo](https://img.shields.io/badge/repo-source-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/TekiDeki/Meeting-Planner)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](https://github.com/TekiDeki/Meeting-Planner/blob/main/LICENSE)
 
+### 📄 [PDF Desk](https://github.com/TekiDeki/PDF-Desk)
+
+**Merge, split, rotate. Nothing leaves this tab.**
+
+Drop several PDFs or images, put the pages in the order you want, turn the ones that came out sideways and delete the ones you do not need, then download a single clean file. The same page list can be used to pull a range out of the document, in your own order and with repeats if you want them. Images become pages on A4, on Letter, or at their own size. It handles the whole job in the tab: no server, no account, no analytics, and the odd dependency is bundled locally, because matching a compression on a contract is not the moment to send it to somebody else's computer.
+
+Merge and split · rotate and delete pages · images to PDF · undo · 4 languages · offline PWA
+
+[![Live demo](https://img.shields.io/badge/live-demo-success?style=flat-square&logo=githubpages&logoColor=white)](https://tekideki.github.io/PDF-Desk/)
+[![Repo](https://img.shields.io/badge/repo-source-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/TekiDeki/PDF-Desk)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](https://github.com/TekiDeki/PDF-Desk/blob/main/LICENSE)
+
 <br>
 
 ---
@@ -333,6 +345,7 @@ The priorities behind my tools:
 | 📅 Cycle Calendar | **[tekideki.github.io/Cycle-Calendar](https://tekideki.github.io/Cycle-Calendar/)** |
 | 👤 Photo Sheet | **[tekideki.github.io/Photo-Sheet](https://tekideki.github.io/Photo-Sheet/)** |
 | 🌍 Meeting Planner | **[tekideki.github.io/Meeting-Planner](https://tekideki.github.io/Meeting-Planner/)** |
+| 📄 PDF Desk | **[tekideki.github.io/PDF-Desk](https://tekideki.github.io/PDF-Desk/)** |
 
 **Personal site:** [freeHTML.dev](https://freehtml.dev/)
 
