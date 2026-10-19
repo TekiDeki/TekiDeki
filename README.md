@@ -11,7 +11,7 @@ I build small, fast web tools that solve one problem well, with privacy and simp
 Vršac, Serbia. Single-file apps. Privacy first. Offline-ready.
 
 [![Website](https://img.shields.io/badge/website-freeHTML.dev-blue?style=flat-square)](https://freehtml.dev/)
-[![Projects](https://img.shields.io/badge/projects-20-brightgreen?style=flat-square)](#-what-im-building)
+[![Projects](https://img.shields.io/badge/projects-21-brightgreen?style=flat-square)](#-what-im-building)
 [![Focus](https://img.shields.io/badge/focus-privacy%20first-brightgreen?style=flat-square)](#-how-i-build)
 [![Made with](https://img.shields.io/badge/made%20with-HTML%20%2F%20CSS%20%2F%20JS-yellow?style=flat-square)](#-how-i-build)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](LICENSE)
@@ -23,7 +23,7 @@ Vršac, Serbia. Single-file apps. Privacy first. Offline-ready.
 
 ## 🚀 What I'm building
 
-Twenty tools. Twenty real problems. Built to be useful.
+Twenty one tools. Twenty one real problems. Built to be useful.
 
 <br>
 
@@ -301,6 +301,20 @@ Merge and split · rotate and delete pages · images to PDF · undo · 4 languag
 
 <br>
 
+### 🖋️ [Sign PDF](https://github.com/TekiDeki/Sign-PDF)
+
+**A signature, in the right place. Nothing leaves this tab.**
+
+Open a PDF, then draw the signature with a finger, type a name in a script face, or upload a photo of the one on paper and let the white background fall away. A click puts it on the page, dragging moves it, and the four corners resize it without stretching the shape. Today's date goes on the same way, in the same ink. The signature is written into the page content, so it stays where it is put, and the signature itself is remembered for the next document while the document is not.
+
+Draw, type or upload · drag and corner resize · today's date · 40 steps of undo · 4 languages · offline PWA
+
+[![Live demo](https://img.shields.io/badge/live-demo-success?style=flat-square&logo=githubpages&logoColor=white)](https://tekideki.github.io/Sign-PDF/)
+[![Repo](https://img.shields.io/badge/repo-source-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/TekiDeki/Sign-PDF)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](https://github.com/TekiDeki/Sign-PDF/blob/main/LICENSE)
+
+<br>
+
 ---
 
 ## 🧠 How I build
@@ -346,6 +360,7 @@ The priorities behind my tools:
 | 👤 Photo Sheet | **[tekideki.github.io/Photo-Sheet](https://tekideki.github.io/Photo-Sheet/)** |
 | 🌍 Meeting Planner | **[tekideki.github.io/Meeting-Planner](https://tekideki.github.io/Meeting-Planner/)** |
 | 📄 PDF Desk | **[tekideki.github.io/PDF-Desk](https://tekideki.github.io/PDF-Desk/)** |
+| 🖋️ Sign PDF | **[tekideki.github.io/Sign-PDF](https://tekideki.github.io/Sign-PDF/)** |
 
 **Personal site:** [freeHTML.dev](https://freehtml.dev/)
 
