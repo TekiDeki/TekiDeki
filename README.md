@@ -11,7 +11,7 @@ I build small, fast web tools that solve one problem well, with privacy and simp
 Vršac, Serbia. Single-file apps. Privacy first. Offline-ready.
 
 [![Website](https://img.shields.io/badge/website-freeHTML.dev-blue?style=flat-square)](https://freehtml.dev/)
-[![Projects](https://img.shields.io/badge/projects-21-brightgreen?style=flat-square)](#-what-im-building)
+[![Projects](https://img.shields.io/badge/projects-single--file%20tools-brightgreen?style=flat-square)](#-what-im-building)
 [![Focus](https://img.shields.io/badge/focus-privacy%20first-brightgreen?style=flat-square)](#-how-i-build)
 [![Made with](https://img.shields.io/badge/made%20with-HTML%20%2F%20CSS%20%2F%20JS-yellow?style=flat-square)](#-how-i-build)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](LICENSE)
@@ -23,7 +23,7 @@ Vršac, Serbia. Single-file apps. Privacy first. Offline-ready.
 
 ## 🚀 What I'm building
 
-Twenty one tools. Twenty one real problems. Built to be useful.
+Small tools, one real problem each. Built to be useful. Every one a single HTML file.
 
 <br>
 
