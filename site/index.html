@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
 <title>freeHTML.dev - small tools, one file, zero tracking</title>
-<meta name="description" content="Single-file web tools by Kristian Mario Mišković (@TekiDeki). Twenty small apps: no backend or account, with privacy notes for features that use external providers.">
+<meta name="description" content="Single-file web tools by Kristian Mario Mišković (@TekiDeki). Twenty one small apps: no backend or account, with privacy notes for features that use external providers.">
 <link rel="canonical" href="https://freehtml.dev/">
 <meta name="author" content="Kristian Mario Mišković">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#080a0e">
@@ -520,7 +520,7 @@ footer{border-top:1px solid var(--border-soft);padding:34px 0 44px;margin-top:20
         </div>
 
         <div class="stats">
-          <div class="stat"><b>20</b><span data-i18n="stat.tools">tools</span></div>
+          <div class="stat"><b>21</b><span data-i18n="stat.tools">tools</span></div>
           <div class="stat"><b>1</b><span data-i18n="stat.file">file each</span></div>
           <div class="stat"><b>0</b><span data-i18n="stat.trackers">trackers</span></div>
           <div class="stat"><b>0</b><span data-i18n="stat.cookies">cookies</span></div>
@@ -583,7 +583,7 @@ footer{border-top:1px solid var(--border-soft);padding:34px 0 44px;margin-top:20
           <button class="chip" type="button" data-filter="media" aria-pressed="false" data-i18n="chips.media">Media</button>
           <button class="chip" type="button" data-filter="health" aria-pressed="false" data-i18n="chips.health">Health</button>
         </div>
-        <p class="count" id="count" aria-live="polite">20 / 20</p>
+        <p class="count" id="count" aria-live="polite">21 / 21</p>
       </div>
 
       <div class="grid" id="grid">
@@ -965,6 +965,26 @@ footer{border-top:1px solid var(--border-soft);padding:34px 0 44px;margin-top:20
           </div>
         </article>
 
+        <article class="card reveal" data-tags="dev text" data-slug="sign" style="--hue:#0f6674">
+          <div class="card-top">
+            <span class="glyph" aria-hidden="true">✒️</span>
+            <div>
+              <h3 class="card-title"><a href="https://tekideki.github.io/Sign-PDF/" target="_blank" rel="noopener noreferrer">Sign PDF</a></h3>
+              <p class="card-tag" data-i18n="sign.tag">Put your signature on a PDF without uploading it.</p>
+            </div>
+          </div>
+          <p class="card-desc" data-i18n="sign.desc">Open a PDF, draw, type or photograph a signature, and drop it on the page. Drag it into place, pull a corner to resize it, add today's date, and download the file with the signature drawn into the page. The document never leaves the tab.</p>
+          <ul class="feats">
+            <li data-i18n="sign.f1">draw or type</li><li data-i18n="sign.f2">photo of a signature</li><li data-i18n="sign.f3">today's date</li><li data-i18n="sign.f4">works offline</li>
+          </ul>
+          <div class="card-foot">
+            <a class="btn btn-sm btn-primary" href="https://tekideki.github.io/Sign-PDF/" target="_blank" rel="noopener noreferrer" data-i18n="open">Open</a>
+            <a class="btn btn-sm" href="https://github.com/TekiDeki/Sign-PDF" target="_blank" rel="noopener noreferrer" data-i18n="src">Source</a>
+            <span class="size" data-i18n="sign.badge">local only</span>
+          </div>
+        </article>
+
+
 
       </div>
 
@@ -1054,6 +1074,7 @@ footer{border-top:1px solid var(--border-soft);padding:34px 0 44px;margin-top:20
         <div class="sc-row"><span class="path">freehtml.dev/photo-sheet</span><span class="arrow" aria-hidden="true">→</span><span class="target">Photo Sheet</span><button class="copy" type="button" data-copy="https://freehtml.dev/photo-sheet" data-i18n="copy.btn">copy</button></div>
         <div class="sc-row"><span class="path">freehtml.dev/zones</span><span class="arrow" aria-hidden="true">→</span><span class="target">Meeting Planner</span><button class="copy" type="button" data-copy="https://freehtml.dev/zones" data-i18n="copy.btn">copy</button></div>
         <div class="sc-row"><span class="path">freehtml.dev/pdf</span><span class="arrow" aria-hidden="true">→</span><span class="target">PDF Desk</span><button class="copy" type="button" data-copy="https://freehtml.dev/pdf" data-i18n="copy.btn">copy</button></div>
+        <div class="sc-row"><span class="path">freehtml.dev/sign</span><span class="arrow" aria-hidden="true">→</span><span class="target">Sign PDF</span><button class="copy" type="button" data-copy="https://freehtml.dev/sign" data-i18n="copy.btn">copy</button></div>
       </div>
       <p class="sc-note mono" data-i18n="sc.note">Unit Atlas now lives in its own repository and is served from tekideki.github.io/Unit-Converter. All shortcuts use 302 redirects to GitHub Pages, where each app manages its own offline support.</p>
     </div>
@@ -1143,6 +1164,7 @@ var I18N = {
     "tools.kicker": "The toolbox", "tools.h2": "Twenty tools. Twenty real problems.",
     "zones.tag": "The hour that works for every city in the room.", "zones.desc": "Add the cities and see which hours fall inside working hours for all of them. Offsets come from the browser, so daylight saving is never stale. The cities and the day travel in the link, and nothing is uploaded.", "zones.f1": "best hour", "zones.f2": "daylight saving", "zones.f3": "shareable link", "zones.f4": "works offline", "zones.badge": "local only",
     "pdf.tag": "Merge, split and rotate PDFs without uploading them.", "pdf.desc": "Drop several PDFs or images, put the pages in the order you want, turn the ones that came out sideways, and download one clean file. You can also pull a page range out of the document. Everything happens in the tab: no server, no account.", "pdf.f1": "merge and split", "pdf.f2": "rotate pages", "pdf.f3": "images to PDF", "pdf.f4": "works offline", "pdf.badge": "local only",
+    "sign.tag": "Put your signature on a PDF without uploading it.", "sign.desc": "Open a PDF, draw, type or photograph a signature, and drop it on the page. Drag it into place, pull a corner to resize it, add today's date, and download the file with the signature drawn into the page. The document never leaves the tab.", "sign.f1": "draw or type", "sign.f2": "photo of a signature", "sign.f3": "today's date", "sign.f4": "works offline", "sign.badge": "local only",
     "tools.lede": "Every tool is free. Most are installable; Unit Atlas also downloads as a standalone HTML file. Offline support keeps them useful without a connection. Search in any of the four languages - the index knows them all.",
     "search.ph": "Search tools… (e.g. password, images, money)",
     "chips.all": "All", "chips.money": "Money", "chips.text": "Text & words", "chips.dev": "Dev & design", "chips.media": "Media", "chips.health": "Health",
@@ -1235,6 +1257,7 @@ var I18N = {
     "tools.kicker": "Trusa de unelte", "tools.h2": "Douăzeci de unelte. Douăzeci de probleme reale.",
     "zones.tag": "Ora care merge pentru fiecare oraș din discuție.", "zones.desc": "Adaugi orașele și vezi care ore cad în programul de lucru al tuturor. Diferențele de fus vin din browser, deci ora de vară nu rămâne niciodată în urmă. Orașele și ziua călătoresc în link, iar nimic nu se încarcă.", "zones.f1": "ora cea mai bună", "zones.f2": "ora de vară", "zones.f3": "link de trimis", "zones.f4": "merge offline", "zones.badge": "doar local",
     "pdf.tag": "Unește, taie și rotește PDF-uri fără să le încarci nicăieri.", "pdf.desc": "Trage mai multe PDF-uri sau imagini, pune paginile în ordinea dorită, rotește-le pe cele care au ieșit întoarse și descarcă un singur fișier curat. Poți scoate și un interval de pagini din document. Totul se întâmplă în tab: fără server, fără cont.", "pdf.f1": "unește și taie", "pdf.f2": "rotește pagini", "pdf.f3": "imagini în PDF", "pdf.f4": "merge offline", "pdf.badge": "doar local",
+    "sign.tag": "Pune semnătura pe un PDF fără să îl încarci nicăieri.", "sign.desc": "Deschide un PDF, desenează, scrie sau fotografiază o semnătură și pune-o pe pagină. Trage-o la locul ei, trage de un colț ca să o mărești, adaugă data de azi și descarcă fișierul cu semnătura desenată în pagină. Documentul nu părăsește niciodată tabul.", "sign.f1": "desenează sau scrie", "sign.f2": "poză cu semnătura", "sign.f3": "data de azi", "sign.f4": "merge offline", "sign.badge": "doar local",
     "tools.lede": "Toate uneltele sunt gratuite. Majoritatea sunt instalabile; Unit Atlas se descarcă și ca fișier HTML autonom. Suportul offline le păstrează utile fără conexiune. Caută în oricare dintre cele patru limbi - indexul le știe pe toate.",
     "search.ph": "Caută unelte… (ex. parole, imagini, bani)",
     "chips.all": "Toate", "chips.money": "Bani", "chips.text": "Text și cuvinte", "chips.dev": "Dev și design", "chips.media": "Media", "chips.health": "Sănătate",
@@ -1327,6 +1350,7 @@ var I18N = {
     "tools.kicker": "Kutija sa alatkama", "tools.h2": "Dvadeset alatki. Dvadeset stvarnih problema.",
     "zones.tag": "Čas koji odgovara svakom gradu u razgovoru.", "zones.desc": "Dodaš gradove i vidiš koji časovi padaju u radno vreme svih njih. Razlike u zonama dolaze iz pregledača, pa letnje vreme nikad ne zaostaje. Gradovi i dan putuju u linku, i ništa se ne otprema.", "zones.f1": "najbolji čas", "zones.f2": "letnje vreme", "zones.f3": "link za slanje", "zones.f4": "radi offline", "zones.badge": "samo lokalno",
     "pdf.tag": "Spoji, razdvoji i rotiraj PDF bez otpremanja.", "pdf.desc": "Prevuci više PDF-ova ili slika, poređaj strane kako želiš, okreni one koje su ispale naopako i preuzmi jedan čist fajl. Možeš i da izdvojiš opseg strana iz dokumenta. Sve se dešava u tabu: bez servera, bez naloga.", "pdf.f1": "spajanje i razdvajanje", "pdf.f2": "rotiranje strana", "pdf.f3": "slike u PDF", "pdf.f4": "radi offline", "pdf.badge": "samo lokalno",
+    "sign.tag": "Stavi potpis na PDF bez otpremanja.", "sign.desc": "Otvori PDF, nacrtaj, ukucaj ili fotografiši potpis i spusti ga na stranu. Prevuci ga na mesto, povuci ugao da promeniš veličinu, dodaj današnji datum i preuzmi fajl sa potpisom nacrtanim u stranu. Dokument nikad ne napušta tab.", "sign.f1": "crtaj ili kucaj", "sign.f2": "slika potpisa", "sign.f3": "današnji datum", "sign.f4": "radi offline", "sign.badge": "samo lokalno",
     "tools.lede": "Sve alatke su besplatne. Većina se može instalirati; Unit Atlas se preuzima i kao samostalan HTML fajl. Offline podrška ih čini korisnim bez veze. Traži na bilo kom od četiri jezika - indeks ih zna sve.",
     "search.ph": "Traži alatke… (npr. lozinka, slike, pare)",
     "chips.all": "Sve", "chips.money": "Pare", "chips.text": "Tekst i reči", "chips.dev": "Razvoj i dizajn", "chips.media": "Mediji", "chips.health": "Zdravlje",
@@ -1419,6 +1443,7 @@ var I18N = {
     "tools.kicker": "Кутија са алаткама", "tools.h2": "Двадесет алатки. Двадесет стварних проблема.",
     "zones.tag": "Час који одговара сваком граду у разговору.", "zones.desc": "Додаш градове и видиш који часови падају у радно време свих њих. Разлике у зонама долазе из прегледача, па летње време никад не заостаје. Градови и дан путују у линку, и ништа се не отпрема.", "zones.f1": "најбољи час", "zones.f2": "летње време", "zones.f3": "линк за слање", "zones.f4": "ради offline", "zones.badge": "само локално",
     "pdf.tag": "Споји, раздвоји и ротирај PDF без отпремања.", "pdf.desc": "Превуци више PDF-ова или слика, поређај стране како желиш, окрени оне које су испале наопако и преузми један чист фајл. Можеш и да издвојиш опсег страна из документа. Све се дешава у табу: без сервера, без налога.", "pdf.f1": "спајање и раздвајање", "pdf.f2": "ротирање страна", "pdf.f3": "слике у PDF", "pdf.f4": "ради offline", "pdf.badge": "само локално",
+    "sign.tag": "Стави потпис на PDF без отпремања.", "sign.desc": "Отвори PDF, нацртај, укуцај или фотографиши потпис и спусти га на страну. Превуци га на место, повуци угао да промениш величину, додај данашњи датум и преузми фајл са потписом нацртаним у страну. Документ никад не напушта таб.", "sign.f1": "цртај или куцај", "sign.f2": "слика потписа", "sign.f3": "данашњи датум", "sign.f4": "ради offline", "sign.badge": "само локално",
     "tools.lede": "Све алатке су бесплатне. Већина се може инсталирати; Unit Atlas се преузима и као самосталан HTML фајл. Offline подршка их чини корисним без везе. Тражи на било ком од четири језика - индекс их зна све.",
     "search.ph": "Тражи алатке… (нпр. лозинка, слике, паре)",
     "chips.all": "Све", "chips.money": "Паре", "chips.text": "Текст и речи", "chips.dev": "Развој и дизајн", "chips.media": "Медији", "chips.health": "Здравље",

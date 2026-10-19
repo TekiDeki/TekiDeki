@@ -1,9 +1,9 @@
 /* freeHTML.dev - cache same-origin pages under their own keys.
    External tools keep their own service workers. */
-const VERSION = 'fhd-v19-pdf-desk';
+const VERSION = 'fhd-v20-sign-pdf';
 const SHORTCUTS = [
   '/convert', '/cheaper', '/money', '/prompts', '/bmi', '/preview', '/bets',
-  '/words', '/lorem', '/pass', '/qr', '/img', '/tts-reader', '/palette', '/cycle-calendar', '/photo-sheet', '/zones', '/pdf', '/github', '/star'
+  '/words', '/lorem', '/pass', '/qr', '/img', '/tts-reader', '/palette', '/cycle-calendar', '/photo-sheet', '/zones', '/pdf', '/sign', '/github', '/star'
 ];
 const SHELL = [
   '/', '/index.html', '/404.html',

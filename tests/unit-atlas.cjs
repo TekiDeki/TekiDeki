@@ -28,7 +28,7 @@ function listFiles(dir) {
  const page = await context.newPage();
  const errors = []; page.on('pageerror', e => errors.push(e.message));
  await page.goto(base + '/');
- assert.equal(await page.locator('.card[data-slug]').count(), 20);
+ assert.equal(await page.locator('.card[data-slug]').count(), 21);
  // every number in the copy has to follow the cards, not a typed figure:
  // the hero button said 16 while the page listed 19.
  const cardTotal = await page.locator('.card[data-slug]').count();
@@ -82,7 +82,7 @@ function listFiles(dir) {
  // offline: the hub opens from the cache, the converter is not served from it
  await context.setOffline(true);
  await page.goto(base + '/');
- assert.equal(await page.locator('.card[data-slug]').count(), 20);
+ assert.equal(await page.locator('.card[data-slug]').count(), 21);
  await page.goto(base + '/convert/').catch(() => {});
  assert.equal(await page.locator('.category').count(), 0);
  await context.setOffline(false);
