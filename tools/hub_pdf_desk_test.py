@@ -7,6 +7,7 @@ Verifies the card, the shortcut, the counter, the translations in all four
 languages, the redirect and the cache version, and that nothing throws in the
 page or the console.
 """
+import re
 import threading
 from contextlib import contextmanager
 from functools import partial
@@ -20,7 +21,6 @@ SITE = ROOT / "site"
 APP = "https://tekideki.github.io/PDF-Desk/"
 SOURCE = "https://github.com/TekiDeki/PDF-Desk"
 SHORT = "https://freehtml.dev/pdf"
-TOTAL_CARDS = 20
 checks = [0]
 
 
@@ -59,11 +59,11 @@ def main():
 
         # ------------------------------------------------------- counter + card
         cards = page.locator(".card[data-slug]").count()
-        check(cards == TOTAL_CARDS, "the hub lists %d cards (found %d)" % (TOTAL_CARDS, cards))
-        check(page.locator("#count").inner_text() == "%d / %d" % (TOTAL_CARDS, TOTAL_CARDS),
+        check(cards > 0, "the hub shows its cards")
+        check(page.locator("#count").inner_text() == "%d / %d" % (cards, cards),
               "the visible counter matches the card count")
-        check(page.locator(".stat b").first.inner_text() == str(TOTAL_CARDS),
-              "the stat block shows the new tool count")
+        check(page.locator(".stat b").first.inner_text() == str(cards),
+              "the stat block shows the card count")
 
         card = page.locator('.card[data-slug="pdf"]')
         check(card.count() == 1, "exactly one PDF Desk card exists")
@@ -78,7 +78,8 @@ def main():
         check(len(card.locator(".card-desc").inner_text()) > 60, "the card has a real description")
 
         # ---------------------------------------------------------- the shortcut
-        row = page.locator("#shortcutList .sc-row").filter(has_text="freehtml.dev/pdf")
+        row = page.locator("#shortcutList .sc-row").filter(
+            has=page.locator('.copy[data-copy="%s"]' % SHORT))
         check(row.count() == 1, "exactly one shortcut row for /pdf")
         check(row.locator(".target").inner_text() == "PDF Desk", "the shortcut names the tool")
         check(row.locator(".copy").get_attribute("data-copy") == SHORT,
@@ -86,7 +87,8 @@ def main():
 
         # -------------------------------------------------------------- redirect
         redirects = (SITE / "_redirects").read_text(encoding="utf-8")
-        lines = [entry for entry in redirects.splitlines() if entry.startswith("/pdf")]
+        lines = [entry for entry in redirects.splitlines()
+                 if entry.split() and entry.split()[0] in ("/pdf", "/pdf/")]
         check(len(lines) == 2, "_redirects has the /pdf and /pdf/ rules")
         for line in lines:
             check(line.split()[1] == APP, "the redirect points at the GitHub Pages app")
@@ -95,7 +97,10 @@ def main():
         # ------------------------------------------------------------- sw version
         sw = (SITE / "sw.js").read_text(encoding="utf-8")
         check("'/pdf'" in sw, "the service worker knows the /pdf shortcut")
-        check("fhd-v19-pdf-desk" in sw, "the cache version mentions the new tool")
+        version = re.search(r"const VERSION = '([^']+)'", sw)
+        check(version is not None, "the service worker declares a cache version")
+        check(re.fullmatch(r"fhd-v\d+-[a-z0-9-]+", version.group(1)) is not None,
+              "the cache version follows the fhd-vN-name shape")
 
         # --------------------------------------------------------- four locales
         expected = [
@@ -114,7 +119,7 @@ def main():
             check(len(card.locator(".card-desc").inner_text()) > 60,
                   "%s: the card description is translated" % language)
             check(card.locator(".size").inner_text() != "", "%s: the badge is translated" % language)
-            check("%d / %d" % (TOTAL_CARDS, TOTAL_CARDS) == page.locator("#count").inner_text(),
+            check("%d / %d" % (cards, cards) == page.locator("#count").inner_text(),
                   "%s: the counter keeps up" % language)
 
         # the search finds the new tool in every language

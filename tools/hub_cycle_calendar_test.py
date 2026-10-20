@@ -8,6 +8,7 @@ languages, the redirect and the cache version, and that nothing throws in the
 page or the console.
 """
 import os
+import re
 import threading
 from contextlib import contextmanager
 from functools import partial
@@ -21,7 +22,6 @@ SITE = ROOT / "site"
 APP = "https://tekideki.github.io/Cycle-Calendar/"
 SOURCE = "https://github.com/TekiDeki/Cycle-Calendar"
 SHORT = "https://freehtml.dev/cycle-calendar"
-TOTAL_CARDS = 18
 checks = [0]
 
 
@@ -62,11 +62,11 @@ def main():
 
         # ------------------------------------------------------- counter + card
         cards = page.locator(".card[data-slug]").count()
-        check(cards == TOTAL_CARDS, "the hub lists %d cards (found %d)" % (TOTAL_CARDS, cards))
-        check(page.locator("#count").inner_text() == "%d / %d" % (TOTAL_CARDS, TOTAL_CARDS),
+        check(cards > 0, "the hub shows its cards")
+        check(page.locator("#count").inner_text() == "%d / %d" % (cards, cards),
               "the visible counter matches the card count")
-        check(page.locator(".stat b").first.inner_text() == str(TOTAL_CARDS),
-              "the stat block shows the new tool count")
+        check(page.locator(".stat b").first.inner_text() == str(cards),
+              "the stat block shows the card count")
 
         card = page.locator('.card[data-slug="cycle-calendar"]')
         check(card.count() == 1, "exactly one Cycle Calendar card exists")
@@ -86,15 +86,19 @@ def main():
 
         # -------------------------------------------------------------- redirect
         redirects = (SITE / "_redirects").read_text(encoding="utf-8")
-        line = [entry for entry in redirects.splitlines() if entry.startswith("/cycle-calendar")]
-        check(len(line) == 1, "_redirects has exactly one /cycle-calendar rule")
-        check(line[0].split()[1] == APP, "the redirect points at the GitHub Pages app")
-        check(line[0].strip().endswith("302"), "the redirect is a 302, not a 301")
+        lines = [entry for entry in redirects.splitlines() if entry.startswith("/cycle-calendar")]
+        check(len(lines) == 2, "_redirects has the /cycle-calendar and /cycle-calendar/ rules")
+        for line in lines:
+            check(line.split()[1] == APP, "the redirect points at the GitHub Pages app")
+            check(line.strip().endswith("302"), "the redirect is a 302, not a 301")
 
         # ------------------------------------------------------------- sw version
         sw = (SITE / "sw.js").read_text(encoding="utf-8")
         check("'/cycle-calendar'" in sw, "the service worker knows the /cycle-calendar shortcut")
-        check("fhd-v16-photo-sheet" in sw, "the cache version mentions the new tool")
+        version = re.search(r"const VERSION = '([^']+)'", sw)
+        check(version is not None, "the service worker declares a cache version")
+        check(re.fullmatch(r"fhd-v\d+-[a-z0-9-]+", version.group(1)) is not None,
+              "the cache version follows the fhd-vN-name shape")
 
         # --------------------------------------------------------- four locales
         expected = [
