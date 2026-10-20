@@ -329,6 +329,34 @@ Link, text, WiFi, vCard, email, phone, SMS · SVG and PNG · A4 sheet · colours
 
 <br>
 
+### 🏷️ [Barcode Generator](https://github.com/TekiDeki/Barcode-Generator)
+
+**Bars that print clean. Nothing leaves the tab.**
+
+A product code, a carton code or a shipping label goes in and a symbol comes out, drawn by the page itself. EAN-13, EAN-8, UPC-A, ITF-14, Code 128 and Code 39, with the check digit worked out for you and a wrong one corrected on the spot. The size is typed in millimetres, so the bars measure the same on screen and on paper. Take vector SVG for a print shop, a PNG at 300 dpi, or paste a list and print a whole A4 sheet of labels with the numbers underneath.
+
+EAN / UPC · Code 128 / 39 · ITF-14 · SVG and PNG at 300 dpi · A4 label sheet · 4 languages · offline PWA
+
+[![Live demo](https://img.shields.io/badge/live-demo-success?style=flat-square&logo=githubpages&logoColor=white)](https://tekideki.github.io/Barcode-Generator/)
+[![Repo](https://img.shields.io/badge/repo-source-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/TekiDeki/Barcode-Generator)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](https://github.com/TekiDeki/Barcode-Generator/blob/main/LICENSE)
+
+<br>
+
+### 📋 [CV Builder](https://github.com/TekiDeki/CV-Builder)
+
+**A CV that prints, without the paywall.**
+
+Fill the form and watch the page fill with you: a classic one column CV, two columns, or a banner across the top, on A4 or Letter, with an optional photo. The download is the print dialog itself, with no account, no watermark and no card at the end. The page is real text with real headings, so the machine that sorts applications can read it too, and the whole CV can be exported as one small JSON file and opened on another computer.
+
+A4 / Letter · classic, two columns, banner · real text, ATS readable · photo optional · JSON copy · 4 languages · offline PWA
+
+[![Live demo](https://img.shields.io/badge/live-demo-success?style=flat-square&logo=githubpages&logoColor=white)](https://tekideki.github.io/CV-Builder/)
+[![Repo](https://img.shields.io/badge/repo-source-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/TekiDeki/CV-Builder)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](https://github.com/TekiDeki/CV-Builder/blob/main/LICENSE)
+
+<br>
+
 ---
 
 ## 🧠 How I build
