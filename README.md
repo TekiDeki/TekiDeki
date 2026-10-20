@@ -315,6 +315,20 @@ Draw, type or upload · drag and corner resize · today's date · 40 steps of un
 
 <br>
 
+### ▦ [QR Generator](https://github.com/TekiDeki/QR-Generator)
+
+**A code that never expires, because no server is behind it.**
+
+A link, a text, a WiFi network, a contact card, an email, a phone number or an SMS goes in and a square comes out, drawn by your own browser. Most free generators keep the code on their server, which is why the download wants an account, why the SVG sits behind a paid plan, and why a leaflet stops working the day somebody cancels a subscription. Here the data is the code: nothing is stored, so there is nothing that can be switched off later. Take SVG for a print shop or PNG up to 2048 px, or paste a list of addresses and print a whole A4 sheet with captions, cut and stick.
+
+Link, text, WiFi, vCard, email, phone, SMS · SVG and PNG · A4 sheet · colours with a contrast warning · logo · 4 languages · offline PWA
+
+[![Live demo](https://img.shields.io/badge/live-demo-success?style=flat-square&logo=githubpages&logoColor=white)](https://tekideki.github.io/QR-Generator/)
+[![Repo](https://img.shields.io/badge/repo-source-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/TekiDeki/QR-Generator)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](https://github.com/TekiDeki/QR-Generator/blob/main/LICENSE)
+
+<br>
+
 ---
 
 ## 🧠 How I build
@@ -361,6 +375,7 @@ The priorities behind my tools:
 | 🌍 Meeting Planner | **[tekideki.github.io/Meeting-Planner](https://tekideki.github.io/Meeting-Planner/)** |
 | 📄 PDF Desk | **[tekideki.github.io/PDF-Desk](https://tekideki.github.io/PDF-Desk/)** |
 | 🖋️ Sign PDF | **[tekideki.github.io/Sign-PDF](https://tekideki.github.io/Sign-PDF/)** |
+| ▦ QR Generator | **[tekideki.github.io/QR-Generator](https://tekideki.github.io/QR-Generator/)** |
 
 **Personal site:** [freeHTML.dev](https://freehtml.dev/)
 
