@@ -59,8 +59,11 @@
   --surface:#10141b;
   --surface-2:#151b24;
   --surface-3:#1b222d;
-  --border:#232c39;
-  --border-soft:#1a222d;
+  /* Hairline cut from the text colour, not from white: the same cool grey as
+     the secondary type, only quieter. Measured against the reference, the line
+     sits at about 70 percent of the brightness of the words beside it. */
+  --border:color-mix(in srgb,var(--muted) 66%,transparent);
+  --border-soft:color-mix(in srgb,var(--muted) 38%,transparent);
   --text:#e9eef5;
   --muted:#9aa7b8;
   --faint:#6d7a8b;
@@ -86,8 +89,8 @@ html[data-theme="light"]{
   --surface:#ffffff;
   --surface-2:#f3f5f8;
   --surface-3:#eaeef3;
-  --border:#dfe4eb;
-  --border-soft:#e7ebf1;
+  --border:color-mix(in srgb,var(--muted) 44%,transparent);
+  --border-soft:color-mix(in srgb,var(--muted) 26%,transparent);
   --text:#0e141c;
   --muted:#596575;
   --faint:#7c8898;
