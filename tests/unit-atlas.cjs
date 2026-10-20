@@ -92,6 +92,23 @@ function listFiles(dir) {
  await page.goto(base + '/convert/').catch(() => {});
  assert.equal(await page.locator('.category').count(), 0);
  await context.setOffline(false);
+ // the site opens dark, whatever the machine prefers, and the switch sticks
+ const fresh = await browser.newContext({viewport: {width: 1280, height: 900}, colorScheme: 'light'});
+ const cold = await fresh.newPage();
+ await cold.goto(base + '/');
+ assert.equal(await cold.getAttribute('html', 'data-theme'), 'dark', 'a light machine still gets the dark site');
+ const metaDark = await cold.getAttribute('meta[name="theme-color"]', 'content');
+ assert.equal(metaDark, '#080a0e', 'the browser chrome matches the dark site, got ' + metaDark);
+ await cold.locator('#themeBtn').click();
+ assert.equal(await cold.getAttribute('html', 'data-theme'), 'light', 'the switch turns the page light');
+ assert.equal(await cold.getAttribute('meta[name="theme-color"]', 'content'), '#f6f7f9', 'the chrome follows the switch');
+ await cold.reload();
+ assert.equal(await cold.getAttribute('html', 'data-theme'), 'light', 'the choice survives a reload');
+ await cold.evaluate(() => localStorage.removeItem('fhd-theme'));
+ await cold.reload();
+ assert.equal(await cold.getAttribute('html', 'data-theme'), 'dark', 'with no choice saved, the site is dark again');
+ await fresh.close();
+
  // the dedicated deployment answers online
  const live = await context.request.get(APP, {timeout: 30000});
  assert.equal(live.status(), 200);

@@ -10,8 +10,7 @@
 <script>
   try {
     var t = localStorage.getItem('fhd-theme');
-    if (t) document.documentElement.setAttribute('data-theme', t);
-    else if (window.matchMedia('(prefers-color-scheme: light)').matches) document.documentElement.setAttribute('data-theme', 'light');
+    document.documentElement.setAttribute('data-theme', t === 'light' ? 'light' : 'dark');
     if (localStorage.getItem('fhd-lang') === 'ro') document.documentElement.setAttribute('lang', 'ro');
   } catch (e) {}
 </script>

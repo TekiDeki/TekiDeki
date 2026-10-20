@@ -8,8 +8,7 @@
 <meta name="description" content="Single-file web tools by Kristian Mario Mišković (@TekiDeki). Small apps with no backend or account, and privacy notes for features that use external providers.">
 <link rel="canonical" href="https://freehtml.dev/">
 <meta name="author" content="Kristian Mario Mišković">
-<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#080a0e">
-<meta name="theme-color" media="(prefers-color-scheme: light)" content="#f6f7f9">
+<meta name="theme-color" content="#080a0e">
 <meta name="color-scheme" content="dark light">
 
 <meta property="og:type" content="website">
@@ -34,12 +33,13 @@
 <link rel="manifest" href="/manifest.webmanifest">
 
 <script>
-  /* Theme + language before first paint: no flash, no layout shift. */
+  /* Theme + language before first paint: no flash, no layout shift.
+   * The site opens dark for everyone. The switch is there for a reader who
+   * wants light, and that choice is the only thing that changes it. */
   (function () {
     try {
       var saved = localStorage.getItem('fhd-theme');
-      var prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-      document.documentElement.setAttribute('data-theme', saved || (prefersLight ? 'light' : 'dark'));
+      document.documentElement.setAttribute('data-theme', saved === 'light' ? 'light' : 'dark');
       var lang = localStorage.getItem('fhd-lang');
       var map = { en: 'en', ro: 'ro', 'sr-latn': 'sr-Latn', 'sr-cyr': 'sr-Cyrl' };
       if (map[lang]) document.documentElement.setAttribute('lang', map[lang]);
@@ -1546,8 +1546,10 @@ var I18N = {
 
   /* ---------- theme ---------- */
   var themeBtn = document.getElementById('themeBtn');
+  var themeMeta = document.querySelector('meta[name="theme-color"]');
   function setTheme(t, save) {
     root.setAttribute('data-theme', t);
+    if (themeMeta) themeMeta.setAttribute('content', t === 'light' ? '#f6f7f9' : '#080a0e');
     if (themeBtn) themeBtn.setAttribute('aria-label', I18N[currentLang()]['a11y.theme']);
     if (save) { try { localStorage.setItem('fhd-theme', t); } catch (e) {} }
   }
@@ -1556,13 +1558,7 @@ var I18N = {
       setTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark', true);
     });
   }
-  try {
-    window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', function (ev) {
-      var saved = null;
-      try { saved = localStorage.getItem('fhd-theme'); } catch (e) {}
-      if (!saved) setTheme(ev.matches ? 'light' : 'dark', false);
-    });
-  } catch (e) {}
+  setTheme(root.getAttribute('data-theme') === 'light' ? 'light' : 'dark', false);
 
   /* ---------- language ---------- */
   var LANG_KEY = 'fhd-lang';
