@@ -31,7 +31,11 @@ function listFiles(dir) {
  // every number in the copy has to follow the cards, not a typed figure:
  // the hero button said 16 while the page listed 19.
  const cardTotal = await page.locator('.card[data-slug]').count();
- assert(cardTotal === 22, 'the hub lists every tool, got ' + cardTotal);
+ // The count is not typed here: every app that has a shortcut in _redirects
+ // must have a card, so the two files have to agree.
+ const apps = new Set([...fs.readFileSync(path.join(ROOT, 'site/_redirects'), 'utf8')
+  .matchAll(/https:\/\/tekideki\.github\.io\/([A-Za-z0-9-]+)\//g)].map(m => m[1]));
+ assert(cardTotal === apps.size, 'cards and shortcuts disagree, cards ' + cardTotal + ', apps ' + apps.size);
  assert(cardTotal > 0, 'the hub lists no tools at all');
  for (const lg of ['en', 'ro', 'sr-latn', 'sr-cyr']) {
   await page.locator('#langBtn').click();
