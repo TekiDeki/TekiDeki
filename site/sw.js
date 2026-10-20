@@ -1,9 +1,9 @@
 /* freeHTML.dev - cache same-origin pages under their own keys.
    External tools keep their own service workers. */
-const VERSION = 'fhd-v25-barcode';
+const VERSION = 'fhd-v26-cv';
 const SHORTCUTS = [
   '/convert', '/cheaper', '/money', '/prompts', '/bmi', '/preview', '/bets',
-  '/words', '/lorem', '/pass', '/qr', '/barcode', '/img', '/tts-reader', '/palette', '/cycle-calendar', '/photo-sheet', '/zones', '/pdf', '/sign', '/github', '/star'
+  '/words', '/lorem', '/pass', '/qr', '/barcode', '/cv', '/img', '/tts-reader', '/palette', '/cycle-calendar', '/photo-sheet', '/zones', '/pdf', '/sign', '/github', '/star'
 ];
 const SHELL = [
   '/', '/index.html', '/404.html',
