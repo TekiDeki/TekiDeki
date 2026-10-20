@@ -404,6 +404,8 @@ The priorities behind my tools:
 | 📄 PDF Desk | **[tekideki.github.io/PDF-Desk](https://tekideki.github.io/PDF-Desk/)** |
 | 🖋️ Sign PDF | **[tekideki.github.io/Sign-PDF](https://tekideki.github.io/Sign-PDF/)** |
 | ▦ QR Generator | **[tekideki.github.io/QR-Generator](https://tekideki.github.io/QR-Generator/)** |
+| 🏷️ Barcode Generator | **[tekideki.github.io/Barcode-Generator](https://tekideki.github.io/Barcode-Generator/)** |
+| 📋 CV Builder | **[tekideki.github.io/CV-Builder](https://tekideki.github.io/CV-Builder/)** |
 
 **Personal site:** [freeHTML.dev](https://freehtml.dev/)
 
