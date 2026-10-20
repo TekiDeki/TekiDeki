@@ -353,6 +353,20 @@ A4 / Letter · classic, two columns, banner · real text, ATS readable · photo 
 
 [![Live demo](https://img.shields.io/badge/live-demo-success?style=flat-square&logo=githubpages&logoColor=white)](https://tekideki.github.io/CV-Builder/)
 [![Repo](https://img.shields.io/badge/repo-source-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/TekiDeki/CV-Builder)
+### 📸 [PDF to Images](https://github.com/TekiDeki/PDF-to-Images)
+
+**Every page as a JPG or PNG, made inside the tab.**
+
+Drop a PDF and take every page back as its own image, at 72, 150 or 300 dots per inch, JPG or PNG, or only the pages you list. The renderer is PDF.js, carried inside the page rather than fetched from a CDN, so a file is read and drawn on your own machine: no upload, no queue, no account, and the tool opens with the network off. The whole set goes down as one ZIP, and the size of the page in pixels is stated before you press the button.
+
+JPG or PNG · 72, 150 or 300 dpi · page ranges · several files at once · one ZIP · locked PDFs · 4 languages · offline PWA
+
+[![Live demo](https://img.shields.io/badge/live-demo-success?style=flat-square&logo=githubpages&logoColor=white)](https://tekideki.github.io/PDF-to-Images/)
+[![Repo](https://img.shields.io/badge/repo-source-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/TekiDeki/PDF-to-Images)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](https://github.com/TekiDeki/PDF-to-Images/blob/main/LICENSE)
+
+<br>
+
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](https://github.com/TekiDeki/CV-Builder/blob/main/LICENSE)
 
 <br>
@@ -406,6 +420,7 @@ The priorities behind my tools:
 | ▦ QR Generator | **[tekideki.github.io/QR-Generator](https://tekideki.github.io/QR-Generator/)** |
 | 🏷️ Barcode Generator | **[tekideki.github.io/Barcode-Generator](https://tekideki.github.io/Barcode-Generator/)** |
 | 📋 CV Builder | **[tekideki.github.io/CV-Builder](https://tekideki.github.io/CV-Builder/)** |
+| 📸 PDF to Images | **[tekideki.github.io/PDF-to-Images](https://tekideki.github.io/PDF-to-Images/)** |
 
 **Personal site:** [freeHTML.dev](https://freehtml.dev/)
 
