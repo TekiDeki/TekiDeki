@@ -853,6 +853,23 @@ footer{border-top:1px solid var(--border-soft);padding:34px 0 44px;margin-top:20
           </div>
         </article>
 
+        <article class="card reveal" data-tags="media text" data-slug="subs" style="--hue:#34d399">
+          <div class="card-top">
+            <span class="glyph" aria-hidden="true">💬</span>
+            <div>
+              <h3 class="card-title"><a href="https://tekideki.github.io/Subtitle-Cleaner/" target="_blank" rel="noopener noreferrer">Subtitle Cleaner</a></h3>
+              <p class="card-tag" data-i18n="subs.tag">Subtitles that open cleanly, fixed in the tab.</p>
+            </div>
+          </div>
+          <p class="card-desc" data-i18n="subs.desc">Drop an SRT or VTT, move the timing, repair the cues that overlap, re-wrap the long lines and take the file back in either format. The page reads the file itself: nothing is uploaded, no account is asked for, and a file saved in the old Windows encoding still opens.</p>
+          <ul class="feats"><li>SRT / VTT</li><li>shift + speed</li><li data-i18n="subs.f3">overlaps fixed</li><li data-i18n="subs.f4">line wrapping</li><li data-i18n="subs.f5">no upload</li></ul>
+          <div class="card-foot">
+            <a class="btn btn-sm btn-primary" href="https://tekideki.github.io/Subtitle-Cleaner/" target="_blank" rel="noopener noreferrer" data-i18n="open">Open</a>
+            <a class="btn btn-sm" href="https://github.com/TekiDeki/Subtitle-Cleaner" target="_blank" rel="noopener noreferrer" data-i18n="src">Source</a>
+            <span class="size" data-i18n="subs.badge">4 languages</span>
+          </div>
+        </article>
+
         <article class="card reveal" data-tags="text" data-slug="cv" style="--hue:#93c5fd">
           <div class="card-top">
             <span class="glyph" aria-hidden="true">📋</span>
@@ -1151,6 +1168,7 @@ footer{border-top:1px solid var(--border-soft);padding:34px 0 44px;margin-top:20
         <div class="sc-row"><span class="path">freehtml.dev/barcode</span><span class="arrow" aria-hidden="true">→</span><span class="target">Barcode Generator</span><button class="copy" type="button" data-copy="https://freehtml.dev/barcode" data-i18n="copy.btn">copy</button></div>
         <div class="sc-row"><span class="path">freehtml.dev/cv</span><span class="arrow" aria-hidden="true">→</span><span class="target">CV Builder</span><button class="copy" type="button" data-copy="https://freehtml.dev/cv" data-i18n="copy.btn">copy</button></div>
         <div class="sc-row"><span class="path">freehtml.dev/pdfimg</span><span class="arrow" aria-hidden="true">→</span><span class="target">PDF to Images</span><button class="copy" type="button" data-copy="https://freehtml.dev/pdfimg" data-i18n="copy.btn">copy</button></div>
+        <div class="sc-row"><span class="path">freehtml.dev/subs</span><span class="arrow" aria-hidden="true">→</span><span class="target">Subtitle Cleaner</span><button class="copy" type="button" data-copy="https://freehtml.dev/subs" data-i18n="copy.btn">copy</button></div>
         <div class="sc-row"><span class="path">freehtml.dev/sign</span><span class="arrow" aria-hidden="true">→</span><span class="target">Sign PDF</span><button class="copy" type="button" data-copy="https://freehtml.dev/sign" data-i18n="copy.btn">copy</button></div>
       </div>
       <p class="sc-note mono" data-i18n="sc.note">Unit Atlas now lives in its own repository and is served from tekideki.github.io/Unit-Converter. All shortcuts use 302 redirects to GitHub Pages, where each app manages its own offline support.</p>
@@ -1285,7 +1303,9 @@ var I18N = {
     "qr.f6": "history + JSON", "qr.badge": "4 languages",
     "barcode.tag": "Bars that print clean. Nothing leaves the tab.", "barcode.desc": "EAN-13, EAN-8, UPC-A, ITF-14, Code 128 and Code 39, drawn as you type, with the check digit worked out for you. Vector SVG for a print shop, PNG at 300 dpi, or a whole A4 sheet of labels.", "barcode.f5": "A4 label sheet", "barcode.badge": "4 languages",
     "cv.tag": "A CV that prints, without the paywall.", "cv.desc": "Fill the form, watch the page, print it as a real PDF. Classic, two columns or a banner across the top, on A4 or Letter, in text a hiring robot can read. No account, no watermark, and the download is the print dialog.", "cv.f5": "no paywall", "cv.badge": "4 languages",
-    "pdfimg.tag": "Every page as a JPG or PNG, made in the tab.", "pdfimg.desc": "Drop a PDF and take every page back as a JPG or PNG at 72, 150 or 300 dpi, or only the pages you list. The pages are drawn by the browser itself, so nothing is uploaded, no account is asked for, and the whole set comes down as one ZIP.", "pdfimg.f5": "one ZIP", "pdfimg.badge": "4 languages",
+    "pdfimg.tag": "Every page as a JPG or PNG, made in the tab.", "pdfimg.desc": "Drop a PDF and take every page back as a JPG or PNG at 72, 150 or 300 dpi, or only the pages you list. The pages are drawn by the browser itself, so nothing is uploaded, no account is asked for, and the whole set comes down as one ZIP.", "pdfimg.f5": "one ZIP",     "pdfimg.badge": "4 languages", "subs.tag": "Subtitles that open cleanly, fixed in the tab.",
+    "subs.desc": "Drop an SRT or VTT, move the timing, repair the cues that overlap, re-wrap the long lines and take the file back in either format. The page reads the file itself: nothing is uploaded, no account is asked for, and a file saved in the old Windows encoding still opens.",
+    "subs.f3": "overlaps fixed", "subs.f4": "line wrapping", "subs.f5": "no upload", "subs.badge": "4 languages",
     "img.tag": "Smaller photos. Without the metadata.",
     "img.desc": "Batch compress and resize images right in the browser, and get them back with EXIF, GPS, camera and timestamp data removed. Download single files or the whole batch as one ZIP.",
     "img.f1": "batch up to 60", "img.f2": "EXIF & GPS stripped", "img.f4": "ZIP download", "img.badge": "4 languages",
@@ -1381,7 +1401,9 @@ var I18N = {
     "qr.f6": "istoric + JSON", "qr.badge": "4 limbi",
     "barcode.tag": "Bare care se tipăresc curat. Nimic nu pleacă din tab.", "barcode.desc": "EAN-13, EAN-8, UPC-A, ITF-14, Code 128 și Code 39, desenate pe măsură ce scrii, cu cifra de control calculată singură. SVG vectorial pentru tipar, PNG la 300 dpi sau o foaie A4 întreagă de etichete.", "barcode.f5": "foaie A4 de etichete", "barcode.badge": "4 limbi",
     "cv.tag": "Un CV care se tipărește, fără paywall.", "cv.desc": "Completezi formularul, vezi pagina, o tipărești ca PDF adevărat. Clasic, două coloane sau un banner sus, pe A4 sau Letter, în text pe care un robot de angajare îl poate citi. Fără cont, fără filigran, iar descărcarea este dialogul de tipărire.", "cv.f5": "fără paywall", "cv.badge": "4 limbi",
-    "pdfimg.tag": "Fiecare pagină ca JPG sau PNG, făcută în tab.", "pdfimg.desc": "Tragi un PDF și iei fiecare pagină înapoi ca JPG sau PNG la 72, 150 sau 300 dpi, sau doar paginile pe care le scrii. Paginile sunt desenate de browser, așa că nimic nu se încarcă, nu se cere cont, iar tot setul coboară ca un singur ZIP.", "pdfimg.f5": "un singur ZIP", "pdfimg.badge": "4 limbi",
+    "pdfimg.tag": "Fiecare pagină ca JPG sau PNG, făcută în tab.", "pdfimg.desc": "Tragi un PDF și iei fiecare pagină înapoi ca JPG sau PNG la 72, 150 sau 300 dpi, sau doar paginile pe care le scrii. Paginile sunt desenate de browser, așa că nimic nu se încarcă, nu se cere cont, iar tot setul coboară ca un singur ZIP.", "pdfimg.f5": "un singur ZIP",     "pdfimg.badge": "4 limbi", "subs.tag": "Subtitrări care se deschid curat, reparate în tab.",
+    "subs.desc": "Tragi un SRT sau VTT, muți timpii, repari replicile care se suprapun, reîmpărți rândurile lungi și iei fișierul înapoi în oricare format. Pagina citește singură fișierul: nimic nu se încarcă, nu se cere cont, iar un fișier salvat în vechea codare Windows se deschide la fel.",
+    "subs.f3": "suprapuneri reparate", "subs.f4": "rânduri reîmpărțite", "subs.f5": "fără încărcare", "subs.badge": "4 limbi",
     "img.tag": "Fotografii mai mici. Fără metadate.",
     "img.desc": "Comprimi și redimensionezi imagini în lot, direct în browser, și le primești înapoi fără EXIF, GPS, cameră și datare. Descarci fișiere individual sau tot lotul într-un ZIP.",
     "img.f1": "lot până la 60", "img.f2": "EXIF și GPS eliminate", "img.f4": "descărcare ZIP", "img.badge": "4 limbi",
@@ -1477,7 +1499,9 @@ var I18N = {
     "qr.f6": "istorija + JSON", "qr.badge": "4 jezika",
     "barcode.tag": "Crte koje se čisto štampaju. Ništa ne izlazi iz taba.", "barcode.desc": "EAN-13, EAN-8, UPC-A, ITF-14, Code 128 i Code 39, crtaju se dok kucaš, a kontrolna cifra se računa sama. Vektorski SVG za štampu, PNG na 300 dpi ili ceo list A4 etiketa.", "barcode.f5": "list A4 etiketa", "barcode.badge": "4 jezika",
     "cv.tag": "CV koji se štampa, bez plaćanja na kraju.", "cv.desc": "Popuniš obrazac, vidiš stranicu i odštampaš je kao pravi PDF. Klasično, u dve kolone ili sa trakom na vrhu, na A4 ili Letter, u tekstu koji robot za zapošljavanje može da pročita. Bez naloga, bez vodenog žiga, a preuzimanje je sam dijalog za štampu.", "cv.f5": "bez plaćanja", "cv.badge": "4 jezika",
-    "pdfimg.tag": "Svaka stranica kao JPG ili PNG, u tabu.", "pdfimg.desc": "Ubaci PDF i uzmi svaku stranicu nazad kao JPG ili PNG na 72, 150 ili 300 dpi, ili samo stranice koje napišeš. Stranice crta sam pregledač, pa se ništa ne otprema, ne traži se nalog, a ceo set silazi kao jedan ZIP.", "pdfimg.f5": "jedan ZIP", "pdfimg.badge": "4 jezika",
+    "pdfimg.tag": "Svaka stranica kao JPG ili PNG, u tabu.", "pdfimg.desc": "Ubaci PDF i uzmi svaku stranicu nazad kao JPG ili PNG na 72, 150 ili 300 dpi, ili samo stranice koje napišeš. Stranice crta sam pregledač, pa se ništa ne otprema, ne traži se nalog, a ceo set silazi kao jedan ZIP.", "pdfimg.f5": "jedan ZIP",     "pdfimg.badge": "4 jezika", "subs.tag": "Titlovi koji se otvaraju čisto, popravljeni u tabu.",
+    "subs.desc": "Ubaci SRT ili VTT, pomeri vreme, popravi titlove koji se preklapaju, prelomi dugačke redove i uzmi fajl nazad u bilo kom formatu. Stranica sama čita fajl: ništa se ne otprema, nalog se ne traži, a fajl sačuvan u starom Windows kodiranju se i dalje otvara.",
+    "subs.f3": "preklapanja popravljena", "subs.f4": "prelomljeni redovi", "subs.f5": "bez otpremanja", "subs.badge": "4 jezika",
     "img.tag": "Manje fotografije. Bez metapodataka.",
     "img.desc": "Grupno sabijaj i menjaj veličinu slika pravo u pregledaču i vraćaju ti se bez EXIF, GPS, podataka kamere i vremena. Preuzmi pojedinačno ili celu grupu kao jedan ZIP.",
     "img.f1": "grupa do 60", "img.f2": "EXIF i GPS uklonjeni", "img.f4": "ZIP preuzimanje", "img.badge": "4 jezika",
@@ -1573,7 +1597,9 @@ var I18N = {
     "qr.f6": "историја + JSON", "qr.badge": "4 језика",
     "barcode.tag": "Црте које се чисто штампају. Ништа не излази из таба.", "barcode.desc": "EAN-13, EAN-8, UPC-A, ITF-14, Code 128 и Code 39, цртају се док куцаш, а контролна цифра се рачуна сама. Векторски SVG за штампу, PNG на 300 dpi или цео лист A4 етикета.", "barcode.f5": "лист A4 етикета", "barcode.badge": "4 језика",
     "cv.tag": "CV који се штампа, без плаћања на крају.", "cv.desc": "Попуниш образац, видиш страницу и одштампаш је као прави PDF. Класично, у две колоне или са траком на врху, на A4 или Letter, у тексту који робот за запошљавање може да прочита. Без налога, без воденог жига, а преузимање је сам дијалог за штампу.", "cv.f5": "без плаћања", "cv.badge": "4 језика",
-    "pdfimg.tag": "Свака страница као JPG или PNG, у табу.", "pdfimg.desc": "Убаци PDF и узми сваку страницу назад као JPG или PNG на 72, 150 или 300 дпи, или само странице које напишеш. Странице црта сам прегледач, па се ништа не отпрема, не тражи се налог, а цео сет силази као један ZIP.", "pdfimg.f5": "један ZIP", "pdfimg.badge": "4 језика",
+    "pdfimg.tag": "Свака страница као JPG или PNG, у табу.", "pdfimg.desc": "Убаци PDF и узми сваку страницу назад као JPG или PNG на 72, 150 или 300 дпи, или само странице које напишеш. Странице црта сам прегледач, па се ништа не отпрема, не тражи се налог, а цео сет силази као један ZIP.", "pdfimg.f5": "један ZIP",     "pdfimg.badge": "4 језика", "subs.tag": "Титлови који се отварају чисто, поправљени у табу.",
+    "subs.desc": "Убаци SRT или VTT, помери време, поправи титлове који се преклапају, преломи дугачке редове и узми фајл назад у било ком формату. Страница сама чита фајл: ништа се не отпрема, налог се не тражи, а фајл сачуван у старом Windows кодирању се и даље отвара.",
+    "subs.f3": "преклапања поправљена", "subs.f4": "преломљени редови", "subs.f5": "без отпремања", "subs.badge": "4 језика",
     "img.tag": "Мање фотографије. Без метаподатака.",
     "img.desc": "Групно сабијај и мењај величину слика право у прегледачу и враћају ти се без EXIF, GPS, података камере и времена. Преузми појединачно или целу групу као један ZIP.",
     "img.f1": "група до 60", "img.f2": "EXIF и GPS уклоњени", "img.f4": "ZIP преузимање", "img.badge": "4 језика",
