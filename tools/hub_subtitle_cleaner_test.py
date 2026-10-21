@@ -102,8 +102,9 @@ def main():
 
         sw = (SITE / "sw.js").read_text(encoding="utf-8")
         check("'/subs'" in sw, "the service worker knows the /subs shortcut")
-        check("subs" in re.search(r"const VERSION = '([^']+)'", sw).group(1),
-              "the cache version mentions the new tool")
+        version = re.search(r"const VERSION = '([^']+)'", sw).group(1)
+        check(re.fullmatch(r"fhd-v\d+-[a-z0-9-]+", version) is not None,
+              "the cache version follows the naming: %s" % version)
 
         expected = [
             ("en", "Subtitles that open cleanly, fixed in the tab."),

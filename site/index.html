@@ -585,6 +585,7 @@ footer{border-top:1px solid var(--border-soft);padding:34px 0 44px;margin-top:20
           <button class="chip" type="button" data-filter="dev" aria-pressed="false" data-i18n="chips.dev">Dev &amp; design</button>
           <button class="chip" type="button" data-filter="media" aria-pressed="false" data-i18n="chips.media">Media</button>
           <button class="chip" type="button" data-filter="health" aria-pressed="false" data-i18n="chips.health">Health</button>
+          <button class="chip" type="button" data-filter="learn" aria-pressed="false" data-i18n="chips.learn">Learn</button>
         </div>
         <p class="count" id="count" aria-live="polite"></p>
       </div>
@@ -1074,7 +1075,22 @@ footer{border-top:1px solid var(--border-soft);padding:34px 0 44px;margin-top:20
           </div>
         </article>
 
-
+        <article class="card reveal" data-tags="learn" data-slug="quiz" style="--hue:#818cf8">
+          <div class="card-top">
+            <span class="glyph" aria-hidden="true">🃏</span>
+            <div>
+              <h3 class="card-title"><a href="https://tekideki.github.io/Quiz-Deck/" target="_blank" rel="noopener noreferrer">Quiz-Deck</a></h3>
+              <p class="card-tag" data-i18n="quiz.tag">Twelve questions a day, each one with its source.</p>
+            </div>
+          </div>
+          <p class="card-desc" data-i18n="quiz.desc">A round of twelve short questions, four answers and one correct, from arithmetic and logic to geography, science, words, history and culture. After every answer come the explanation, the source and the date the bank was checked. The daily round is dealt from the date itself, so everybody gets the same twelve, and the score link carries the challenge on. No account, no upload, no statistics.</p>
+          <ul class="feats"><li data-i18n="quiz.f1">daily round</li><li data-i18n="quiz.f2">a source on every fact</li><li data-i18n="quiz.f3">streak and record</li><li data-i18n="quiz.f4">four languages</li><li data-i18n="quiz.f5">offline</li></ul>
+          <div class="card-foot">
+            <a class="btn btn-sm btn-primary" href="https://tekideki.github.io/Quiz-Deck/" target="_blank" rel="noopener noreferrer" data-i18n="open">Open</a>
+            <a class="btn btn-sm" href="https://github.com/TekiDeki/Quiz-Deck" target="_blank" rel="noopener noreferrer" data-i18n="src">Source</a>
+            <span class="size" data-i18n="quiz.badge">4 languages</span>
+          </div>
+        </article>
 
       </div>
 
@@ -1169,6 +1185,7 @@ footer{border-top:1px solid var(--border-soft);padding:34px 0 44px;margin-top:20
         <div class="sc-row"><span class="path">freehtml.dev/cv</span><span class="arrow" aria-hidden="true">→</span><span class="target">CV Builder</span><button class="copy" type="button" data-copy="https://freehtml.dev/cv" data-i18n="copy.btn">copy</button></div>
         <div class="sc-row"><span class="path">freehtml.dev/pdfimg</span><span class="arrow" aria-hidden="true">→</span><span class="target">PDF to Images</span><button class="copy" type="button" data-copy="https://freehtml.dev/pdfimg" data-i18n="copy.btn">copy</button></div>
         <div class="sc-row"><span class="path">freehtml.dev/subs</span><span class="arrow" aria-hidden="true">→</span><span class="target">Subtitle Cleaner</span><button class="copy" type="button" data-copy="https://freehtml.dev/subs" data-i18n="copy.btn">copy</button></div>
+        <div class="sc-row"><span class="path">freehtml.dev/quiz</span><span class="arrow" aria-hidden="true">→</span><span class="target">Quiz-Deck</span><button class="copy" type="button" data-copy="https://freehtml.dev/quiz" data-i18n="copy.btn">copy</button></div>
         <div class="sc-row"><span class="path">freehtml.dev/sign</span><span class="arrow" aria-hidden="true">→</span><span class="target">Sign PDF</span><button class="copy" type="button" data-copy="https://freehtml.dev/sign" data-i18n="copy.btn">copy</button></div>
       </div>
       <p class="sc-note mono" data-i18n="sc.note">Unit Atlas now lives in its own repository and is served from tekideki.github.io/Unit-Converter. All shortcuts use 302 redirects to GitHub Pages, where each app manages its own offline support.</p>
@@ -1306,6 +1323,10 @@ var I18N = {
     "pdfimg.tag": "Every page as a JPG or PNG, made in the tab.", "pdfimg.desc": "Drop a PDF and take every page back as a JPG or PNG at 72, 150 or 300 dpi, or only the pages you list. The pages are drawn by the browser itself, so nothing is uploaded, no account is asked for, and the whole set comes down as one ZIP.", "pdfimg.f5": "one ZIP",     "pdfimg.badge": "4 languages", "subs.tag": "Subtitles that open cleanly, fixed in the tab.",
     "subs.desc": "Drop an SRT or VTT, move the timing, repair the cues that overlap, re-wrap the long lines and take the file back in either format. The page reads the file itself: nothing is uploaded, no account is asked for, and a file saved in the old Windows encoding still opens.",
     "subs.f3": "overlaps fixed", "subs.f4": "line wrapping", "subs.f5": "no upload", "subs.badge": "4 languages",
+    "quiz.tag": "Twelve questions a day, each one with its source.",
+    "quiz.desc": "A round of twelve short questions, four answers and one correct, from arithmetic and logic to geography, science, words, history and culture. After every answer come the explanation, the source and the date the bank was checked. The daily round is dealt from the date itself, so everybody gets the same twelve, and the score link carries the challenge on. No account, no upload, no statistics.",
+    "quiz.f1": "daily round", "quiz.f2": "a source on every fact", "quiz.f3": "streak and record", "quiz.f4": "four languages", "quiz.f5": "offline", "quiz.badge": "4 languages",
+    "chips.learn": "Learn",
     "img.tag": "Smaller photos. Without the metadata.",
     "img.desc": "Batch compress and resize images right in the browser, and get them back with EXIF, GPS, camera and timestamp data removed. Download single files or the whole batch as one ZIP.",
     "img.f1": "batch up to 60", "img.f2": "EXIF & GPS stripped", "img.f4": "ZIP download", "img.badge": "4 languages",
@@ -1404,6 +1425,10 @@ var I18N = {
     "pdfimg.tag": "Fiecare pagină ca JPG sau PNG, făcută în tab.", "pdfimg.desc": "Tragi un PDF și iei fiecare pagină înapoi ca JPG sau PNG la 72, 150 sau 300 dpi, sau doar paginile pe care le scrii. Paginile sunt desenate de browser, așa că nimic nu se încarcă, nu se cere cont, iar tot setul coboară ca un singur ZIP.", "pdfimg.f5": "un singur ZIP",     "pdfimg.badge": "4 limbi", "subs.tag": "Subtitrări care se deschid curat, reparate în tab.",
     "subs.desc": "Tragi un SRT sau VTT, muți timpii, repari replicile care se suprapun, reîmpărți rândurile lungi și iei fișierul înapoi în oricare format. Pagina citește singură fișierul: nimic nu se încarcă, nu se cere cont, iar un fișier salvat în vechea codare Windows se deschide la fel.",
     "subs.f3": "suprapuneri reparate", "subs.f4": "rânduri reîmpărțite", "subs.f5": "fără încărcare", "subs.badge": "4 limbi",
+    "quiz.tag": "Douăsprezece întrebări pe zi, fiecare cu sursa ei.",
+    "quiz.desc": "O rundă de douăsprezece întrebări scurte, patru variante și una singură bună, de la calcul și logică la geografie, științe, limbă, istorie și cultură. După fiecare răspuns vin explicația, sursa și data la care a fost verificată banca de întrebări. Runda de azi se naște din dată, așa că toți primesc aceleași douăsprezece, iar linkul cu scorul duce provocarea mai departe. Fără cont, fără încărcare, fără statistici.",
+    "quiz.f1": "runda de azi", "quiz.f2": "sursă la fiecare fapt", "quiz.f3": "serie și record", "quiz.f4": "patru limbi", "quiz.f5": "offline", "quiz.badge": "4 limbi",
+    "chips.learn": "Învățare",
     "img.tag": "Fotografii mai mici. Fără metadate.",
     "img.desc": "Comprimi și redimensionezi imagini în lot, direct în browser, și le primești înapoi fără EXIF, GPS, cameră și datare. Descarci fișiere individual sau tot lotul într-un ZIP.",
     "img.f1": "lot până la 60", "img.f2": "EXIF și GPS eliminate", "img.f4": "descărcare ZIP", "img.badge": "4 limbi",
@@ -1502,6 +1527,10 @@ var I18N = {
     "pdfimg.tag": "Svaka stranica kao JPG ili PNG, u tabu.", "pdfimg.desc": "Ubaci PDF i uzmi svaku stranicu nazad kao JPG ili PNG na 72, 150 ili 300 dpi, ili samo stranice koje napišeš. Stranice crta sam pregledač, pa se ništa ne otprema, ne traži se nalog, a ceo set silazi kao jedan ZIP.", "pdfimg.f5": "jedan ZIP",     "pdfimg.badge": "4 jezika", "subs.tag": "Titlovi koji se otvaraju čisto, popravljeni u tabu.",
     "subs.desc": "Ubaci SRT ili VTT, pomeri vreme, popravi titlove koji se preklapaju, prelomi dugačke redove i uzmi fajl nazad u bilo kom formatu. Stranica sama čita fajl: ništa se ne otprema, nalog se ne traži, a fajl sačuvan u starom Windows kodiranju se i dalje otvara.",
     "subs.f3": "preklapanja popravljena", "subs.f4": "prelomljeni redovi", "subs.f5": "bez otpremanja", "subs.badge": "4 jezika",
+    "quiz.tag": "Dvanaest pitanja dnevno, svako sa svojim izvorom.",
+    "quiz.desc": "Runda od dvanaest kratkih pitanja, četiri odgovora i samo jedan tačan, od računa i logike do geografije, nauke, jezika, istorije i kulture. Posle svakog odgovora dolaze objašnjenje, izvor i datum provere baze pitanja. Današnja runda se rađa iz datuma, pa svi dobijaju istih dvanaest, a link sa skorom nosi izazov dalje. Bez naloga, bez otpremanja, bez statistike.",
+    "quiz.f1": "današnja runda", "quiz.f2": "izvor za svaku činjenicu", "quiz.f3": "niz i rekord", "quiz.f4": "četiri jezika", "quiz.f5": "offline", "quiz.badge": "4 jezika",
+    "chips.learn": "Učenje",
     "img.tag": "Manje fotografije. Bez metapodataka.",
     "img.desc": "Grupno sabijaj i menjaj veličinu slika pravo u pregledaču i vraćaju ti se bez EXIF, GPS, podataka kamere i vremena. Preuzmi pojedinačno ili celu grupu kao jedan ZIP.",
     "img.f1": "grupa do 60", "img.f2": "EXIF i GPS uklonjeni", "img.f4": "ZIP preuzimanje", "img.badge": "4 jezika",
@@ -1600,6 +1629,10 @@ var I18N = {
     "pdfimg.tag": "Свака страница као JPG или PNG, у табу.", "pdfimg.desc": "Убаци PDF и узми сваку страницу назад као JPG или PNG на 72, 150 или 300 дпи, или само странице које напишеш. Странице црта сам прегледач, па се ништа не отпрема, не тражи се налог, а цео сет силази као један ZIP.", "pdfimg.f5": "један ZIP",     "pdfimg.badge": "4 језика", "subs.tag": "Титлови који се отварају чисто, поправљени у табу.",
     "subs.desc": "Убаци SRT или VTT, помери време, поправи титлове који се преклапају, преломи дугачке редове и узми фајл назад у било ком формату. Страница сама чита фајл: ништа се не отпрема, налог се не тражи, а фајл сачуван у старом Windows кодирању се и даље отвара.",
     "subs.f3": "преклапања поправљена", "subs.f4": "преломљени редови", "subs.f5": "без отпремања", "subs.badge": "4 језика",
+    "quiz.tag": "Дванаест питања дневно, свако са својим извором.",
+    "quiz.desc": "Рунда од дванаест кратких питања, четири одговора и само један тачан, од рачуна и логике до географије, науке, језика, историје и културе. После сваког одговора долазе објашњење, извор и датум провере базе питања. Данашња рунда се рађа из датума, па сви добијају истих дванаест, а линк са скором носи изазов даље. Без налога, без отпремања, без статистике.",
+    "quiz.f1": "данашња рунда", "quiz.f2": "извор за сваку чињеницу", "quiz.f3": "низ и рекорд", "quiz.f4": "четири језика", "quiz.f5": "offline", "quiz.badge": "4 језика",
+    "chips.learn": "Учење",
     "img.tag": "Мање фотографије. Без метаподатака.",
     "img.desc": "Групно сабијај и мењај величину слика право у прегледачу и враћају ти се без EXIF, GPS, података камере и времена. Преузми појединачно или целу групу као један ZIP.",
     "img.f1": "група до 60", "img.f2": "EXIF и GPS уклоњени", "img.f4": "ZIP преузимање", "img.badge": "4 језика",
