@@ -381,6 +381,20 @@ SRT and VTT both ways · shift and speed · overlaps repaired · long cues split
 
 <br>
 
+### 🃏 [Quiz-Deck](https://github.com/TekiDeki/Quiz-Deck)
+
+**Twelve short questions, four answers, one correct, and the source for every fact.**
+
+A round of twelve questions from arithmetic and logic to geography, science, words, history and culture. Answer, read why, and see where the fact comes from: every item carries an explanation, a named source and the date the bank was checked. The daily round is dealt from the date itself, so everybody gets the same twelve in the same order, and the score travels as a link. The streak and the record stay in this browser, with a plain warning that a cleared cache takes them away, and Export and Import for a copy.
+
+Daily round · explanation and source on every answer · challenge link · streak and record · export and import · practice and a replay of the mistakes · 4 languages · offline PWA
+
+[![Live demo](https://img.shields.io/badge/live-demo-success?style=flat-square&logo=githubpages&logoColor=white)](https://tekideki.github.io/Quiz-Deck/)
+[![Repo](https://img.shields.io/badge/repo-source-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/TekiDeki/Quiz-Deck)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](https://github.com/TekiDeki/Quiz-Deck/blob/main/LICENSE)
+
+<br>
+
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](https://github.com/TekiDeki/CV-Builder/blob/main/LICENSE)
 
 <br>
@@ -436,6 +450,7 @@ The priorities behind my tools:
 | 📋 CV Builder | **[tekideki.github.io/CV-Builder](https://tekideki.github.io/CV-Builder/)** |
 | 📸 PDF to Images | **[tekideki.github.io/PDF-to-Images](https://tekideki.github.io/PDF-to-Images/)** |
 | 💬 Subtitle Cleaner | **[tekideki.github.io/Subtitle-Cleaner](https://tekideki.github.io/Subtitle-Cleaner/)** |
+| 🃏 Quiz-Deck | **[tekideki.github.io/Quiz-Deck](https://tekideki.github.io/Quiz-Deck/)** |
 
 **Personal site:** [freeHTML.dev](https://freehtml.dev/)
 
