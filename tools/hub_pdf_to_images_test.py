@@ -102,8 +102,8 @@ def main():
 
         sw = (SITE / "sw.js").read_text(encoding="utf-8")
         check("'/pdfimg'" in sw, "the service worker knows the /pdfimg shortcut")
-        check("pdfimg" in re.search(r"const VERSION = '([^']+)'", sw).group(1),
-              "the cache version mentions the new tool")
+        check(re.search(r"const VERSION = 'fhd-v\d+-[a-z0-9]+';", sw) is not None,
+              "the cache version is a named fhd build")
 
         expected = [
             ("en", "Every page as a JPG or PNG, made in the tab."),

@@ -367,6 +367,20 @@ JPG or PNG · 72, 150 or 300 dpi · page ranges · several files at once · one 
 
 <br>
 
+### 💬 [Subtitle Cleaner](https://github.com/TekiDeki/Subtitle-Cleaner)
+
+**Subtitles that open cleanly, fixed in the tab.**
+
+Drop an SRT or VTT and fix what a player complains about: cues that overlap are cut where the next one starts, a cue too long for two lines is split into pieces that share its time, the lines are re-wrapped under the limit you type, tags are stripped, and the whole file moves by a number of seconds or is retimed for a sped up video. The page reads the file itself, including a file saved in the old Windows encoding, so nothing is uploaded and no account is asked for.
+
+SRT and VTT both ways · shift and speed · overlaps repaired · long cues split · line wrapping · tag stripping · report with counts · 4 languages · offline PWA
+
+[![Live demo](https://img.shields.io/badge/live-demo-success?style=flat-square&logo=githubpages&logoColor=white)](https://tekideki.github.io/Subtitle-Cleaner/)
+[![Repo](https://img.shields.io/badge/repo-source-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/TekiDeki/Subtitle-Cleaner)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](https://github.com/TekiDeki/Subtitle-Cleaner/blob/main/LICENSE)
+
+<br>
+
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](https://github.com/TekiDeki/CV-Builder/blob/main/LICENSE)
 
 <br>
@@ -421,6 +435,7 @@ The priorities behind my tools:
 | 🏷️ Barcode Generator | **[tekideki.github.io/Barcode-Generator](https://tekideki.github.io/Barcode-Generator/)** |
 | 📋 CV Builder | **[tekideki.github.io/CV-Builder](https://tekideki.github.io/CV-Builder/)** |
 | 📸 PDF to Images | **[tekideki.github.io/PDF-to-Images](https://tekideki.github.io/PDF-to-Images/)** |
+| 💬 Subtitle Cleaner | **[tekideki.github.io/Subtitle-Cleaner](https://tekideki.github.io/Subtitle-Cleaner/)** |
 
 **Personal site:** [freeHTML.dev](https://freehtml.dev/)
 
