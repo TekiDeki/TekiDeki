@@ -399,6 +399,20 @@ Daily round · explanation and source on every answer · challenge link · strea
 
 <br>
 
+### 📡 [Internet Stability Test](https://github.com/TekiDeki/Internet-Stability-Test)
+
+**Is your connection solid, or just fast?**
+
+Continuous latency probes against a public endpoint measure jitter, lost probes and outages over minutes or hours. The timeline charts every probe and shades the outages, and the verdict shows its thresholds instead of hiding them. A copyable report and a full JSON export stay in the browser; nothing is uploaded.
+
+Latency, jitter, loss and uptime - outage detection with durations - live timeline chart - verdict with visible thresholds - report and JSON export - history of the last runs - four languages - one HTML file, zero dependencies
+
+[![Live demo](https://img.shields.io/badge/live-demo-success?style=flat-square&logo=githubpages&logoColor=white)](https://tekideki.github.io/Internet-Stability-Test/)
+[![Repo](https://img.shields.io/badge/repo-source-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/TekiDeki/Internet-Stability-Test)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](https://github.com/TekiDeki/Internet-Stability-Test/blob/main/LICENSE)
+
+<br>
+
 ---
 
 ## 🧠 How I build
@@ -451,6 +465,7 @@ The priorities behind my tools:
 | 📸 PDF to Images | **[tekideki.github.io/PDF-to-Images](https://tekideki.github.io/PDF-to-Images/)** |
 | 💬 Subtitle Cleaner | **[tekideki.github.io/Subtitle-Cleaner](https://tekideki.github.io/Subtitle-Cleaner/)** |
 | 🃏 Quiz-Deck | **[tekideki.github.io/Quiz-Deck](https://tekideki.github.io/Quiz-Deck/)** |
+| 📡 Internet Stability Test | **[tekideki.github.io/Internet-Stability-Test](https://tekideki.github.io/Internet-Stability-Test/)** |
 
 **Personal site:** [freeHTML.dev](https://freehtml.dev/)
 
