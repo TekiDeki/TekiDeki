@@ -101,8 +101,10 @@ def main():
 
         sw = (SITE / "sw.js").read_text(encoding="utf-8")
         check("'/quiz'" in sw, "the service worker knows the /quiz shortcut")
-        check("quiz" in re.search(r"const VERSION = '([^']+)'", sw).group(1),
-              "the cache version mentions the new tool")
+        version = re.search(r"const VERSION = '([^']+)'", sw)
+        check(version is not None, "the service worker declares a cache version")
+        check(re.fullmatch(r"fhd-v\d+-[a-z0-9-]+", version.group(1)) is not None,
+              "the cache version follows the fhd-vN-name shape")
 
         expected = [
             ("en", "Twelve questions a day, each one with its source."),
