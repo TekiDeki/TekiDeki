@@ -33,7 +33,13 @@ function listFiles(dir) {
  const cardTotal = await page.locator('.card[data-slug]').count();
  // The count is not typed here: every app that has a shortcut in _redirects
  // must have a card, so the two files have to agree.
- const apps = new Set([...fs.readFileSync(path.join(ROOT, 'site/_redirects'), 'utf8')
+ // Only 302 lines count. A 301 line is not a shortcut: it retires an old address
+ // and may point at a page that is not a card (the quizzes hub), so it must not
+ // be required to have one.
+ const shortcuts = fs.readFileSync(path.join(ROOT, 'site/_redirects'), 'utf8')
+  .split('\n')
+  .filter(line => /\s302\s*$/.test(line));
+ const apps = new Set([...shortcuts.join('\n')
   .matchAll(/https:\/\/tekideki\.github\.io\/([A-Za-z0-9-]+)\//g)].map(m => m[1]));
  assert(cardTotal === apps.size, 'cards and shortcuts disagree, cards ' + cardTotal + ', apps ' + apps.size);
  assert(cardTotal > 0, 'the hub lists no tools at all');
