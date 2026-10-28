@@ -39,8 +39,11 @@ function listFiles(dir) {
  const shortcuts = fs.readFileSync(path.join(ROOT, 'site/_redirects'), 'utf8')
   .split('\n')
   .filter(line => /\s302\s*$/.test(line));
+ // An app can also live on its own freehtml.dev subdomain (games.freehtml.dev),
+ // served by Cloudflare Pages from the same repo. The shortcut still has to exist.
  const apps = new Set([...shortcuts.join('\n')
-  .matchAll(/https:\/\/tekideki\.github\.io\/([A-Za-z0-9-]+)\//g)].map(m => m[1]));
+  .matchAll(/https:\/\/(?:tekideki\.github\.io\/([A-Za-z0-9-]+)\/|([a-z0-9-]+)\.freehtml\.dev\/)/g)]
+  .map(m => m[1] || m[2]));
  assert(cardTotal === apps.size, 'cards and shortcuts disagree, cards ' + cardTotal + ', apps ' + apps.size);
  assert(cardTotal > 0, 'the hub lists no tools at all');
  for (const lg of ['en', 'ro', 'sr-latn', 'sr-cyr']) {
