@@ -102,8 +102,13 @@ def main():
 
         sw = (SITE / "sw.js").read_text(encoding="utf-8")
         check("'/stability'" in sw, "the service worker knows the /stability shortcut")
-        check("stability" in re.search(r"const VERSION = '([^']+)'", sw).group(1),
-              "the cache version mentions the new tool")
+        # Verificarea veche cerea ca sirul VERSION sa contina numele uneltei adaugate atunci
+        # ("stability"). Dupa ce versiunea a fost redenumita ('fhd-v32-games-domain'), conditia nu
+        # mai putea fi indeplinita niciodata - un test care pica vesnic nu pazeste nimic. Acum se
+        # verifica ce conteaza cu adevarat: VERSION are forma fhd-v<N>-<eticheta>, iar unelte nou
+        # adaugate trebuie sa apara in SHORTCUTS (verificat mai sus, prin /stability).
+        check(re.fullmatch(r"fhd-v\d+-[a-z0-9-]+", re.search(r"const VERSION = '([^']+)'", sw).group(1)) is not None,
+              "the cache version keeps the fhd-v<N>-<label> shape")
 
         expected = [
             ("en", "Is your connection solid, or just fast?"),
