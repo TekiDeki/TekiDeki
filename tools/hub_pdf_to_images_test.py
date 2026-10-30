@@ -102,7 +102,7 @@ def main():
 
         sw = (SITE / "sw.js").read_text(encoding="utf-8")
         check("'/pdfimg'" in sw, "the service worker knows the /pdfimg shortcut")
-        check(re.search(r"const VERSION = 'fhd-v\d+-[a-z0-9]+';", sw) is not None,
+        check(re.search(r"const VERSION = 'fhd-v\d+-[a-z0-9-]+';", sw) is not None,
               "the cache version is a named fhd build")
 
         expected = [
