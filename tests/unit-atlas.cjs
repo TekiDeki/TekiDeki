@@ -129,6 +129,12 @@ function listFiles(dir) {
  assert(body.includes('const CATEGORIES='), 'the live deployment serves the converter');
  assert(body.includes('https://tekideki.github.io/Unit-Converter/'), 'the live deployment is canonical on its own repository');
  assert(body.includes('Српски'), 'the live deployment keeps the four languages');
+ // regula R31 si R6, pe pagina hubului (static, nu depinde de browser)
+ const hubHtml = fs.readFileSync(path.join(__dirname, '..', 'site', 'index.html'), 'utf8');
+ assert(!hubHtml.includes('\u2014') && !hubHtml.includes('&mdash;'),
+   'R31: hubul nu are cratima lunga in textul vizibil');
+ assert(hubHtml.includes('https://paypal.me/TekiDeki'), 'R6: linkul de donatie e exact https://paypal.me/TekiDeki');
+
  assert.deepEqual(errors, []);
  await browser.close();
  console.log('PASS: hub card, tools list, shortcut, cache, offline shell and the live dedicated deployment.');
