@@ -430,6 +430,21 @@ The priorities behind my tools:
 
 > *"The best code is the code you don't have to ship."*
 
+### 🧰 Working on the hub
+
+The 30 tool cards on [freeHTML.dev](https://freehtml.dev/) are not written by hand. They live in
+[`tools.json`](tools.json), one entry per tool, and `python3 scripts/build-tools.py --write` renders
+them into `site/index.html` at build time. The shipped page is still plain static HTML, with no extra
+JavaScript, so the registry costs the visitor nothing.
+
+    npm install                              # playwright, tests only
+    python3 scripts/build-tools.py --check   # is the page exactly what the registry says?
+    npm test                                 # registry, links, redirects
+
+Adding a tool means one entry in `tools.json` plus its text in the four dictionaries. The tests fail
+if a key is missing in any language, if a card's fallback text drifts from the English dictionary, or
+if a short link (`/convert`, `/money`) is missing from `site/_redirects`.
+
 ---
 
 <div align="center">

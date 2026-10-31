@@ -1,0 +1,1286 @@
+{
+  "tools": [
+    {
+      "slug": "convert",
+      "name": "Unit Atlas · Unit Converter",
+      "url": "https://tekideki.github.io/Unit-Converter/",
+      "repo": "https://github.com/TekiDeki/Unit-Converter",
+      "path": "/convert",
+      "tags": [
+        "dev"
+      ],
+      "hue": "#c5ed91",
+      "glyph": "⇄",
+      "tag": {
+        "key": "convert.tag",
+        "text": "A world of measures. Made simple."
+      },
+      "desc": {
+        "key": "convert.desc",
+        "text": "11 international categories plus Romanian and Serbian land measures. Instant conversions, saved references and shareable links, in one downloadable HTML file."
+      },
+      "features": [
+        {
+          "key": "convert.f1",
+          "text": "11 + 1 categories"
+        },
+        {
+          "key": "convert.f2",
+          "text": "local land measures"
+        },
+        {
+          "key": "convert.f3",
+          "text": "4 languages"
+        },
+        {
+          "key": "convert.f4",
+          "text": "downloadable HTML"
+        },
+        {
+          "key": "convert.f5",
+          "text": "own repository"
+        }
+      ],
+      "size": {
+        "key": "convert.f3",
+        "text": "4 languages"
+      }
+    },
+    {
+      "slug": "cheaper",
+      "name": "Which is cheaper?",
+      "url": "https://tekideki.github.io/Which-is-cheaper/",
+      "repo": "https://github.com/TekiDeki/Which-is-cheaper",
+      "path": "/cheaper",
+      "tags": [
+        "money"
+      ],
+      "hue": "#f2a65a",
+      "glyph": "🛒",
+      "tag": {
+        "key": "cheaper.tag",
+        "text": "Never lose the grocery-aisle math again."
+      },
+      "desc": {
+        "key": "cheaper.desc",
+        "text": "Type in two products - price and size - and get an instant price-per-unit verdict: “B is 12% cheaper.”"
+      },
+      "features": [
+        {
+          "text": "g ↔ kg ↔ oz ↔ lb"
+        },
+        {
+          "text": "ml ↔ L"
+        },
+        {
+          "key": "cheaper.f3",
+          "text": "4 languages"
+        },
+        {
+          "key": "cheaper.f4",
+          "text": "shareable links"
+        },
+        {
+          "text": "offline PWA"
+        }
+      ],
+      "size": {
+        "text": "~23 KB"
+      }
+    },
+    {
+      "slug": "money",
+      "name": "Smart Money Manager",
+      "url": "https://tekideki.github.io/Smart-Money-Manager/",
+      "repo": "https://github.com/TekiDeki/Smart-Money-Manager",
+      "path": "/money",
+      "tags": [
+        "money"
+      ],
+      "hue": "#5ec27a",
+      "glyph": "💰",
+      "tag": {
+        "key": "money.tag",
+        "text": "Your finances, without handing over your data."
+      },
+      "desc": {
+        "key": "money.desc",
+        "text": "Track income and expenses, categorise spending and watch interactive charts update in real time. Everything lives in your browser."
+      },
+      "features": [
+        {
+          "key": "money.f1",
+          "text": "income & expenses"
+        },
+        {
+          "key": "money.f2",
+          "text": "categories"
+        },
+        {
+          "key": "money.f3",
+          "text": "interactive charts"
+        },
+        {
+          "key": "money.f4",
+          "text": "installable PWA"
+        }
+      ],
+      "size": {
+        "key": "money.badge",
+        "text": "local only"
+      }
+    },
+    {
+      "slug": "loan",
+      "name": "Loan & Amortization Calculator",
+      "url": "https://tekideki.github.io/Loan-Calculator/",
+      "repo": "https://github.com/TekiDeki/Loan-Calculator",
+      "path": "/loan",
+      "tags": [
+        "money"
+      ],
+      "hue": "#38bdf8",
+      "glyph": "🏦",
+      "tag": {
+        "key": "loan.tag",
+        "text": "Monthly payment, total interest and a full repayment plan."
+      },
+      "desc": {
+        "key": "loan.desc",
+        "text": "Enter a loan and see the monthly payment, total interest, payoff date and a full schedule. Test extra payments, export CSV. Everything stays in your browser."
+      },
+      "features": [
+        {
+          "key": "loan.f1",
+          "text": "monthly payment"
+        },
+        {
+          "key": "loan.f2",
+          "text": "extra payments"
+        },
+        {
+          "key": "loan.f3",
+          "text": "full schedule"
+        },
+        {
+          "key": "loan.f4",
+          "text": "CSV export"
+        }
+      ],
+      "size": {
+        "key": "loan.badge",
+        "text": "local only"
+      }
+    },
+    {
+      "slug": "circuit",
+      "name": "Circuit Lab",
+      "url": "https://tekideki.github.io/Circuit-Simulator/",
+      "repo": "https://github.com/TekiDeki/Circuit-Simulator",
+      "path": "/circuit",
+      "tags": [
+        "dev"
+      ],
+      "hue": "#f59e0b",
+      "glyph": "⚡",
+      "tag": {
+        "key": "circuit.tag",
+        "text": "Breadboard simulator with LEDs, sensors and transistors."
+      },
+      "desc": {
+        "key": "circuit.desc",
+        "text": "Build circuits on a breadboard and press Simulate. Learn with 10 lessons, 60 quiz cards and 12 broken circuits to repair. Everything runs in your browser."
+      },
+      "features": [
+        {
+          "key": "circuit.f1",
+          "text": "breadboard"
+        },
+        {
+          "key": "circuit.f2",
+          "text": "lessons and quizzes"
+        },
+        {
+          "key": "circuit.f3",
+          "text": "broken circuits"
+        },
+        {
+          "key": "circuit.f4",
+          "text": "four languages"
+        }
+      ],
+      "size": {
+        "key": "circuit.badge",
+        "text": "local only"
+      }
+    },
+    {
+      "slug": "prompts",
+      "name": "AI Prompt Builder",
+      "url": "https://tekideki.github.io/AI-Prompt-Builder/",
+      "repo": "https://github.com/TekiDeki/AI-Prompt-Builder",
+      "path": "/prompts",
+      "tags": [
+        "dev"
+      ],
+      "hue": "#c084fc",
+      "glyph": "🎨",
+      "tag": {
+        "key": "prompts.tag",
+        "text": "The Luminance Master - prompts that actually work."
+      },
+      "desc": {
+        "key": "prompts.desc",
+        "text": "Stop guessing which words work. Pick from curated dropdowns - lighting, composition, camera, film stock, atmosphere - and the tool assembles a coherent, engine-specific prompt."
+      },
+      "features": [
+        {
+          "text": "Midjourney"
+        },
+        {
+          "text": "FLUX.1"
+        },
+        {
+          "text": "Stable Diffusion"
+        },
+        {
+          "text": "DALL·E 3"
+        },
+        {
+          "key": "prompts.f5",
+          "text": "14 presets"
+        },
+        {
+          "key": "prompts.f6",
+          "text": "live prompt score"
+        }
+      ],
+      "size": {
+        "text": "v22.13"
+      }
+    },
+    {
+      "slug": "bmi",
+      "name": "Calculator IMC · BMI",
+      "url": "https://tekideki.github.io/BMI-Calculator/",
+      "repo": "https://github.com/TekiDeki/BMI-Calculator",
+      "path": "/bmi",
+      "tags": [
+        "health"
+      ],
+      "hue": "#60a5fa",
+      "glyph": "⚖️",
+      "tag": {
+        "key": "bmi.tag",
+        "text": "Your BMI in two taps - in four languages."
+      },
+      "desc": {
+        "key": "bmi.desc",
+        "text": "Weight plus height, and you get an instant BMI with a clear category. Dark and light theme, shareable language links, works offline."
+      },
+      "features": [
+        {
+          "key": "bmi.f1",
+          "text": "4 languages + hreflang"
+        },
+        {
+          "key": "bmi.f2",
+          "text": "dark / light"
+        },
+        {
+          "key": "bmi.f3",
+          "text": "share button"
+        },
+        {
+          "text": "offline PWA"
+        }
+      ],
+      "size": {
+        "text": "~18 KB"
+      }
+    },
+    {
+      "slug": "preview",
+      "name": "Mobile Preview",
+      "url": "https://tekideki.github.io/Mobile-Preview/",
+      "repo": "https://github.com/TekiDeki/Mobile-Preview",
+      "path": "/preview",
+      "tags": [
+        "dev"
+      ],
+      "hue": "#38bdf8",
+      "glyph": "📱",
+      "tag": {
+        "key": "preview.tag",
+        "text": "Any page, on any device, in seconds."
+      },
+      "desc": {
+        "key": "preview.desc",
+        "text": "Load a local HTML file or paste a URL and it renders inside real device frames. For developers, designers and anyone who ships for small screens."
+      },
+      "features": [
+        {
+          "key": "preview.f1",
+          "text": "12 devices"
+        },
+        {
+          "key": "preview.f2",
+          "text": "13 aspect ratios"
+        },
+        {
+          "key": "preview.f3",
+          "text": "custom sizes"
+        },
+        {
+          "key": "preview.f4",
+          "text": "portrait / landscape"
+        },
+        {
+          "text": "zoom"
+        }
+      ],
+      "size": {
+        "text": "offline PWA"
+      }
+    },
+    {
+      "slug": "bets",
+      "name": "Bet Tracker",
+      "url": "https://tekideki.github.io/Bet-Tracker/",
+      "repo": "https://github.com/TekiDeki/Bet-Tracker",
+      "path": "/bets",
+      "tags": [
+        "money"
+      ],
+      "hue": "#f472b6",
+      "glyph": "📓",
+      "tag": {
+        "key": "bets.tag",
+        "text": "A private bet journal - not betting advice."
+      },
+      "desc": {
+        "key": "bets.desc",
+        "text": "Record and settle bets, review net profit and settled-bet ROI, and export JSON backups. No account, no tracking - the data stays in your browser."
+      },
+      "features": [
+        {
+          "key": "bets.f1",
+          "text": "4 languages"
+        },
+        {
+          "key": "bets.f2",
+          "text": "edit records"
+        },
+        {
+          "key": "bets.f3",
+          "text": "per-record currency"
+        },
+        {
+          "key": "bets.f4",
+          "text": "JSON export"
+        }
+      ],
+      "size": {
+        "text": "Apache-2.0"
+      }
+    },
+    {
+      "slug": "words",
+      "name": "LexiGen · Random Word",
+      "url": "https://tekideki.github.io/Generator-Random-Word/",
+      "repo": "https://github.com/TekiDeki/Generator-Random-Word",
+      "path": "/words",
+      "tags": [
+        "text"
+      ],
+      "hue": "#a3e635",
+      "glyph": "🔤",
+      "tag": {
+        "key": "words.tag",
+        "text": "Find a word. Start an idea."
+      },
+      "desc": {
+        "key": "words.desc",
+        "text": "Generate random words in four languages for writing, language practice or creative prompts. Filter by length, copy a word, revisit recent history - all locally."
+      },
+      "features": [
+        {
+          "key": "words.f1",
+          "text": "4 languages"
+        },
+        {
+          "key": "words.f2",
+          "text": "strict filters"
+        },
+        {
+          "key": "copy.btn",
+          "text": "copy"
+        },
+        {
+          "key": "words.f4",
+          "text": "per-language history"
+        },
+        {
+          "key": "words.f5",
+          "text": "zero dependencies"
+        }
+      ],
+      "size": {
+        "text": "offline PWA"
+      }
+    },
+    {
+      "slug": "lorem",
+      "name": "Lorem Ipsum Generator",
+      "url": "https://tekideki.github.io/Generator-Lorem-Ipsum/",
+      "repo": "https://github.com/TekiDeki/Generator-Lorem-Ipsum",
+      "path": "/lorem",
+      "tags": [
+        "text",
+        "dev"
+      ],
+      "hue": "#94a3b8",
+      "glyph": "¶",
+      "tag": {
+        "key": "lorem.tag",
+        "text": "Placeholder text, exactly how you need it."
+      },
+      "desc": {
+        "key": "lorem.desc",
+        "text": "Generate paragraphs, sentences or an exact word count. Copy the text or download a plain TXT file - no accounts, no tracking, no backend."
+      },
+      "features": [
+        {
+          "key": "lorem.f1",
+          "text": "4 interface languages"
+        },
+        {
+          "key": "lorem.f2",
+          "text": "3 length presets"
+        },
+        {
+          "key": "copy.btn",
+          "text": "copy"
+        },
+        {
+          "key": "lorem.f4",
+          "text": "TXT export"
+        }
+      ],
+      "size": {
+        "key": "lorem.badge",
+        "text": "zero dependencies"
+      }
+    },
+    {
+      "slug": "pass",
+      "name": "Password Generator",
+      "url": "https://tekideki.github.io/Password-Generator/",
+      "repo": "https://github.com/TekiDeki/Password-Generator",
+      "path": "/pass",
+      "tags": [
+        "dev"
+      ],
+      "hue": "#fbbf24",
+      "glyph": "🔐",
+      "tag": {
+        "key": "pass.tag",
+        "text": "Random by design. Private by default."
+      },
+      "desc": {
+        "key": "pass.desc",
+        "text": "Passwords generated locally with Web Crypto. Choose length and character sets, reveal only when needed, copy or export TXT after a plaintext warning."
+      },
+      "features": [
+        {
+          "key": "pass.f1",
+          "text": "8-128 characters"
+        },
+        {
+          "key": "pass.f2",
+          "text": "batches up to 100"
+        },
+        {
+          "key": "pass.f3",
+          "text": "entropy estimate"
+        },
+        {
+          "key": "pass.f4",
+          "text": "4 languages"
+        }
+      ],
+      "size": {
+        "text": "Web Crypto"
+      }
+    },
+    {
+      "slug": "qr",
+      "name": "QR Scanner",
+      "url": "https://tekideki.github.io/QR-Scanner/",
+      "repo": "https://github.com/TekiDeki/QR-Scanner",
+      "path": "/qr",
+      "tags": [
+        "media"
+      ],
+      "hue": "#2dd4bf",
+      "glyph": "📷",
+      "tag": {
+        "key": "qr.tag",
+        "text": "Point, scan, know. Nothing is uploaded."
+      },
+      "desc": {
+        "key": "qr.desc",
+        "text": "Scan QR codes and barcodes with the camera or from an image, and read product details for EAN/UPC codes straight from Open Food Facts. Content is understood, not just printed."
+      },
+      "features": [
+        {
+          "text": "QR"
+        },
+        {
+          "text": "EAN / UPC"
+        },
+        {
+          "text": "Code 128"
+        },
+        {
+          "text": "DataMatrix"
+        },
+        {
+          "text": "Open Food Facts"
+        },
+        {
+          "key": "qr.f6",
+          "text": "history + JSON"
+        }
+      ],
+      "size": {
+        "key": "qr.badge",
+        "text": "4 languages"
+      }
+    },
+    {
+      "slug": "pdfimg",
+      "name": "PDF to Images",
+      "url": "https://tekideki.github.io/PDF-to-Images/",
+      "repo": "https://github.com/TekiDeki/PDF-to-Images",
+      "path": "/pdfimg",
+      "tags": [
+        "media",
+        "dev"
+      ],
+      "hue": "#d946ef",
+      "glyph": "📸",
+      "tag": {
+        "key": "pdfimg.tag",
+        "text": "Every page as a JPG or PNG, made in the tab."
+      },
+      "desc": {
+        "key": "pdfimg.desc",
+        "text": "Drop a PDF and take every page back as a JPG or PNG at 72, 150 or 300 dpi, or only the pages you list. The pages are drawn by the browser itself, so nothing is uploaded, no account is asked for, and the whole set comes down as one ZIP."
+      },
+      "features": [
+        {
+          "text": "JPG / PNG"
+        },
+        {
+          "text": "72 / 150 / 300 dpi"
+        },
+        {
+          "text": "page ranges"
+        },
+        {
+          "key": "pdfimg.f5",
+          "text": "one ZIP"
+        }
+      ],
+      "size": {
+        "key": "pdfimg.badge",
+        "text": "4 languages"
+      }
+    },
+    {
+      "slug": "subs",
+      "name": "Subtitle Cleaner",
+      "url": "https://tekideki.github.io/Subtitle-Cleaner/",
+      "repo": "https://github.com/TekiDeki/Subtitle-Cleaner",
+      "path": "/subs",
+      "tags": [
+        "media",
+        "text"
+      ],
+      "hue": "#34d399",
+      "glyph": "💬",
+      "tag": {
+        "key": "subs.tag",
+        "text": "Subtitles that open cleanly, fixed in the tab."
+      },
+      "desc": {
+        "key": "subs.desc",
+        "text": "Drop an SRT or VTT, move the timing, repair the cues that overlap, re-wrap the long lines and take the file back in either format. The page reads the file itself: nothing is uploaded, no account is asked for, and a file saved in the old Windows encoding still opens."
+      },
+      "features": [
+        {
+          "text": "SRT / VTT"
+        },
+        {
+          "text": "shift + speed"
+        },
+        {
+          "key": "subs.f3",
+          "text": "overlaps fixed"
+        },
+        {
+          "key": "subs.f4",
+          "text": "line wrapping"
+        },
+        {
+          "key": "subs.f5",
+          "text": "no upload"
+        }
+      ],
+      "size": {
+        "key": "subs.badge",
+        "text": "4 languages"
+      }
+    },
+    {
+      "slug": "cv",
+      "name": "CV Builder",
+      "url": "https://tekideki.github.io/CV-Builder/",
+      "repo": "https://github.com/TekiDeki/CV-Builder",
+      "path": "/cv",
+      "tags": [
+        "text"
+      ],
+      "hue": "#93c5fd",
+      "glyph": "📋",
+      "tag": {
+        "key": "cv.tag",
+        "text": "A CV that prints, without the paywall."
+      },
+      "desc": {
+        "key": "cv.desc",
+        "text": "Fill the form, watch the page, print it as a real PDF. Classic, two columns or a banner across the top, on A4 or Letter, in text a hiring robot can read. No account, no watermark, and the download is the print dialog."
+      },
+      "features": [
+        {
+          "text": "A4 / Letter"
+        },
+        {
+          "text": "classic"
+        },
+        {
+          "text": "two columns"
+        },
+        {
+          "text": "banner"
+        },
+        {
+          "key": "cv.f5",
+          "text": "no paywall"
+        }
+      ],
+      "size": {
+        "key": "cv.badge",
+        "text": "4 languages"
+      }
+    },
+    {
+      "slug": "barcode",
+      "name": "Barcode Generator",
+      "url": "https://tekideki.github.io/Barcode-Generator/",
+      "repo": "https://github.com/TekiDeki/Barcode-Generator",
+      "path": "/barcode",
+      "tags": [
+        "dev",
+        "money"
+      ],
+      "hue": "#7dd3fc",
+      "glyph": "🏷️",
+      "tag": {
+        "key": "barcode.tag",
+        "text": "Bars that print clean. Nothing leaves the tab."
+      },
+      "desc": {
+        "key": "barcode.desc",
+        "text": "EAN-13, EAN-8, UPC-A, ITF-14, Code 128 and Code 39, drawn as you type, with the check digit worked out for you. Vector SVG for a print shop, PNG at 300 dpi, or a whole A4 sheet of labels."
+      },
+      "features": [
+        {
+          "text": "EAN / UPC"
+        },
+        {
+          "text": "Code 128 / 39"
+        },
+        {
+          "text": "ITF-14"
+        },
+        {
+          "text": "SVG + PNG"
+        },
+        {
+          "key": "barcode.f5",
+          "text": "A4 label sheet"
+        }
+      ],
+      "size": {
+        "key": "barcode.badge",
+        "text": "4 languages"
+      }
+    },
+    {
+      "slug": "img",
+      "name": "Image Compressor",
+      "url": "https://tekideki.github.io/Image-Compressor/",
+      "repo": "https://github.com/TekiDeki/Image-Compressor",
+      "path": "/img",
+      "tags": [
+        "media",
+        "dev"
+      ],
+      "hue": "#fb7185",
+      "glyph": "🖼️",
+      "tag": {
+        "key": "img.tag",
+        "text": "Smaller photos. Without the metadata."
+      },
+      "desc": {
+        "key": "img.desc",
+        "text": "Batch compress and resize images right in the browser, and get them back with EXIF, GPS, camera and timestamp data removed. Download single files or the whole batch as one ZIP."
+      },
+      "features": [
+        {
+          "key": "img.f1",
+          "text": "batch up to 60"
+        },
+        {
+          "key": "img.f2",
+          "text": "EXIF & GPS stripped"
+        },
+        {
+          "text": "JPEG / WebP / PNG"
+        },
+        {
+          "key": "img.f4",
+          "text": "ZIP download"
+        }
+      ],
+      "size": {
+        "key": "img.badge",
+        "text": "4 languages"
+      }
+    },
+    {
+      "slug": "tts-reader",
+      "name": "Text-to-Speech Reader",
+      "url": "https://tekideki.github.io/Text-to-Speech-Reader/",
+      "repo": "https://github.com/TekiDeki/Text-to-Speech-Reader",
+      "path": "/tts-reader",
+      "tags": [
+        "media"
+      ],
+      "hue": "#8b7cf6",
+      "glyph": "🎧",
+      "tag": {
+        "key": "tts-reader.tag",
+        "text": "Listen to your text with the voices available in your browser."
+      },
+      "desc": {
+        "key": "tts-reader.desc",
+        "text": "Paste text or load a .txt file, listen by chapter and adjust reading speed. No audio download. Local voices keep text on-device; online voices may send it to their provider."
+      },
+      "features": [
+        {
+          "key": "tts-reader.f1",
+          "text": "chapter playback"
+        },
+        {
+          "key": "tts-reader.f2",
+          "text": "browser voices"
+        },
+        {
+          "key": "tts-reader.f3",
+          "text": "speed control"
+        },
+        {
+          "key": "tts-reader.f4",
+          "text": "local text"
+        }
+      ],
+      "size": {
+        "key": "tts-reader.badge",
+        "text": "no audio export"
+      }
+    },
+    {
+      "slug": "palette",
+      "name": "Palette Studio",
+      "url": "https://tekideki.github.io/Palette-Studio/",
+      "repo": "https://github.com/TekiDeki/Palette-Studio",
+      "path": "/palette",
+      "tags": [
+        "media",
+        "dev"
+      ],
+      "hue": "#a78bfa",
+      "glyph": "🎨",
+      "tag": {
+        "key": "palette.tag",
+        "text": "Every colour, measured. Nothing uploaded."
+      },
+      "desc": {
+        "key": "palette.desc",
+        "text": "Pull a palette from a photo with k-means, build harmonies and gradients, check WCAG 2.x contrast with an accessible suggestion, and see the result through seven colour blindness simulations."
+      },
+      "features": [
+        {
+          "key": "palette.f1",
+          "text": "palette from image"
+        },
+        {
+          "key": "palette.f2",
+          "text": "WCAG AA / AAA"
+        },
+        {
+          "key": "palette.f3",
+          "text": "7 CVD simulations"
+        },
+        {
+          "key": "palette.f4",
+          "text": "CSS / Tailwind / SVG"
+        }
+      ],
+      "size": {
+        "key": "palette.badge",
+        "text": "4 languages"
+      }
+    },
+    {
+      "slug": "cycle-calendar",
+      "name": "Cycle Calendar",
+      "url": "https://tekideki.github.io/Cycle-Calendar/",
+      "repo": "https://github.com/TekiDeki/Cycle-Calendar",
+      "path": "/cycle-calendar",
+      "tags": [
+        "health"
+      ],
+      "hue": "#c63f6d",
+      "glyph": "📅",
+      "tag": {
+        "key": "cycle-calendar.tag",
+        "text": "Your cycle, on your device."
+      },
+      "desc": {
+        "key": "cycle-calendar.desc",
+        "text": "Log flow, symptoms, mood, notes and basal temperature. The calendar groups your periods, predicts the next ones from your own averages and shades the fertile window. Nothing leaves the browser."
+      },
+      "features": [
+        {
+          "key": "cycle-calendar.f1",
+          "text": "flow and symptoms"
+        },
+        {
+          "key": "cycle-calendar.f2",
+          "text": "predictions from your own averages"
+        },
+        {
+          "key": "cycle-calendar.f3",
+          "text": "fertile window and ovulation"
+        },
+        {
+          "key": "cycle-calendar.f4",
+          "text": "backup export and import"
+        }
+      ],
+      "size": {
+        "key": "cycle-calendar.badge",
+        "text": "local only"
+      }
+    },
+    {
+      "slug": "photo-sheet",
+      "name": "Photo Sheet",
+      "url": "https://tekideki.github.io/Photo-Sheet/",
+      "repo": "https://github.com/TekiDeki/Photo-Sheet",
+      "path": "/photo-sheet",
+      "tags": [
+        "media"
+      ],
+      "hue": "#17616f",
+      "glyph": "👤",
+      "tag": {
+        "key": "photo-sheet.tag",
+        "text": "Passport photos, printed at home."
+      },
+      "desc": {
+        "key": "photo-sheet.desc",
+        "text": "Crop a photo to 35 x 45 mm, 30 x 40 mm or 51 x 51 mm against millimetre guides, then print a full 10 x 15 sheet at 300 dpi with cut marks. The photo never leaves the browser."
+      },
+      "features": [
+        {
+          "key": "photo-sheet.f1",
+          "text": "millimetre guides"
+        },
+        {
+          "key": "photo-sheet.f2",
+          "text": "six photos per sheet"
+        },
+        {
+          "key": "photo-sheet.f3",
+          "text": "300 dpi print and PNG"
+        },
+        {
+          "key": "photo-sheet.f4",
+          "text": "nothing uploaded"
+        }
+      ],
+      "size": {
+        "key": "photo-sheet.badge",
+        "text": "local only"
+      }
+    },
+    {
+      "slug": "video-trim",
+      "name": "Video Trimmer",
+      "url": "https://tekideki.github.io/Video-Trim/",
+      "repo": "https://github.com/TekiDeki/Video-Trim",
+      "path": "/trim",
+      "tags": [
+        "media"
+      ],
+      "hue": "#38bdf8",
+      "glyph": "<svg viewBox=\"0 0 24 24\" width=\"22\" height=\"22\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"2.5\" y=\"6\" width=\"13\" height=\"12\" rx=\"2\"/><path d=\"M5.5 6v12M12.5 6v12M2.5 12h13\"/><circle cx=\"18.5\" cy=\"9\" r=\"2\"/><circle cx=\"18.5\" cy=\"15\" r=\"2\"/><path d=\"M16.8 10.4 9.4 13.6M9.4 10.4l7.4 3.2\"/></svg>",
+      "tag": {
+        "key": "video.tag",
+        "text": "Cut a video without uploading it."
+      },
+      "desc": {
+        "key": "video.desc",
+        "text": "Pick the start and the end on a timeline, drop the sound if you want, and save a smaller file. The clip is processed on your device - no upload, no account, no server."
+      },
+      "features": [
+        {
+          "key": "video.f1",
+          "text": "no upload"
+        },
+        {
+          "key": "video.f2",
+          "text": "WebM / MP4"
+        },
+        {
+          "key": "video.f3",
+          "text": "PNG frame"
+        },
+        {
+          "key": "video.f4",
+          "text": "works offline"
+        }
+      ],
+      "size": {
+        "key": "video.badge",
+        "text": "runs locally"
+      }
+    },
+    {
+      "slug": "zones",
+      "name": "Meeting Planner",
+      "url": "https://tekideki.github.io/Meeting-Planner/",
+      "repo": "https://github.com/TekiDeki/Meeting-Planner",
+      "path": "/zones",
+      "tags": [
+        "dev"
+      ],
+      "hue": "#22c1d6",
+      "glyph": "🌍",
+      "tag": {
+        "key": "zones.tag",
+        "text": "The hour that works for every city in the room."
+      },
+      "desc": {
+        "key": "zones.desc",
+        "text": "Add the cities and see which hours fall inside working hours for all of them. Offsets come from the browser, so daylight saving is never stale. The cities and the day travel in the link, and nothing is uploaded."
+      },
+      "features": [
+        {
+          "key": "zones.f1",
+          "text": "best hour"
+        },
+        {
+          "key": "zones.f2",
+          "text": "daylight saving"
+        },
+        {
+          "key": "zones.f3",
+          "text": "shareable link"
+        },
+        {
+          "key": "zones.f4",
+          "text": "works offline"
+        }
+      ],
+      "size": {
+        "key": "zones.badge",
+        "text": "local only"
+      }
+    },
+    {
+      "slug": "pdf",
+      "name": "PDF Desk",
+      "url": "https://tekideki.github.io/PDF-Desk/",
+      "repo": "https://github.com/TekiDeki/PDF-Desk",
+      "path": "/pdf",
+      "tags": [
+        "dev",
+        "text"
+      ],
+      "hue": "#e3a548",
+      "glyph": "📄",
+      "tag": {
+        "key": "pdf.tag",
+        "text": "Merge, split and rotate PDFs without uploading them."
+      },
+      "desc": {
+        "key": "pdf.desc",
+        "text": "Drop several PDFs or images, put the pages in the order you want, turn the ones that came out sideways, and download one clean file. You can also pull a page range out of the document. Everything happens in the tab: no server, no account."
+      },
+      "features": [
+        {
+          "key": "pdf.f1",
+          "text": "merge and split"
+        },
+        {
+          "key": "pdf.f2",
+          "text": "rotate pages"
+        },
+        {
+          "key": "pdf.f3",
+          "text": "images to PDF"
+        },
+        {
+          "key": "pdf.f4",
+          "text": "works offline"
+        }
+      ],
+      "size": {
+        "key": "pdf.badge",
+        "text": "local only"
+      }
+    },
+    {
+      "slug": "qrgen",
+      "name": "QR Generator",
+      "url": "https://tekideki.github.io/QR-Generator/",
+      "repo": "https://github.com/TekiDeki/QR-Generator",
+      "path": "/qrgen",
+      "tags": [
+        "dev",
+        "media"
+      ],
+      "hue": "#0f6674",
+      "glyph": "▦",
+      "tag": {
+        "key": "qrgen.tag",
+        "text": "A code that never expires, because no server is behind it."
+      },
+      "desc": {
+        "key": "qrgen.desc",
+        "text": "Turn a link, a text, a WiFi network, a contact card, an email, a phone number or an SMS into a code drawn by your own browser. Take SVG for print or PNG up to 2048 px, or paste a list of addresses and print a whole A4 sheet with captions. Nothing is uploaded, so nothing can switch the code off later."
+      },
+      "features": [
+        {
+          "key": "qrgen.f1",
+          "text": "SVG for print"
+        },
+        {
+          "key": "qrgen.f2",
+          "text": "WiFi and vCard"
+        },
+        {
+          "key": "qrgen.f3",
+          "text": "A4 sheet of codes"
+        },
+        {
+          "key": "qrgen.f4",
+          "text": "works offline"
+        }
+      ],
+      "size": {
+        "key": "qrgen.badge",
+        "text": "local only"
+      }
+    },
+    {
+      "slug": "sign",
+      "name": "Sign PDF",
+      "url": "https://tekideki.github.io/Sign-PDF/",
+      "repo": "https://github.com/TekiDeki/Sign-PDF",
+      "path": "/sign",
+      "tags": [
+        "dev",
+        "text"
+      ],
+      "hue": "#0f6674",
+      "glyph": "✒️",
+      "tag": {
+        "key": "sign.tag",
+        "text": "Put your signature on a PDF without uploading it."
+      },
+      "desc": {
+        "key": "sign.desc",
+        "text": "Open a PDF, draw, type or photograph a signature, and drop it on the page. Drag it into place, pull a corner to resize it, add today's date, and download the file with the signature drawn into the page. The document never leaves the tab."
+      },
+      "features": [
+        {
+          "key": "sign.f1",
+          "text": "draw or type"
+        },
+        {
+          "key": "sign.f2",
+          "text": "photo of a signature"
+        },
+        {
+          "key": "sign.f3",
+          "text": "today's date"
+        },
+        {
+          "key": "sign.f4",
+          "text": "works offline"
+        }
+      ],
+      "size": {
+        "key": "sign.badge",
+        "text": "local only"
+      }
+    },
+    {
+      "slug": "quiz",
+      "name": "Quiz-Deck",
+      "url": "https://tekideki.github.io/Quiz-Deck/",
+      "repo": "https://github.com/TekiDeki/Quiz-Deck",
+      "path": "/quiz",
+      "tags": [
+        "learn"
+      ],
+      "hue": "#818cf8",
+      "glyph": "🃏",
+      "tag": {
+        "key": "quiz.tag",
+        "text": "Twelve questions a day, each one with its source."
+      },
+      "desc": {
+        "key": "quiz.desc",
+        "text": "A round of twelve short questions, four answers and one correct, from arithmetic and logic to geography, science, words, history and culture. After every answer come the explanation, the source and the date the bank was checked. The daily round is dealt from the date itself, so everybody gets the same twelve, and the score link carries the challenge on. No account, no upload, no statistics."
+      },
+      "features": [
+        {
+          "key": "quiz.f1",
+          "text": "daily round"
+        },
+        {
+          "key": "quiz.f2",
+          "text": "a source on every fact"
+        },
+        {
+          "key": "quiz.f3",
+          "text": "streak and record"
+        },
+        {
+          "key": "quiz.f4",
+          "text": "four languages"
+        },
+        {
+          "key": "quiz.f5",
+          "text": "offline"
+        }
+      ],
+      "size": {
+        "key": "quiz.badge",
+        "text": "4 languages"
+      }
+    },
+    {
+      "slug": "stability",
+      "name": "Internet Stability Test",
+      "url": "https://tekideki.github.io/Internet-Stability-Test/",
+      "repo": "https://github.com/TekiDeki/Internet-Stability-Test",
+      "path": "/stability",
+      "tags": [
+        "dev"
+      ],
+      "hue": "#34d399",
+      "glyph": "📡",
+      "tag": {
+        "key": "stability.tag",
+        "text": "Is your connection solid, or just fast?"
+      },
+      "desc": {
+        "key": "stability.desc",
+        "text": "Continuous latency probes measure jitter, lost probes and outages over minutes or hours, then hand you a verdict with the thresholds shown. The report and the full data export stay in your browser."
+      },
+      "features": [
+        {
+          "key": "stability.f1",
+          "text": "jitter, loss, outages"
+        },
+        {
+          "key": "stability.f2",
+          "text": "timeline chart"
+        },
+        {
+          "key": "stability.f3",
+          "text": "report and JSON export"
+        },
+        {
+          "key": "stability.f4",
+          "text": "four languages"
+        }
+      ],
+      "size": {
+        "key": "stability.badge",
+        "text": "local only"
+      }
+    },
+    {
+      "slug": "games",
+      "name": "Games",
+      "url": "https://games.freehtml.dev/",
+      "repo": "https://github.com/TekiDeki/Games",
+      "path": "/games",
+      "tags": [
+        "learn"
+      ],
+      "hue": "#f59e0b",
+      "glyph": "🎮",
+      "tag": {
+        "key": "games.tag",
+        "text": "Small games, one file each, no account."
+      },
+      "desc": {
+        "key": "games.desc",
+        "text": "Word and logic games that run entirely in the browser. The first one is a hangman on themes: a hidden word, six lives, a letter hint and your own streak. Words are checked against the alphabet of their own language, including Serbian Cyrillic. No account, no ads, no upload."
+      },
+      "features": [
+        {
+          "key": "games.f1",
+          "text": "hangman on themes"
+        },
+        {
+          "key": "games.f2",
+          "text": "four languages"
+        },
+        {
+          "key": "games.f3",
+          "text": "streak and record"
+        },
+        {
+          "key": "games.f4",
+          "text": "no upload"
+        }
+      ],
+      "size": {
+        "key": "games.badge",
+        "text": "4 languages"
+      }
+    }
+  ]
+}
