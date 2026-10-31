@@ -73,49 +73,91 @@
 # Sursa: Search Console, export Coverage-Drilldown 26.10.2026 - 42 URL-uri, toate 404,
 # ultima accesare cu crawlere intre 18.06 si 05.08.2026. Sunt pagini din hub-ul vechi.
 # Regula: ce are succesor real primeste 301 (semnalul se muta, nu moare).
+# Fiecare slug are DOUA reguli, cu si fara slash la final. Prima versiune (PR #47) avea doar
+# forma fara slash: Cloudflare Pages trateaza /slug si /slug/ ca adrese diferite, deci toate
+# cele 39 de variante cu slash raspundeau 404. Masurat pe viu pe 31.10.2026.
 # Jocurile (tetris, 15-puzzle-game, wordle-game) NU au succesor si raman 404 intentionat:
 # un redirect catre home ar produce soft-404, tratat de Google mai rau decat un 404 onest.
 #
 # Quiz-uri si teste de personalitate -> hub-ul de quiz-uri viu:
 /karl-marx-complete-25-question-interactive-quiz  https://tekideki.github.io/quizzes/  301
+/karl-marx-complete-25-question-interactive-quiz/  https://tekideki.github.io/quizzes/  301
 /lewis-pullman-25-question-rising-star-quiz  https://tekideki.github.io/quizzes/  301
+/lewis-pullman-25-question-rising-star-quiz/  https://tekideki.github.io/quizzes/  301
 /personal-finance-25-question-quiz-tracker  https://tekideki.github.io/quizzes/  301
+/personal-finance-25-question-quiz-tracker/  https://tekideki.github.io/quizzes/  301
 /annie-clark-st-vincent-masterclass-10-questions-quiz  https://tekideki.github.io/quizzes/  301
+/annie-clark-st-vincent-masterclass-10-questions-quiz/  https://tekideki.github.io/quizzes/  301
 /nicolas-winding-refn-ultimate-film-quiz-25-questions  https://tekideki.github.io/quizzes/  301
+/nicolas-winding-refn-ultimate-film-quiz-25-questions/  https://tekideki.github.io/quizzes/  301
 /cobie-smulders-actress-trivia-quiz  https://tekideki.github.io/quizzes/  301
+/cobie-smulders-actress-trivia-quiz/  https://tekideki.github.io/quizzes/  301
 /big-five-masterclass  https://tekideki.github.io/quizzes/  301
+/big-five-masterclass/  https://tekideki.github.io/quizzes/  301
 /difficult-person-test-interpersonal-dynamics-assessment  https://tekideki.github.io/quizzes/  301
+/difficult-person-test-interpersonal-dynamics-assessment/  https://tekideki.github.io/quizzes/  301
 /art-deco-forge-prompt-generator  https://tekideki.github.io/AI-Prompt-Builder/  301
+/art-deco-forge-prompt-generator/  https://tekideki.github.io/AI-Prompt-Builder/  301
 /isaac-newton-physics-quiz-laws-gravity  https://tekideki.github.io/quizzes/  301
+/isaac-newton-physics-quiz-laws-gravity/  https://tekideki.github.io/quizzes/  301
 /erich-fromm-humanistic-psychology-quiz  https://tekideki.github.io/quizzes/  301
+/erich-fromm-humanistic-psychology-quiz/  https://tekideki.github.io/quizzes/  301
 /mia-wasikowska-ultimate-film-actor-quiz-25-questions  https://tekideki.github.io/quizzes/  301
+/mia-wasikowska-ultimate-film-actor-quiz-25-questions/  https://tekideki.github.io/quizzes/  301
 /color-personality-test-interactive  https://tekideki.github.io/quizzes/  301
+/color-personality-test-interactive/  https://tekideki.github.io/quizzes/  301
 /jimmy-wales-wikipedia-quiz-guide  https://tekideki.github.io/quizzes/  301
+/jimmy-wales-wikipedia-quiz-guide/  https://tekideki.github.io/quizzes/  301
 /personality-type-assessment-25-questions  https://tekideki.github.io/quizzes/  301
+/personality-type-assessment-25-questions/  https://tekideki.github.io/quizzes/  301
 /nancy-pelosi-ultimate-political-quiz-25-questions  https://tekideki.github.io/quizzes/  301
+/nancy-pelosi-ultimate-political-quiz-25-questions/  https://tekideki.github.io/quizzes/  301
 /island-personality-quiz-tropical-match  https://tekideki.github.io/quizzes/  301
+/island-personality-quiz-tropical-match/  https://tekideki.github.io/quizzes/  301
 /florence-welch-music-quiz  https://tekideki.github.io/quizzes/  301
+/florence-welch-music-quiz/  https://tekideki.github.io/quizzes/  301
 /james-lipton-inside-the-actors-studio-quiz  https://tekideki.github.io/quizzes/  301
+/james-lipton-inside-the-actors-studio-quiz/  https://tekideki.github.io/quizzes/  301
 /salman-rushdie-literary-masterclass-quiz  https://tekideki.github.io/quizzes/  301
+/salman-rushdie-literary-masterclass-quiz/  https://tekideki.github.io/quizzes/  301
 /benjamin-franklin-legacy-quiz  https://tekideki.github.io/quizzes/  301
+/benjamin-franklin-legacy-quiz/  https://tekideki.github.io/quizzes/  301
 /one-mile-chapter-two-2026-quiz  https://tekideki.github.io/quizzes/  301
+/one-mile-chapter-two-2026-quiz/  https://tekideki.github.io/quizzes/  301
 /jj-abrams-filmmaker-quiz-star-wars-lost  https://tekideki.github.io/quizzes/  301
+/jj-abrams-filmmaker-quiz-star-wars-lost/  https://tekideki.github.io/quizzes/  301
 /unitvault-pro  https://tekideki.github.io/Unit-Converter/  301
+/unitvault-pro/  https://tekideki.github.io/Unit-Converter/  301
 /love-compass-25-question-fictional-couple-quiz  https://tekideki.github.io/quizzes/  301
+/love-compass-25-question-fictional-couple-quiz/  https://tekideki.github.io/quizzes/  301
 /the-heart-is-a-muscle-2026-drama-quiz  https://tekideki.github.io/quizzes/  301
+/the-heart-is-a-muscle-2026-drama-quiz/  https://tekideki.github.io/quizzes/  301
 /niccolo-machiavelli-25-question-political-philosophy-quiz  https://tekideki.github.io/quizzes/  301
+/niccolo-machiavelli-25-question-political-philosophy-quiz/  https://tekideki.github.io/quizzes/  301
 /karma-compass-25-karmic-debt-spiritual-quiz  https://tekideki.github.io/quizzes/  301
+/karma-compass-25-karmic-debt-spiritual-quiz/  https://tekideki.github.io/quizzes/  301
 /anais-nin-literary-masterclass-interactive-quiz  https://tekideki.github.io/quizzes/  301
+/anais-nin-literary-masterclass-interactive-quiz/  https://tekideki.github.io/quizzes/  301
 /jay-z-hip-hop-mogul-quiz-educational-guide  https://tekideki.github.io/quizzes/  301
+/jay-z-hip-hop-mogul-quiz-educational-guide/  https://tekideki.github.io/quizzes/  301
 /pose-2026-dance-drama-quiz  https://tekideki.github.io/quizzes/  301
+/pose-2026-dance-drama-quiz/  https://tekideki.github.io/quizzes/  301
 /voltaire-enlightenment-philosopher-quiz  https://tekideki.github.io/quizzes/  301
+/voltaire-enlightenment-philosopher-quiz/  https://tekideki.github.io/quizzes/  301
 /jack-welch-leadership-quiz-ge  https://tekideki.github.io/quizzes/  301
+/jack-welch-leadership-quiz-ge/  https://tekideki.github.io/quizzes/  301
 /ben-stein-masterclass  https://tekideki.github.io/quizzes/  301
+/ben-stein-masterclass/  https://tekideki.github.io/quizzes/  301
 /robin-williams-comedy-legend-masterclass-quiz  https://tekideki.github.io/quizzes/  301
+/robin-williams-comedy-legend-masterclass-quiz/  https://tekideki.github.io/quizzes/  301
 /nelson-mandela-ultimate-history-quiz-25-questions  https://tekideki.github.io/quizzes/  301
+/nelson-mandela-ultimate-history-quiz-25-questions/  https://tekideki.github.io/quizzes/  301
 /elemental-personality-quiz-earth-air-fire-water  https://tekideki.github.io/quizzes/  301
+/elemental-personality-quiz-earth-air-fire-water/  https://tekideki.github.io/quizzes/  301
 /ryan-gosling-notebook-to-ken-masterclass-quiz  https://tekideki.github.io/quizzes/  301
+/ryan-gosling-notebook-to-ken-masterclass-quiz/  https://tekideki.github.io/quizzes/  301
 /alignment-compass-masterclass-dnd-moral-quiz  https://tekideki.github.io/quizzes/  301
+/alignment-compass-masterclass-dnd-moral-quiz/  https://tekideki.github.io/quizzes/  301
 /games   https://games.freehtml.dev/  302
 /games/  https://games.freehtml.dev/  302
 #
