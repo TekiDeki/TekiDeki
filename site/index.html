@@ -47,6 +47,7 @@
   })();
 </script>
 
+<script>document.documentElement.classList.add('js');</script>
 <style>
 /* ============================================================
    freeHTML.dev - one file, no dependencies, no third parties.
@@ -396,8 +397,12 @@ footer{border-top:1px solid var(--border-soft);padding:34px 0 44px;margin-top:20
 .foot-note .heart{color:#e2557b}
 
 /* ---------- reveal ---------- */
-.reveal{opacity:0;transform:translateY(14px);transition:opacity .55s var(--ease),transform .55s var(--ease)}
-.reveal.in{opacity:1;transform:none}
+/* Animatia de aparitie se aplica doar daca JS-ul ruleaza (`html.js`, pus de scriptul din <head>).
+   Fara JS, `.reveal` ramane la opacitate 1: altfel pagina ar fi goala pentru cine are JS oprit,
+   pentru modul citire sau pentru un motor care nu executa scripturi. */
+html.js .reveal{opacity:0;transform:translateY(14px)}
+.reveal{transition:opacity .55s var(--ease),transform .55s var(--ease)}
+html.js .reveal.in{opacity:1;transform:none}
 
 /* ---------- responsive ---------- */
 @media (max-width:960px){
@@ -464,6 +469,35 @@ footer{border-top:1px solid var(--border-soft);padding:34px 0 44px;margin-top:20
   ]
 }
 </script>
+<style id="tinte-44">
+/* regula casei: pe telefon, tinta de atingere are cel putin 44x44px (WCAG 2.5.5, Apple HIG).
+   Hub-ul avea 34px din runda trecuta; aici se ridica la 44, doar pe pointer gros sau ecran mic,
+   ca sa nu umfle pagina pe desktop. `!important` e intentionat: e un prag de accesibilitate. */
+@media (pointer: coarse), (max-width: 700px) {
+  html body :is(button, select, textarea, summary, [role="button"],
+      input:not([type="checkbox"]):not([type="radio"]):not([type="file"]):not([type="hidden"])) {
+    min-height: 44px !important;
+  }
+  html body :is(.chip, .lang-btn, .icon-btn, button.copy, a.btn, .btn) {
+    min-height: 44px !important;
+    display: inline-flex !important; align-items: center !important; justify-content: center !important;
+  }
+  html body :is(.icon-btn, .lang-btn, .chip) { min-width: 44px !important; }
+  /* legaturile din afara propozitiei: navigatie, carduri, subsol */
+  html body a:not(p a):not(li a):not(.card) { min-height: 44px !important; min-width: 44px !important; }
+  html body :is(.brand, .card-title a, .foot-links a, .nav a, .links a, .topbar-in a, #nav a) {
+    display: inline-flex !important; align-items: center !important; min-height: 44px !important;
+  }
+  /* barele care nu incap se asaza pe doua linii in loc sa iasa din ecran */
+  html body :is(.topbar-in, .controls, .chips-row, .toolbar-in, .foot-links, .hero-cta, .links) {
+    flex-wrap: wrap !important;
+  }
+  /* linia de comanda din lista de scurtaturi: se rupe, nu impinge pagina */
+  html body :is(.shortcuts code, .sc-row code, code) {
+    max-width: 100% !important; white-space: normal !important; overflow-wrap: anywhere !important;
+  }
+}
+</style>
 </head>
 
 <body>

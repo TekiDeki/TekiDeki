@@ -45,6 +45,19 @@ a.btn:hover{border-color:var(--accent)}
 a.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
 .ro{margin-top:18px;font-size:13.5px;color:var(--faint)}
 </style>
+<style id="ecran-mic">
+/* regula casei: ecrane mici (320px) fara depasire pe orizontala si tinte de 44px.
+   `body` e o grila cu o singura coloana implicita; o coloana `auto` isi ia latimea de la
+   continutul cel mai lat (linia lunga din <pre>), deci pagina se lateste chiar daca `.box`
+   are max-width. Coloana trebuie fortata la minmax(0, 1fr). */
+@media (max-width: 700px), (pointer: coarse) {
+  body { grid-template-columns: minmax(0, 1fr); }
+  .box { min-width: 0; max-width: 100%; }
+  pre { max-width: 100%; }
+  a.btn, .links a { min-height: 44px; display: inline-flex; align-items: center; }
+  .ro a { display: inline-block; min-height: 44px; line-height: 44px; }
+}
+</style>
 </head>
 <body>
 <main class="box">
