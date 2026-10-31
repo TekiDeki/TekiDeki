@@ -2,6 +2,13 @@
   "name": "tekideki-site-tests",
   "private": true,
   "description": "Development-only browser tests. The shipped site has zero dependencies.",
-  "scripts": {"test": "node tests/unit-atlas.cjs"},
-  "devDependencies": {"@axe-core/playwright": "4.14.0", "playwright": "1.64.1"}
+  "scripts": {
+    "test": "node tests/unit-atlas.cjs && node tests/tools-registry.cjs && node tests/redirects.cjs",
+    "tools": "python3 scripts/build-tools.py --write",
+    "tools:check": "python3 scripts/build-tools.py --check"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.14.0",
+    "playwright": "1.64.1"
+  }
 }
