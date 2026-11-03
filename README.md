@@ -432,7 +432,7 @@ The priorities behind my tools:
 
 ### 🧰 Working on the hub
 
-The 30 tool cards on [freeHTML.dev](https://freehtml.dev/) are not written by hand. They live in
+The tool cards on [freeHTML.dev](https://freehtml.dev/) are not written by hand. They live in
 [`tools.json`](tools.json), one entry per tool, and `python3 scripts/build-tools.py --write` renders
 them into `site/index.html` at build time. The shipped page is still plain static HTML, with no extra
 JavaScript, so the registry costs the visitor nothing.

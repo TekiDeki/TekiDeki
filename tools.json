@@ -1241,6 +1241,49 @@
       }
     },
     {
+      "slug": "csv",
+      "name": "CSV-Desk",
+      "url": "https://tekideki.github.io/CSV-Desk/",
+      "repo": "https://github.com/TekiDeki/CSV-Desk",
+      "path": "/csv",
+      "tags": [
+        "dev",
+        "text"
+      ],
+      "hue": "#3b82f6",
+      "glyph": "▤",
+      "tag": {
+        "key": "csv.tag",
+        "text": "Clean CSV files without sending them anywhere."
+      },
+      "desc": {
+        "key": "csv.desc",
+        "text": "Edit, filter, clean and export CSV or TSV files locally. Detect delimiters, trim whitespace, remove duplicates and keep every value as text."
+      },
+      "features": [
+        {
+          "key": "csv.f1",
+          "text": "CSV, TSV and JSON"
+        },
+        {
+          "key": "csv.f2",
+          "text": "cleanup and undo"
+        },
+        {
+          "key": "csv.f3",
+          "text": "4 languages"
+        },
+        {
+          "key": "csv.f4",
+          "text": "offline PWA"
+        }
+      ],
+      "size": {
+        "key": "csv.badge",
+        "text": "local only"
+      }
+    },
+    {
       "slug": "games",
       "name": "Games",
       "url": "https://games.freehtml.dev/",
