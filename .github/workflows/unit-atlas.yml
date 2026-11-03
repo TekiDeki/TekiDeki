@@ -1,10 +1,10 @@
 name: Unit Atlas integration tests
 on:
   pull_request:
-    paths: ['site/**', 'tests/**', 'docs/**', 'README.md', 'package*.json', '.github/workflows/unit-atlas.yml']
+    paths: ['site/**', 'tests/**', 'docs/**', 'tools.json', 'scripts/**', 'README.md', 'package*.json', '.github/workflows/unit-atlas.yml']
   push:
     branches: [main]
-    paths: ['site/**', 'tests/**', 'docs/**', 'README.md', 'package*.json', '.github/workflows/unit-atlas.yml']
+    paths: ['site/**', 'tests/**', 'docs/**', 'tools.json', 'scripts/**', 'README.md', 'package*.json', '.github/workflows/unit-atlas.yml']
 permissions:
   contents: read
 jobs:

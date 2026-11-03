@@ -399,6 +399,20 @@ Daily round · explanation and source on every answer · challenge link · strea
 
 <br>
 
+### 🖼️ [Icon-Desk](https://github.com/TekiDeki/Icon-Desk)
+
+**Favicons and app icons, without uploading your image.**
+
+Start from a PNG, JPG or WebP, or type a one to three character monogram, then set the square crop, zoom, padding, corner radius and background. The previews are shown at the sizes that actually matter - 16, 32, 48, 180, 192 and 512 pixels, plus a real browser-tab strip - with actual-size, checkerboard, light and dark views, because a detail that survives a large preview can disappear at 16 pixels. One click builds a nine-file pack on your device: a multi-size ICO, six PNG icons, a web manifest and an HTML snippet. The ZIP is written byte-identically for identical output, so it can be checked with a hash.
+
+Nine-file pack · ICO with 16/32/48 entries · image or monogram · transparent or coloured background · actual-size previews · four languages · offline PWA · no upload, no account, no watermark
+
+[![Live demo](https://img.shields.io/badge/live-demo-success?style=flat-square&logo=githubpages&logoColor=white)](https://tekideki.github.io/Icon-Desk/)
+[![Repo](https://img.shields.io/badge/repo-source-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/TekiDeki/Icon-Desk)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](https://github.com/TekiDeki/Icon-Desk/blob/main/LICENSE)
+
+<br>
+
 ### 📡 [Internet Stability Test](https://github.com/TekiDeki/Internet-Stability-Test)
 
 **Is your connection solid, or just fast?**

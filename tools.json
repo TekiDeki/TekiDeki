@@ -1326,6 +1326,48 @@
       }
     },
     {
+      "slug": "icon-desk",
+      "name": "Icon-Desk",
+      "url": "https://tekideki.github.io/Icon-Desk/",
+      "repo": "https://github.com/TekiDeki/Icon-Desk",
+      "path": "/icon",
+      "tags": [
+        "dev"
+      ],
+      "hue": "#a3e635",
+      "glyph": "🖼️",
+      "tag": {
+        "key": "icon.tag",
+        "text": "Favicons and app icons, without uploading your image."
+      },
+      "desc": {
+        "key": "icon.desc",
+        "text": "Crop a picture or type a monogram, check the real 16, 32 and 48 pixel results, then download a complete icon pack: ICO, six PNG icons, a web manifest and the HTML snippet. All of it on your device."
+      },
+      "features": [
+        {
+          "key": "icon.f1",
+          "text": "ICO + 6 PNG"
+        },
+        {
+          "key": "icon.f2",
+          "text": "monogram or image"
+        },
+        {
+          "key": "icon.f3",
+          "text": "manifest + HTML"
+        },
+        {
+          "key": "icon.f4",
+          "text": "no upload"
+        }
+      ],
+      "size": {
+        "key": "icon.badge",
+        "text": "9-file pack"
+      }
+    },
+    {
       "slug": "games",
       "name": "Games",
       "url": "https://games.freehtml.dev/",
