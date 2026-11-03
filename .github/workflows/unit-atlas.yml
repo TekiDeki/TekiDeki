@@ -26,3 +26,6 @@ jobs:
           trap 'kill "$SERVER_PID"' EXIT
           node -e "const net=require('net');let tries=0;function ready(){const s=net.connect(8080,'127.0.0.1',()=>s.end());s.on('error',()=>{if(++tries>50)process.exit(1);setTimeout(ready,100);});}ready();"
           npm test
+      - name: Sitemap index on the live host (informative, does not block)
+        continue-on-error: true
+        run: node tests/sitemap-index.cjs --live

@@ -3,9 +3,10 @@
   "private": true,
   "description": "Development-only browser tests. The shipped site has zero dependencies.",
   "scripts": {
-    "test": "node tests/unit-atlas.cjs && node tests/tools-registry.cjs && node tests/redirects.cjs",
+    "test": "node tests/unit-atlas.cjs && node tests/tools-registry.cjs && node tests/redirects.cjs && node tests/sitemap-index.cjs",
     "tools": "python3 scripts/build-tools.py --write",
-    "tools:check": "python3 scripts/build-tools.py --check"
+    "tools:check": "python3 scripts/build-tools.py --check",
+    "test:live": "node tests/unit-atlas.cjs && node tests/tools-registry.cjs && node tests/redirects.cjs --live && node tests/sitemap-index.cjs --live"
   },
   "devDependencies": {
     "@axe-core/playwright": "4.14.0",
