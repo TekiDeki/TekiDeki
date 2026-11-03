@@ -1284,6 +1284,48 @@
       }
     },
     {
+      "slug": "hash",
+      "name": "Hash-Desk",
+      "url": "https://tekideki.github.io/Hash-Desk/",
+      "repo": "https://github.com/TekiDeki/Hash-Desk",
+      "path": "/hash",
+      "tags": [
+        "dev"
+      ],
+      "hue": "#009688",
+      "glyph": "#",
+      "tag": {
+        "key": "hash.tag",
+        "text": "Check any file without sending it anywhere."
+      },
+      "desc": {
+        "key": "hash.desc",
+        "text": "Calculate MD5 and SHA-256 locally, compare an expected checksum and export a manifest. Multi-file drag and drop, one read and no upload."
+      },
+      "features": [
+        {
+          "key": "hash.f1",
+          "text": "MD5 + SHA-256"
+        },
+        {
+          "key": "hash.f2",
+          "text": "expected hash checks"
+        },
+        {
+          "key": "hash.f3",
+          "text": "checksums.txt export"
+        },
+        {
+          "key": "hash.f4",
+          "text": "offline PWA"
+        }
+      ],
+      "size": {
+        "key": "hash.badge",
+        "text": "local only"
+      }
+    },
+    {
       "slug": "games",
       "name": "Games",
       "url": "https://games.freehtml.dev/",

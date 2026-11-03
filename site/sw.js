@@ -1,9 +1,9 @@
 /* freeHTML.dev - cache same-origin pages under their own keys.
    External tools keep their own service workers. */
-const VERSION = 'fhd-v33-offline-redirects';
+const VERSION = 'fhd-v34-hash-desk';
 const SHORTCUTS = [
   '/convert', '/cheaper', '/money', '/prompts', '/bmi', '/preview', '/bets',
-  '/words', '/lorem', '/pass', '/qr', '/barcode', '/cv', '/pdfimg', '/subs', '/quiz', '/stability', '/img', '/tts-reader', '/palette', '/cycle-calendar', '/photo-sheet', '/zones', '/pdf', '/sign', '/github', '/star'
+  '/words', '/lorem', '/pass', '/qr', '/barcode', '/cv', '/pdfimg', '/subs', '/quiz', '/stability', '/img', '/tts-reader', '/palette', '/cycle-calendar', '/photo-sheet', '/zones', '/pdf', '/sign', '/hash', '/github', '/star'
 ];
 const SHELL = [
   '/', '/index.html', '/404.html',

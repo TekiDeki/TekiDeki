@@ -1146,6 +1146,23 @@ html.js .reveal.in{opacity:1;transform:none}
           </div>
         </article>
 
+        <article class="card reveal" data-tags="dev" data-slug="hash" style="--hue:#009688">
+          <div class="card-top">
+            <span class="glyph" aria-hidden="true">#</span>
+            <div>
+              <h3 class="card-title"><a href="https://tekideki.github.io/Hash-Desk/" target="_blank" rel="noopener noreferrer">Hash-Desk</a></h3>
+              <p class="card-tag" data-i18n="hash.tag">Check any file without sending it anywhere.</p>
+            </div>
+          </div>
+          <p class="card-desc" data-i18n="hash.desc">Calculate MD5 and SHA-256 locally, compare an expected checksum and export a manifest. Multi-file drag and drop, one read and no upload.</p>
+          <ul class="feats"><li data-i18n="hash.f1">MD5 + SHA-256</li><li data-i18n="hash.f2">expected hash checks</li><li data-i18n="hash.f3">checksums.txt export</li><li data-i18n="hash.f4">offline PWA</li></ul>
+          <div class="card-foot">
+            <a class="btn btn-sm btn-primary" href="https://tekideki.github.io/Hash-Desk/" target="_blank" rel="noopener noreferrer" data-i18n="open">Open</a>
+            <a class="btn btn-sm" href="https://github.com/TekiDeki/Hash-Desk" target="_blank" rel="noopener noreferrer" data-i18n="src">Source</a>
+            <span class="size" data-i18n="hash.badge">local only</span>
+          </div>
+        </article>
+
         <article class="card reveal" data-tags="learn" data-slug="games" style="--hue:#f59e0b">
           <div class="card-top">
             <span class="glyph" aria-hidden="true">🎮</span>
@@ -1260,6 +1277,7 @@ html.js .reveal.in{opacity:1;transform:none}
         <div class="sc-row"><span class="path">freehtml.dev/sign</span><span class="arrow" aria-hidden="true">→</span><span class="target">Sign PDF</span><button class="copy" type="button" data-copy="https://freehtml.dev/sign" data-i18n="copy.btn">copy</button></div>
         <div class="sc-row"><span class="path">freehtml.dev/stability</span><span class="arrow" aria-hidden="true">&#8594;</span><span class="target">Internet Stability Test</span><button class="copy" type="button" data-copy="https://freehtml.dev/stability" data-i18n="copy.btn">copy</button></div>
         <div class="sc-row"><span class="path">freehtml.dev/csv</span><span class="arrow" aria-hidden="true">&#8594;</span><span class="target">CSV-Desk</span><button class="copy" type="button" data-copy="https://freehtml.dev/csv" data-i18n="copy.btn">copy</button></div>
+        <div class="sc-row"><span class="path">freehtml.dev/hash</span><span class="arrow" aria-hidden="true">&#8594;</span><span class="target">Hash-Desk</span><button class="copy" type="button" data-copy="https://freehtml.dev/hash" data-i18n="copy.btn">copy</button></div>
         <div class="sc-row"><span class="path">freehtml.dev/games</span><span class="arrow" aria-hidden="true">&#8594;</span><span class="target">Games</span><button class="copy" type="button" data-copy="https://freehtml.dev/games" data-i18n="copy.btn">copy</button></div>
       </div>
       <p class="sc-note mono" data-i18n="sc.note">Unit Atlas now lives in its own repository and is served from tekideki.github.io/Unit-Converter. All shortcuts use 302 redirects: most go to GitHub Pages, the games to games.freehtml.dev, where each app manages its own offline support.</p>
@@ -1403,6 +1421,7 @@ var I18N = {
     "quiz.f1": "daily round", "quiz.f2": "a source on every fact", "quiz.f3": "streak and record", "quiz.f4": "four languages", "quiz.f5": "offline", "quiz.badge": "4 languages",
     "stability.tag": "Is your connection solid, or just fast?", "stability.desc": "Continuous latency probes measure jitter, lost probes and outages over minutes or hours, then hand you a verdict with the thresholds shown. The report and the full data export stay in your browser.", "stability.f1": "jitter, loss, outages", "stability.f2": "timeline chart", "stability.f3": "report and JSON export", "stability.f4": "four languages", "stability.badge": "local only",
     "csv.tag": "Clean CSV files without sending them anywhere.", "csv.desc": "Edit, filter, clean and export CSV or TSV files locally. Detect delimiters, trim whitespace, remove duplicates and keep every value as text.", "csv.f1": "CSV, TSV and JSON", "csv.f2": "cleanup and undo", "csv.f3": "4 languages", "csv.f4": "offline PWA", "csv.badge": "local only",
+    "hash.tag": "Check any file without sending it anywhere.", "hash.desc": "Calculate MD5 and SHA-256 locally, compare an expected checksum and export a manifest. Multi-file drag and drop, one read and no upload.", "hash.f1": "MD5 + SHA-256", "hash.f2": "expected hash checks", "hash.f3": "checksums.txt export", "hash.f4": "offline PWA", "hash.badge": "local only",
     "chips.learn": "Learn",
     "img.tag": "Smaller photos. Without the metadata.",
     "img.desc": "Batch compress and resize images right in the browser, and get them back with EXIF, GPS, camera and timestamp data removed. Download single files or the whole batch as one ZIP.",
@@ -1508,6 +1527,7 @@ var I18N = {
     "quiz.f1": "runda de azi", "quiz.f2": "sursă la fiecare fapt", "quiz.f3": "serie și record", "quiz.f4": "patru limbi", "quiz.f5": "offline", "quiz.badge": "4 limbi",
     "stability.tag": "Conexiunea ta e solidă sau doar rapidă?", "stability.desc": "Sonde continue de latență măsoară jitter, sonde pierdute și căderi timp de minute sau ore, apoi îți dau un verdict cu pragurile la vedere. Raportul și exportul complet de date rămân în browserul tău.", "stability.f1": "jitter, pierderi, căderi", "stability.f2": "grafic în timp", "stability.f3": "raport și export JSON", "stability.f4": "patru limbi", "stability.badge": "doar local",
     "csv.tag": "Curăță fișiere CSV fără să le trimiți nicăieri.", "csv.desc": "Editează, filtrează, curăță și exportă fișiere CSV sau TSV local. Detectează separatorul, elimină spațiile și duplicatele și păstrează fiecare valoare ca text.", "csv.f1": "CSV, TSV și JSON", "csv.f2": "curățare și anulare", "csv.f3": "4 limbi", "csv.f4": "PWA offline", "csv.badge": "doar local",
+    "hash.tag": "Verifică fișiere fără să le trimiți nicăieri.", "hash.desc": "Calculează MD5 și SHA-256 local, compară hash-ul așteptat și exportă un manifest. Mai multe fișiere, drag and drop, o singură citire și nicio încărcare.", "hash.f1": "MD5 + SHA-256", "hash.f2": "comparare hash așteptat", "hash.f3": "export checksums.txt", "hash.f4": "PWA offline", "hash.badge": "doar local",
     "chips.learn": "Învățare",
     "img.tag": "Fotografii mai mici. Fără metadate.",
     "img.desc": "Comprimi și redimensionezi imagini în lot, direct în browser, și le primești înapoi fără EXIF, GPS, cameră și datare. Descarci fișiere individual sau tot lotul într-un ZIP.",
@@ -1613,6 +1633,7 @@ var I18N = {
     "quiz.f1": "današnja runda", "quiz.f2": "izvor za svaku činjenicu", "quiz.f3": "niz i rekord", "quiz.f4": "četiri jezika", "quiz.f5": "offline", "quiz.badge": "4 jezika",
     "stability.tag": "Da li ti je veza čvrsta ili samo brza?", "stability.desc": "Neprekidne sonde latencije mere džiter, izgubljene sonde i prekide tokom minuta ili sati, pa ti daju presudu sa pragovima na vidiku. Izveštaj i kompletan izvoz podataka ostaju u tvom pregledaču.", "stability.f1": "džiter, gubici, prekidi", "stability.f2": "grafikon u vremenu", "stability.f3": "izveštaj i JSON izvoz", "stability.f4": "četiri jezika", "stability.badge": "samo lokalno",
     "csv.tag": "Očistite CSV datoteke bez slanja bilo kuda.", "csv.desc": "Uredite, filtrirajte, očistite i izvezite CSV ili TSV datoteke lokalno. Prepoznajte separator, uklonite razmake i duplikate i zadržite svaku vrednost kao tekst.", "csv.f1": "CSV, TSV i JSON", "csv.f2": "čišćenje i poništavanje", "csv.f3": "4 jezika", "csv.f4": "PWA van mreže", "csv.badge": "samo lokalno",
+    "hash.tag": "Proverite datoteke bez slanja bilo kuda.", "hash.desc": "Izračunajte MD5 i SHA-256 lokalno, uporedite očekivani heš i izvezite manifest. Više datoteka, prevlačenje, jedno čitanje i bez slanja.", "hash.f1": "MD5 + SHA-256", "hash.f2": "provera očekivanog heša", "hash.f3": "izvoz checksums.txt", "hash.f4": "PWA van mreže", "hash.badge": "samo lokalno",
     "chips.learn": "Učenje",
     "img.tag": "Manje fotografije. Bez metapodataka.",
     "img.desc": "Grupno sabijaj i menjaj veličinu slika pravo u pregledaču i vraćaju ti se bez EXIF, GPS, podataka kamere i vremena. Preuzmi pojedinačno ili celu grupu kao jedan ZIP.",
@@ -1718,6 +1739,7 @@ var I18N = {
     "quiz.f1": "данашња рунда", "quiz.f2": "извор за сваку чињеницу", "quiz.f3": "низ и рекорд", "quiz.f4": "четири језика", "quiz.f5": "offline", "quiz.badge": "4 језика",
     "stability.tag": "Да ли ти је веза чврста или само брза?", "stability.desc": "Непрекидне сонде латенције мере џитер, изгубљене сонде и прекиде током минута или сати, па ти дају пресуду са праговима на видику. Извештај и комплетан извоз података остају у твом прегледачу.", "stability.f1": "џитер, губици, прекиди", "stability.f2": "графикон у времену", "stability.f3": "извештај и JSON извоз", "stability.f4": "четири језика", "stability.badge": "само локално",
     "csv.tag": "Очистите CSV датотеке без слања било куда.", "csv.desc": "Уредите, филтрирајте, очистите и извезите CSV или TSV датотеке локално. Препознајте сепаратор, уклоните размаке и дупликате и задржите сваку вредност као текст.", "csv.f1": "CSV, TSV и JSON", "csv.f2": "чишћење и поништавање", "csv.f3": "4 језика", "csv.f4": "PWA ван мреже", "csv.badge": "само локално",
+    "hash.tag": "Проверите датотеке без слања било куда.", "hash.desc": "Израчунајте MD5 и SHA-256 локално, упоредите очекивани хеш и изведите манифест. Више датотека, превлачење, једно читање и без слања.", "hash.f1": "MD5 + SHA-256", "hash.f2": "провера очекиваног хеша", "hash.f3": "извоз checksums.txt", "hash.f4": "PWA ван мреже", "hash.badge": "само локално",
     "chips.learn": "Учење",
     "img.tag": "Мање фотографије. Без метаподатака.",
     "img.desc": "Групно сабијај и мењај величину слика право у прегледачу и враћају ти се без EXIF, GPS, података камере и времена. Преузми појединачно или целу групу као један ZIP.",
