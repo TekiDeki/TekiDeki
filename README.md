@@ -275,6 +275,22 @@ Millimetre guides · six photos per 10 x 15 sheet · 300 dpi print and PNG · ho
 [![Repo](https://img.shields.io/badge/repo-source-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/TekiDeki/Photo-Sheet)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](https://github.com/TekiDeki/Photo-Sheet/blob/main/LICENSE)
 
+<br>
+
+### ✂️ [Video Trimmer](https://github.com/TekiDeki/Video-Trim)
+
+**The clip never leaves the device.**
+
+Pick the start and the end on a timeline, drop the sound if you want, and save a smaller file. The page decodes and re-encodes the video with the browser's own engine, so nothing is uploaded and no account is asked for. Unplug the network after the page loads and it still works.
+
+Timeline trimming · WebM / MP4 · PNG frame · no upload · 4 languages · works offline
+
+[![Live demo](https://img.shields.io/badge/live-demo-success?style=flat-square&logo=githubpages&logoColor=white)](https://tekideki.github.io/Video-Trim/)
+[![Repo](https://img.shields.io/badge/repo-source-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/TekiDeki/Video-Trim)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](https://github.com/TekiDeki/Video-Trim/blob/main/LICENSE)
+
+<br>
+
 ### 🌍 [Meeting Planner](https://github.com/TekiDeki/Meeting-Planner)
 
 **The hour that works for every city in the room.**
@@ -352,7 +368,11 @@ Fill the form and watch the page fill with you: a classic one column CV, two col
 A4 / Letter · classic, two columns, banner · real text, ATS readable · photo optional · JSON copy · 4 languages · offline PWA
 
 [![Live demo](https://img.shields.io/badge/live-demo-success?style=flat-square&logo=githubpages&logoColor=white)](https://tekideki.github.io/CV-Builder/)
-[![Repo](https://img.shields.io/badge/repo-source-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/TekiDeki/CV-Builder)
+[![Repo](https://img.shields.io/badge/repo-source-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/TekiDeki/CV-Builder)]
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](https://github.com/TekiDeki/CV-Builder/blob/main/LICENSE)
+
+<br>
+
 ### 📸 [PDF to Images](https://github.com/TekiDeki/PDF-to-Images)
 
 **Every page as a JPG or PNG, made inside the tab.**
@@ -395,10 +415,6 @@ Daily round · explanation and source on every answer · challenge link · strea
 
 <br>
 
-[![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](https://github.com/TekiDeki/CV-Builder/blob/main/LICENSE)
-
-<br>
-
 ### 🖼️ [Icon-Desk](https://github.com/TekiDeki/Icon-Desk)
 
 **Favicons and app icons, without uploading your image.**
@@ -424,6 +440,48 @@ Latency, jitter, loss and uptime - outage detection with durations - live timeli
 [![Live demo](https://img.shields.io/badge/live-demo-success?style=flat-square&logo=githubpages&logoColor=white)](https://tekideki.github.io/Internet-Stability-Test/)
 [![Repo](https://img.shields.io/badge/repo-source-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/TekiDeki/Internet-Stability-Test)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](https://github.com/TekiDeki/Internet-Stability-Test/blob/main/LICENSE)
+
+<br>
+
+### 📊 [CSV-Desk](https://github.com/TekiDeki/CSV-Desk)
+
+**Open, clean, export. The file never leaves the tab.**
+
+A local CSV, TSV and TXT editor and cleaner. The delimiter is detected on the spot, cells are editable, columns can be renamed, reordered or hidden, and the cleanup pass trims whitespace, drops empty and duplicate rows with twenty steps of undo. Every value stays text, so a leading zero survives the round trip.
+
+CSV, TSV and JSON · delimiter detection · cleanup with undo · 4 languages · offline PWA
+
+[![Live demo](https://img.shields.io/badge/live-demo-success?style=flat-square&logo=githubpages&logoColor=white)](https://tekideki.github.io/CSV-Desk/)
+[![Repo](https://img.shields.io/badge/repo-source-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/TekiDeki/CSV-Desk)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](https://github.com/TekiDeki/CSV-Desk/blob/main/LICENSE)
+
+<br>
+
+### #️⃣ [Hash-Desk](https://github.com/TekiDeki/Hash-Desk)
+
+**A checksum you can trust, made in the tab.**
+
+Drop files or paste text and read MD5 and SHA-256 without sending anything anywhere: each file is read once and hashed in a Web Worker. Type the expected hash and see at once whether it matches, then export a standard checksums.txt manifest for the whole batch. Up to 128 MiB per file, no upload, no account.
+
+MD5 and SHA-256 · expected-hash check · checksums.txt manifest · multi-file drag and drop · 4 languages · offline PWA
+
+[![Live demo](https://img.shields.io/badge/live-demo-success?style=flat-square&logo=githubpages&logoColor=white)](https://tekideki.github.io/Hash-Desk/)
+[![Repo](https://img.shields.io/badge/repo-source-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/TekiDeki/Hash-Desk)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](https://github.com/TekiDeki/Hash-Desk/blob/main/LICENSE)
+
+<br>
+
+### 🎮 [Games](https://github.com/TekiDeki/Games)
+
+**Small browser games, one HTML file each.**
+
+Nine word and logic games on their own host: Guess the word, Word pairs, Word scramble, Word of the day, Odd one out, Word search, Word from definition, Type fast and Translation pairs. Every game is one HTML file that runs entirely in the browser, speaks English, Romanian, Serbian Latin and Serbian Cyrillic, and keeps its streak and record on the device. No account, no ads, no analytics.
+
+Nine games · four languages · streak and record · no upload · light and dark
+
+[![Live demo](https://img.shields.io/badge/live-demo-success?style=flat-square&logo=githubpages&logoColor=white)](https://games.freehtml.dev/)
+[![Repo](https://img.shields.io/badge/repo-source-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/TekiDeki/Games)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue?style=flat-square)](https://github.com/TekiDeki/Games/blob/main/LICENSE)
 
 <br>
 
@@ -485,6 +543,7 @@ if a short link (`/convert`, `/money`) is missing from `site/_redirects`.
 | 🎨 Palette Studio | **[tekideki.github.io/Palette-Studio](https://tekideki.github.io/Palette-Studio/)** |
 | 📅 Cycle Calendar | **[tekideki.github.io/Cycle-Calendar](https://tekideki.github.io/Cycle-Calendar/)** |
 | 👤 Photo Sheet | **[tekideki.github.io/Photo-Sheet](https://tekideki.github.io/Photo-Sheet/)** |
+| ✂️ Video Trimmer | **[tekideki.github.io/Video-Trim](https://tekideki.github.io/Video-Trim/)** |
 | 🌍 Meeting Planner | **[tekideki.github.io/Meeting-Planner](https://tekideki.github.io/Meeting-Planner/)** |
 | 📄 PDF Desk | **[tekideki.github.io/PDF-Desk](https://tekideki.github.io/PDF-Desk/)** |
 | 🖋️ Sign PDF | **[tekideki.github.io/Sign-PDF](https://tekideki.github.io/Sign-PDF/)** |
@@ -494,7 +553,11 @@ if a short link (`/convert`, `/money`) is missing from `site/_redirects`.
 | 📸 PDF to Images | **[tekideki.github.io/PDF-to-Images](https://tekideki.github.io/PDF-to-Images/)** |
 | 💬 Subtitle Cleaner | **[tekideki.github.io/Subtitle-Cleaner](https://tekideki.github.io/Subtitle-Cleaner/)** |
 | 🃏 Quiz-Deck | **[tekideki.github.io/Quiz-Deck](https://tekideki.github.io/Quiz-Deck/)** |
+| 🖼️ Icon-Desk | **[tekideki.github.io/Icon-Desk](https://tekideki.github.io/Icon-Desk/)** |
 | 📡 Internet Stability Test | **[tekideki.github.io/Internet-Stability-Test](https://tekideki.github.io/Internet-Stability-Test/)** |
+| 📊 CSV-Desk | **[tekideki.github.io/CSV-Desk](https://tekideki.github.io/CSV-Desk/)** |
+| #️⃣ Hash-Desk | **[tekideki.github.io/Hash-Desk](https://tekideki.github.io/Hash-Desk/)** |
+| 🎮 Games | **[games.freehtml.dev](https://games.freehtml.dev/)** |
 
 **Personal site:** [freeHTML.dev](https://freehtml.dev/)
 
