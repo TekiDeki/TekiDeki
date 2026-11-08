@@ -1384,12 +1384,12 @@
       },
       "desc": {
         "key": "games.desc",
-        "text": "Word and logic games that run entirely in the browser. The first one is a hangman on themes: a hidden word, six lives, a letter hint and your own streak. Words are checked against the alphabet of their own language, including Serbian Cyrillic. No account, no ads, no upload."
+        "text": "Nine word and logic games that run entirely in the browser: a hangman on themes, memory pairs, anagrams, a daily word, odd one out, word search, definitions, a typing test and translation pairs. Words are checked against the alphabet of their own language, including Serbian Cyrillic. No account, no ads, no upload."
       },
       "features": [
         {
           "key": "games.f1",
-          "text": "hangman on themes"
+          "text": "nine games"
         },
         {
           "key": "games.f2",
